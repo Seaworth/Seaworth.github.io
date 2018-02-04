@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://seaworth.github.io/img/Hexo+Github搭建yilia主题的博客/QQ截图20180203172738.png">
 <meta property="og:image" content="http://seaworth.github.io/img/Hexo+Github搭建yilia主题的博客/QQ截图20180203175708.png">
 <meta property="og:image" content="http://seaworth.github.io/img/Hexo+Github搭建yilia主题的博客/QQ截图20180203180907.png">
-<meta property="og:updated_time" content="2018-02-04T07:16:33.048Z">
+<meta property="og:updated_time" content="2018-02-04T07:26:21.720Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+Github搭建yilia主题的博客">
 <meta name="twitter:description" content="1 概述什么是Hexo？  Hexo 是一个快速、简洁且高效的博客发布工具。Hexo支持Markdown格式，众多优秀插件和主题。在几秒内，即可利用靓丽的主题生成静态网页。">
@@ -191,7 +191,7 @@
 </blockquote>
 <h3 id="2-准备"><a href="#2-准备" class="headerlink" title="2 准备"></a>2 准备</h3><p>我是在win10环境下配置的，搭建博客需要以下的准备工作：</p>
 <ul>
-<li>Github账号<br>作用：是用来做博客的远程仓库，<a href="https://github.com/" target="_blank" rel="noopener">Github官网</a>申请一个账户，每一个Github账户（如我的账户名为Seaworth））对应有一个域名（则<a href="https://seaworth.github.io/">我的博客地址</a><a href="https://seaworth.github.io/）。">https://seaworth.github.io/）。</a></li>
+<li>Github账号<br>作用：是用来做博客的远程仓库，<a href="https://github.com/" target="_blank" rel="noopener">Github官网</a>申请一个账户，每一个Github账户（如我的账户名为Seaworth））对应有一个域名（则<a href="https://seaworth.github.io/">我的博客地址</a> <a href="https://seaworth.github.io/）。">https://seaworth.github.io/）。</a></li>
 <li>Git软件安装<br>作用：把本地的hexo内容提交到github上去，<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git软件官网下载</a>，安装即可。</li>
 <li>Node.js安装<br>作用：用来创建hexo博客框架的，<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js官网下载</a>，安装即可。</li>
 </ul>
@@ -231,7 +231,7 @@
 <h3 id="6-使用hexo写博客"><a href="#6-使用hexo写博客" class="headerlink" title="6 使用hexo写博客"></a>6 使用hexo写博客</h3><p>Hexo使用Markdown解析文章，我是使用的<a href="http://soft.xiaoshujiang.com/" target="_blank" rel="noopener">小书匠</a>在线编辑器+印象笔记，编写的文章直接同步到印象笔记挺方便的。<br>hexo常用的命令，#后面为注释。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n <span class="comment">#完整命令为hexo new,用于新建一篇文章</span></span><br><span class="line">$ hexo g <span class="comment">#完整命令为hexo generate,用于生成静态文件</span></span><br><span class="line">$ hexo s <span class="comment">#完整命令为hexo server,用于启动服务器，主要用来本地预览</span></span><br><span class="line">$ hexo d <span class="comment">#完整命令为hexo deploy,用于将本地文件发布到github上</span></span><br></pre></td></tr></table></figure></p>
 <p>定位到我们的hexo根目录，执行命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n <span class="string">"hello my first blog"</span> <span class="comment"># 新建一篇文章名为hello my first blog</span></span><br><span class="line">INFO  Created: F:\blog\<span class="built_in">source</span>\_posts\hello-my-first-blog.md</span><br></pre></td></tr></table></figure></p>
 <p>Hexo会帮我们在F:\blog\source_posts下生成相关md文件，打开这个文件就可以开始写博客了，Markdown语法编写，默认生成如下内容：<br><img src="/img/Hexo+Github搭建yilia主题的博客/QQ截图20180203175708.png" alt="enter description here" title="QQ截图20180203175708"><br>在后面添加##我的第一篇博客，啦啦啦！，写完文章后，在hexo文件夹下打开Git Bash输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
-<p>然后使用<a href="https://yourname.github.io进行访问。" target="_blank" rel="noopener">https://yourname.github.io进行访问。</a><br><img src="/img/Hexo+Github搭建yilia主题的博客/QQ截图20180203180907.png" alt="enter description here" title="QQ截图20180203180907"><br>到这里就差不多搭建好了一个属于自己的博客了，还有一些细节的东西（如访问统计，）可以后面慢慢完善，后面就只是发布文章了，这是我第一次写博客，有些地方可能说的不是很全面，搭建的过程中难免会遇到一些问题，在百度上搜索大部分都能够解决，只要怀着一颗折腾到底的心，相信一定能够搭建好属于自己的个人博客的！</p>
+<p>然后使用 <a href="https://yourname.github.io" target="_blank" rel="noopener">https://yourname.github.io</a> 进行访问。<br><img src="/img/Hexo+Github搭建yilia主题的博客/QQ截图20180203180907.png" alt="enter description here" title="QQ截图20180203180907"><br>到这里就差不多搭建好了一个属于自己的博客了，还有一些细节的东西（如访问统计，）可以后面慢慢完善，后面就只是发布文章了，这是我第一次写博客，有些地方可能说的不是很全面，搭建的过程中难免会遇到一些问题，在百度上搜索大部分都能够解决，只要怀着一颗折腾到底的心，相信一定能够搭建好属于自己的个人博客的！</p>
 <h3 id="7-参考"><a href="#7-参考" class="headerlink" title="7 参考"></a>7 参考</h3><p><a href="http://blog.haoji.me/build-blog-website-by-hexo-github.html?from=xa" target="_blank" rel="noopener">使用hexo+github搭建免费个人博客详细教程</a><br><a href="http://tengj.top/2016/02/22/hexo1/" target="_blank" rel="noopener">hexo干货系列：（一）hexo+gitHub搭建个人独立博客</a></p>
 
       
@@ -503,11 +503,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
