@@ -376,21 +376,28 @@
   
 
   
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://seaworth.github.io/2018/03/11/破解VIP会员视频/",
-  owner: 'Seaworth',
-  repo: 'Seaworth.github.io',
-  oauth: {
-    client_id: 'afe6966152deee6d73fa',
-    client_secret: '8aafe13329e7d11fa72e9bc19cb43ffd63092ab2',
-  },
+  
+  
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'afe6966152deee6d73fa',
+  	clientSecret: '8aafe13329e7d11fa72e9bc19cb43ffd63092ab2',
+  	repo: 'Seaworth.github.io',
+  	owner: 'Seaworth',
+  	admin: ['Seaworth'],
+  	id: 'Sun Mar 11 2018 20:03:55 GMT+0800',
+  	distractionFreeMode: 'true'
 })
-gitment.render('gitment-ctn')
+gitalk.render('gitalk-container') 
+}
 </script>
+  
   
 
 
