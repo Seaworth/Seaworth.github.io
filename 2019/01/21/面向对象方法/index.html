@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://seaworth.github.io">
-  <title>Seaworth的博客</title>
+  <title>面向对象方法 | Seaworth的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
-<meta name="keywords" content="python,machine learning,matlab,爬虫,读书,音乐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Seaworth的博客">
-<meta property="og:url" content="http://seaworth.github.io/index.html">
+  <meta name="description" content="这学期修了一门课程《面向对象方法》，不是为了学分而去学一门课，自己还是有所收获，现在把它总结记录下来。本课程老师上课也是用的Linux系统，讲授时也是直接敲代码给我们演示，给自己的印象比较深刻，老师比较专业的。自己练习和作业也是在Ubuntu的环境下实现，会用到vim编辑器，g++编译器。">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象方法">
+<meta property="og:url" content="http://seaworth.github.io/2019/01/21/面向对象方法/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
-<meta property="og:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta property="og:description" content="这学期修了一门课程《面向对象方法》，不是为了学分而去学一门课，自己还是有所收获，现在把它总结记录下来。本课程老师上课也是用的Linux系统，讲授时也是直接敲代码给我们演示，给自己的印象比较深刻，老师比较专业的。自己练习和作业也是在Ubuntu的环境下实现，会用到vim编辑器，g++编译器。">
+<meta property="og:image" content="http://seaworth.github.io/2019/01/21/面向对象方法/面向对象方法.png">
+<meta property="og:image" content="http://seaworth.github.io/2019/01/21/面向对象方法/vim.jpg">
+<meta property="og:image" content="http://seaworth.github.io/2019/01/21/面向对象方法/vim-vi-workmodel.png">
+<meta property="og:image" content="http://seaworth.github.io/2019/01/21/面向对象方法/C++.jpg">
+<meta property="og:updated_time" content="2019-01-23T11:01:09.652Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Seaworth的博客">
-<meta name="twitter:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta name="twitter:title" content="面向对象方法">
+<meta name="twitter:description" content="这学期修了一门课程《面向对象方法》，不是为了学分而去学一门课，自己还是有所收获，现在把它总结记录下来。本课程老师上课也是用的Linux系统，讲授时也是直接敲代码给我们演示，给自己的印象比较深刻，老师比较专业的。自己练习和作业也是在Ubuntu的环境下实现，会用到vim编辑器，g++编译器。">
+<meta name="twitter:image" content="http://seaworth.github.io/2019/01/21/面向对象方法/面向对象方法.png">
   
     <link rel="alternative" href="/atom.xml" title="Seaworth的博客" type="application/atom+xml">
   
@@ -145,16 +151,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-面向对象方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-面向对象方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/21/面向对象方法/">面向对象方法</a>
+    <h1 class="article-title" itemprop="name">
+      面向对象方法
     </h1>
   
 
@@ -167,11 +171,104 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这学期修了一门课程《面向对象方法》，不是为了学分而去学一门课，自己还是有所收获，现在把它总结记录下来。本课程老师上课也是用的<code>Linux</code>系统，讲授时也是直接敲代码给我们演示，给自己的印象比较深刻，老师比较专业的。自己练习和作业也是在<code>Ubuntu</code>的环境下实现，会用到vim编辑器，g++编译器。
-        
-          <a class="article-more-a" href="/2019/01/21/面向对象方法/#more">more >></a>
-        
+        <p>这学期修了一门课程《面向对象方法》，不是为了学分而去学一门课，自己还是有所收获，现在把它总结记录下来。本课程老师上课也是用的<code>Linux</code>系统，讲授时也是直接敲代码给我们演示，给自己的印象比较深刻，老师比较专业的。自己练习和作业也是在<code>Ubuntu</code>的环境下实现，会用到vim编辑器，g++编译器。<a id="more"></a><br><img src="/2019/01/21/面向对象方法/面向对象方法.png" title="脑图"></p>
+<h1 id="0-vim基本用法"><a href="#0-vim基本用法" class="headerlink" title="0 vim基本用法"></a>0 vim基本用法</h1><img src="/2019/01/21/面向对象方法/vim.jpg" title="vim">  
+<p>Vim是从vi发展出来的一个文本编辑器。Ubuntu下广泛使用。</p>
+<h2 id="0-1-vim的示意图"><a href="#0-1-vim的示意图" class="headerlink" title="0.1 vim的示意图"></a>0.1 vim的示意图</h2><img src="/2019/01/21/面向对象方法/vim-vi-workmodel.png" title="vim-vi-workmodel">  
+<p>基本上vim共分为三种模式</p>
+<ul>
+<li>命令模式（Command mode）</li>
+<li>输入模式（Insert mode）</li>
+<li>底线命令模式（Last line mode）</li>
+</ul>
+<p>（注：操作在<strong>英文输入法</strong>下）<br>用户刚刚启动<code>vim</code>，便进入<code>命令模式</code>。此状态下敲击键盘动作会被vim识别为命令，而非输入字符。比如我们此时按下<code>i</code>，并不会输入一个字符，i被当作了一个命令。在命令模式下，按<code>i</code>切换到输入模式。在输入模式下，按<code>Esc</code>，回到命令模式。在命令模式下，<code>Shift+:</code>切换到底线命令模式。</p>
+<h2 id="0-2-基本设置"><a href="#0-2-基本设置" class="headerlink" title="0.2 基本设置"></a>0.2 基本设置</h2><p>Vim的全局配置一般在<code>/etc/vim/vimrc</code>，对所有用户生效。如果只对单次编辑启用某个配置项，可以在命令模式下，先输入一个冒号，再输入配置。<br>下面进行全局配置，一劳永逸。<br>在<code>Terminal</code>下输入<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">vim</span> /etc/<span class="keyword">vim</span>/vimrc</span><br></pre></td></tr></table></figure></p>
+<p>然后在文件末尾加上以下内容。<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> tabstop=<span class="number">4</span> <span class="comment">"设置tab键为4个空格</span></span><br><span class="line"><span class="keyword">set</span> softtabstop=<span class="number">4</span> <span class="comment">"逢4空格进1制表符</span></span><br><span class="line"><span class="keyword">set</span> <span class="built_in">shiftwidth</span>=<span class="number">4</span> <span class="comment">"自动缩进所使用的空白长度</span></span><br><span class="line"><span class="keyword">set</span> noexpandtab </span><br><span class="line"><span class="keyword">set</span> autoindent <span class="comment">"按下回车键后，下一行的缩进会自动跟上一行的缩进保持一致</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> nocompatible <span class="comment">"不与 Vi 兼容（采用 Vim 自己的操作命令）</span></span><br><span class="line"><span class="keyword">syntax</span> <span class="keyword">on</span> <span class="comment">"打开语法高亮</span></span><br><span class="line"><span class="keyword">set</span> showmode <span class="comment">"在底部显示，当前处于命令模式还是插入模式</span></span><br><span class="line"><span class="keyword">set</span> encoding=utf-<span class="number">8</span>  <span class="comment">"用 utf-8 编码</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">number</span> <span class="comment">"设置行号</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="0-3-基本操作"><a href="#0-3-基本操作" class="headerlink" title="0.3 基本操作"></a>0.3 基本操作</h2><p>在<code>Terminal</code>下输入，新建hello.cpp文件。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">vim</span> <span class="selector-tag">hello</span><span class="selector-class">.cpp</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>此时进入了命令模式，按<code>i</code>，进入编辑模式，输入代码。</li>
+<li><code>Esc</code>退出编辑模式，回到命令模式。</li>
+<li><code>Shift+:</code>进入底线命令模式，底线命令模式下，<code>w</code>为保存，<code>q</code>为退出，<code>q!</code>为强制退出不保存。</li>
+<li>在命令模式下，按<code>gg</code>回到文首，按<code>v</code>进入视图模式，<code>Shift+G</code>跳到文末，全选，<code>d</code>为删除，<code>c</code>为剪切，<code>y</code>为复制，<code>p</code>为粘贴。</li>
+<li><code>dd</code>删除本行，<code>yy</code>复制本行，<code>cc</code>剪切本行.</li>
+</ol>
+<h1 id="1-makefile入门"><a href="#1-makefile入门" class="headerlink" title="1 makefile入门"></a>1 makefile入门</h1><h2 id="1-1-程序的编译和链接"><a href="#1-1-程序的编译和链接" class="headerlink" title="1.1 程序的编译和链接"></a>1.1 程序的编译和链接</h2><p>在Linux（unix）环境下使用GNU的make工具能够比较容易的构建一个属于你自己的工程，整个工程的编译只需要一个命令就可以完成编译、连接以至于最后的执行。不过这需要我们投入一些时间去完成一个或者多个称之为 Makefile 文件的编写。此文件正是 make 正常工作的基础。</p>
+<p>Makefile文件描述了整个工程的编译、连接等规则。make是一个命令工具，它解释 Makefile 中的指令（应该说是规则）。编译整个工程你所要做的唯一的一件事就是在 shell 提示符下输入 make 命令。整个工程完全自动编译，极大提高了效率。</p>
+<blockquote>
+<p>准备知识<br><strong>编译</strong>：把高级语言书写的代码转换为机器可识别的机器指令。编译高级语言后生成的指令虽然可被机器识别，但是还不能被执行。编译时，编译器检查高级语言的语法、函数与变量的声明是否正确。只有所有的语法正确、相关变量定义正确编译器就可以编译出中间目标文件。通常，一个高级语言的源文件都可对应一个目标文件。目标文件在Linux 中默认后缀为“.o”。<br><strong>链接</strong>：链接：将多.o 文件，或者.o 文件和库文件链接成为可被操作系统执行的可执行程序（Linux 环境下，可执行文件的格式为“ELF”格式）。链接器不检查函数所在的源文件，只检查所有.o 文件中的定义的符号。将.o 文件中使用的函数和其它.o 或者库文件中的相关符号进行合并，对所有文件中的符号进行重新安排（重定位），并链接系统相关文件（程序启动文件等）最终生成可执行程序。链接过程使用 GNU 的“ld”工具。  </p>
+</blockquote>
+<h2 id="1-2-小例子"><a href="#1-2-小例子" class="headerlink" title="1.2 小例子"></a>1.2 小例子</h2><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">seaworth<span class="variable">@ubuntu</span><span class="symbol">:~/Desktop/make_learning</span><span class="variable">$ </span>ls</span><br><span class="line">hello.cpp  hello.h  makefile</span><br></pre></td></tr></table></figure>
+<p><code>hello.h</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"hello makefile!"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>hello.cpp</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"hello.h"</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    show();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>makefile</code><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hello: hello.o</span><br><span class="line">    g++ -o hello hello.o</span><br><span class="line">hello<span class="selector-class">.o</span>: hello<span class="selector-class">.h</span> hello.cpp</span><br><span class="line">    g++ -c hello.cpp</span><br><span class="line">clean:</span><br><span class="line">    rm hello.o</span><br></pre></td></tr></table></figure></p>
+<p>在<code>Terminal</code>下输入<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">seaworth<span class="variable">@ubuntu</span><span class="symbol">:~/Desktop/make_learning</span><span class="variable">$ </span>ls</span><br><span class="line">hello.cpp  hello.h  makefile</span><br><span class="line">seaworth<span class="variable">@ubuntu</span><span class="symbol">:~/Desktop/make_learning</span><span class="variable">$ </span>make</span><br><span class="line">g++ -c hello.cpp</span><br><span class="line">g++ -o hello hello.o</span><br><span class="line">seaworth<span class="variable">@ubuntu</span><span class="symbol">:~/Desktop/make_learning</span><span class="variable">$ </span>ls</span><br><span class="line">hello  hello.cpp  hello.h  hello.o  makefile</span><br><span class="line">seaworth<span class="variable">@ubuntu</span><span class="symbol">:~/Desktop/make_learning</span><span class="variable">$ </span>./hello</span><br><span class="line">hello makefile!</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-3-参考文档"><a href="#1-3-参考文档" class="headerlink" title="1.3 参考文档"></a>1.3 参考文档</h2><ul>
+<li><a href="https://github.com/seisman/how-to-write-makefile" target="_blank" rel="noopener">《跟我一起写makefile》</a></li>
+<li><a href="https://hacker-yhj.github.io/resources/gun_make.pdf" target="_blank" rel="noopener">《GNU make中文手册》</a></li>
+</ul>
+<h1 id="2-UML设计"><a href="#2-UML设计" class="headerlink" title="2 UML设计"></a>2 UML设计</h1><p>参考文档：<a href="https://design-patterns.readthedocs.io/zh_CN/latest/read_uml.html" target="_blank" rel="noopener">看懂UML类图和时序图</a></p>
+<h1 id="3-C"><a href="#3-C" class="headerlink" title="3 C++"></a>3 C++</h1><h2 id="3-1-C-的精髓"><a href="#3-1-C-的精髓" class="headerlink" title="3.1 C++的精髓"></a>3.1 C++的精髓</h2><ul>
+<li>抽象</li>
+<li>封装</li>
+<li>继承</li>
+<li>多态</li>
+</ul>
+<h2 id="3-2-编程大作业"><a href="#3-2-编程大作业" class="headerlink" title="3.2 编程大作业"></a>3.2 编程大作业</h2><ul>
+<li><strong>贪吃蛇</strong><blockquote>
+<p>针对Snake游戏，以UML完成需求分析到设计实现。</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>用C++语言编写</li>
+<li>构建出UML用例图与类图</li>
+<li>进行可视化编程，有良好的用户界面（使用NCURSES/SDL等）<br></li>
+</ol>
+<ul>
+<li><strong>通信录备份</strong><blockquote>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>实现可以将通信录备份到预先设定的服务器数据库中</li>
+<li>数据库使用SQLite</li>
+<li>同时备份到TF卡中</li>
+<li>Android下通信部分用C++完成，界面用JAVA完成，之间采用JNI调用；iOS直接使用OBJECT C完成</li>
+<li>需要有完整的设计文档（UML）<br><a href="https://lizhijun.site/2018/11/28/%E9%80%9A%E4%BF%A1%E5%BD%95%E5%A4%87%E4%BB%BD/" target="_blank" rel="noopener">通信录备份源码</a></li>
+</ol>
+<h2 id="3-3-C-基本语法"><a href="#3-3-C-基本语法" class="headerlink" title="3.3 C++基本语法"></a>3.3 C++基本语法</h2><p>推荐书籍</p>
+<ul>
+<li>《C++ Primer 中文版（第5版）》<img src="/2019/01/21/面向对象方法/C++.jpg" title="C++ Primer">
+</li>
+</ul>
+
       
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢你请我吃糖果！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -191,16 +288,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/21/面向对象方法/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://seaworth.github.io/2019/01/21/面向对象方法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/20/剑指Offer-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剑指Offer-2</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -215,559 +371,53 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-剑指Offer-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/20/剑指Offer-2/">剑指Offer-2</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/20/剑指Offer-2/" class="archive-article-date">
-  	<time datetime="2019-01-20T00:50:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>题目：孩子们的游戏(圆圈中最后剩下的数)
-        
-          <a class="article-more-a" href="/2019/01/20/剑指Offer-2/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/20/剑指Offer-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-vim基本用法"><span class="toc-number">1.</span> <span class="toc-text">0 vim基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-1-vim的示意图"><span class="toc-number">1.1.</span> <span class="toc-text">0.1 vim的示意图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-2-基本设置"><span class="toc-number">1.2.</span> <span class="toc-text">0.2 基本设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-3-基本操作"><span class="toc-number">1.3.</span> <span class="toc-text">0.3 基本操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-makefile入门"><span class="toc-number">2.</span> <span class="toc-text">1 makefile入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-程序的编译和链接"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 程序的编译和链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-小例子"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 小例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-参考文档"><span class="toc-number">2.3.</span> <span class="toc-text">1.3 参考文档</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-UML设计"><span class="toc-number">3.</span> <span class="toc-text">2 UML设计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-C"><span class="toc-number">4.</span> <span class="toc-text">3 C++</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-C-的精髓"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 C++的精髓</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-编程大作业"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 编程大作业</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-C-基本语法"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 C++基本语法</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-剑指Offer-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/18/剑指Offer-1/">剑指Offer-1</a>
-    </h1>
   
 
-        
-        <a href="/2019/01/18/剑指Offer-1/" class="archive-article-date">
-  	<time datetime="2019-01-18T12:38:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>题目：和为S的两个数字
-        
-          <a class="article-more-a" href="/2019/01/18/剑指Offer-1/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/18/剑指Offer-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-CPP学习路线" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/11/CPP学习路线/">C++学习路线</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/11/CPP学习路线/" class="archive-article-date">
-  	<time datetime="2019-01-11T14:24:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>成长为一名合格的程序员，需要一条合适的学习线路。今天在微信上看到一篇文章《三位斩获百度C++后台开发Offer大佬的口述分享！！！》，希望能在C++学习的漆黑的道路上点亮一盏明灯~
-        
-          <a class="article-more-a" href="/2019/01/11/CPP学习路线/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/11/CPP学习路线/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-父亲的寄语" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/02/父亲的寄语/">父亲的寄语</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/02/父亲的寄语/" class="archive-article-date">
-  	<time datetime="2019-01-02T13:55:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天父亲发来一张图片，上面写着：爸爸40多岁了，能力有限，今生做我的儿子，委屈你了，有几句心里话对你说。</p>
-<h1 id="1-父亲对儿子的寄语"><a href="#1-父亲对儿子的寄语" class="headerlink" title="1.父亲对儿子的寄语"></a>1.父亲对儿子的寄语</h1><ol>
-<li>做人要诚实，待人要诚信。</li>
-<li>天上不会掉馅饼，一份耕耘一份收获。</li>
-<li>天道酬勤，勤奋是生存的基础，也是生活的根本。</li>
-<li>一生中没有人有义务对你好，除了我和你妈。
-        
-          <a class="article-more-a" href="/2019/01/02/父亲的寄语/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/02/父亲的寄语/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CPP-day01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/16/CPP-day01/">C++ day01</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/16/CPP-day01/" class="archive-article-date">
-  	<time datetime="2018-12-16T13:37:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-C-概述"><a href="#1-C-概述" class="headerlink" title="1.C++概述"></a>1.C++概述</h1><p>C++是C的超集，是C的补充和扩展，兼容C。
-        
-          <a class="article-more-a" href="/2018/12/16/CPP-day01/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/16/CPP-day01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo-yilia主题优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/29/hexo-yilia主题优化/">hexo-yilia主题优化</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/29/hexo-yilia主题优化/" class="archive-article-date">
-  	<time datetime="2018-11-29T12:51:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>为博客添加站点统计，设置网页标签图标ico，修改头像。
-        
-          <a class="article-more-a" href="/2018/11/29/hexo-yilia主题优化/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/29/hexo-yilia主题优化/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-定制域名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/29/定制域名/">定制域名</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/29/定制域名/" class="archive-article-date">
-  	<time datetime="2018-11-29T06:53:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近给自己的博客换了一个新的域名，在新添加博客文章的时候出现了问题。记录下来~
-        
-          <a class="article-more-a" href="/2018/11/29/定制域名/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/29/定制域名/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
 
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'afe6966152deee6d73fa',
+  	clientSecret: '8aafe13329e7d11fa72e9bc19cb43ffd63092ab2',
+  	repo: 'Seaworth.github.io',
+  	owner: 'Seaworth',
+  	admin: ['Seaworth'],
+  	id: 'Mon Jan 21 2019 21:20:29 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+  
   
 
 
@@ -801,8 +451,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
