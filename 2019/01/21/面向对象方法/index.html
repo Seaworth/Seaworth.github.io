@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://seaworth.github.io/2019/01/21/面向对象方法/vim.jpg">
 <meta property="og:image" content="http://seaworth.github.io/2019/01/21/面向对象方法/vim-vi-workmodel.png">
 <meta property="og:image" content="http://seaworth.github.io/2019/01/21/面向对象方法/C++.jpg">
-<meta property="og:updated_time" content="2019-01-23T11:01:09.652Z">
+<meta property="og:updated_time" content="2019-01-23T11:05:55.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象方法">
 <meta name="twitter:description" content="这学期修了一门课程《面向对象方法》，不是为了学分而去学一门课，自己还是有所收获，现在把它总结记录下来。本课程老师上课也是用的Linux系统，讲授时也是直接敲代码给我们演示，给自己的印象比较深刻，老师比较专业的。自己练习和作业也是在Ubuntu的环境下实现，会用到vim编辑器，g++编译器。">
@@ -195,7 +195,7 @@
 <h1 id="1-makefile入门"><a href="#1-makefile入门" class="headerlink" title="1 makefile入门"></a>1 makefile入门</h1><h2 id="1-1-程序的编译和链接"><a href="#1-1-程序的编译和链接" class="headerlink" title="1.1 程序的编译和链接"></a>1.1 程序的编译和链接</h2><p>在Linux（unix）环境下使用GNU的make工具能够比较容易的构建一个属于你自己的工程，整个工程的编译只需要一个命令就可以完成编译、连接以至于最后的执行。不过这需要我们投入一些时间去完成一个或者多个称之为 Makefile 文件的编写。此文件正是 make 正常工作的基础。</p>
 <p>Makefile文件描述了整个工程的编译、连接等规则。make是一个命令工具，它解释 Makefile 中的指令（应该说是规则）。编译整个工程你所要做的唯一的一件事就是在 shell 提示符下输入 make 命令。整个工程完全自动编译，极大提高了效率。</p>
 <blockquote>
-<p>准备知识<br><strong>编译</strong>：把高级语言书写的代码转换为机器可识别的机器指令。编译高级语言后生成的指令虽然可被机器识别，但是还不能被执行。编译时，编译器检查高级语言的语法、函数与变量的声明是否正确。只有所有的语法正确、相关变量定义正确编译器就可以编译出中间目标文件。通常，一个高级语言的源文件都可对应一个目标文件。目标文件在Linux 中默认后缀为“.o”。<br><strong>链接</strong>：链接：将多.o 文件，或者.o 文件和库文件链接成为可被操作系统执行的可执行程序（Linux 环境下，可执行文件的格式为“ELF”格式）。链接器不检查函数所在的源文件，只检查所有.o 文件中的定义的符号。将.o 文件中使用的函数和其它.o 或者库文件中的相关符号进行合并，对所有文件中的符号进行重新安排（重定位），并链接系统相关文件（程序启动文件等）最终生成可执行程序。链接过程使用 GNU 的“ld”工具。  </p>
+<p>准备知识<br><strong>编译</strong>：把高级语言书写的代码转换为机器可识别的机器指令。编译高级语言后生成的指令虽然可被机器识别，但是还不能被执行。编译时，编译器检查高级语言的语法、函数与变量的声明是否正确。只有所有的语法正确、相关变量定义正确编译器就可以编译出中间目标文件。通常，一个高级语言的源文件都可对应一个目标文件。目标文件在Linux 中默认后缀为“.o”。<br><strong>链接</strong>：将多.o 文件，或者.o 文件和库文件链接成为可被操作系统执行的可执行程序（Linux 环境下，可执行文件的格式为“ELF”格式）。链接器不检查函数所在的源文件，只检查所有.o 文件中的定义的符号。将.o 文件中使用的函数和其它.o 或者库文件中的相关符号进行合并，对所有文件中的符号进行重新安排（重定位），并链接系统相关文件（程序启动文件等）最终生成可执行程序。链接过程使用 GNU 的“ld”工具。  </p>
 </blockquote>
 <h2 id="1-2-小例子"><a href="#1-2-小例子" class="headerlink" title="1.2 小例子"></a>1.2 小例子</h2><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">seaworth<span class="variable">@ubuntu</span><span class="symbol">:~/Desktop/make_learning</span><span class="variable">$ </span>ls</span><br><span class="line">hello.cpp  hello.h  makefile</span><br></pre></td></tr></table></figure>
 <p><code>hello.h</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"hello makefile!"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -526,15 +526,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
