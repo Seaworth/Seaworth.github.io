@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://seaworth.github.io">
-  <title>Tag: hexo | Seaworth的博客</title>
+  <title>C++ day02 | Seaworth的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
-<meta name="keywords" content="python,machine learning,matlab,爬虫,读书,音乐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Seaworth的博客">
-<meta property="og:url" content="http://seaworth.github.io/tags/hexo/index.html">
+  <meta name="description" content="1 extern C浅析——C++中调用C">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ day02">
+<meta property="og:url" content="http://seaworth.github.io/2019/02/26/CPP-day02/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
-<meta property="og:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta property="og:description" content="1 extern C浅析——C++中调用C">
+<meta property="og:updated_time" content="2019-02-26T12:48:11.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Seaworth的博客">
-<meta name="twitter:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta name="twitter:title" content="C++ day02">
+<meta name="twitter:description" content="1 extern C浅析——C++中调用C">
   
     <link rel="alternative" href="/atom.xml" title="Seaworth的博客" type="application/atom+xml">
   
@@ -145,144 +146,240 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CPP-day02" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C++ day02
+    </h1>
+  
+
+        
+        <a href="/2019/02/26/CPP-day02/" class="archive-article-date">
+  	<time datetime="2019-02-26T11:33:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-extern-C浅析——C-中调用C"><a href="#1-extern-C浅析——C-中调用C" class="headerlink" title="1 extern C浅析——C++中调用C"></a>1 extern C浅析——C++中调用C<a id="more"></a></h1><p>在VS2010中新建工程<code>06 extern C浅析</code>，添加三个新建项</p>
+<ul>
+<li><code>test.h</code></li>
+<li><code>test.c</code></li>
+<li><code>06 extern C浅析.cpp</code><h2 id="1-1-在C语言代码中处理"><a href="#1-1-在C语言代码中处理" class="headerlink" title="1.1 在C语言代码中处理"></a>1.1 在C语言代码中处理</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus <span class="comment">//两个下划线__</span></span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> &#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//一些用C语言实现的声明</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus <span class="comment">//两个下划线__</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>上面代码的含义是如果是C++编译器对C语言实现的test函数进行编译，则按照C语言编译，如果不是C++编译器则按照C语言正常处理。<br>如果要声明C语言的函数较多时，采用这种方法。</p>
+</blockquote>
+<p><code>test.h</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once <span class="comment">//防止头文件重复编译</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus <span class="comment">//两个下划线__</span></span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> &#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">	<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;//包含基本的输入输出，C语言</span></span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show1</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show2</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus <span class="comment">//两个下划线__</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
+<p><code>test.c</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"test.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"hello world\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"hello world1\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show2</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"hello world2\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>06 extern C浅析.cpp</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; //标准输入输出流</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用命名空间 std</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"test.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//C++中调用C语言方法</span></span><br><span class="line"><span class="comment">//extern "C" void show();//show方法，按照C语言方式做连接</span></span><br><span class="line"><span class="comment">//解决问题：在C++中调用C语言的函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//函数入口</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	show();<span class="comment">//C++中函数是可以发生重载，编译器会把这个函数名称偷偷改变</span></span><br><span class="line">	show1();</span><br><span class="line">	show2();</span><br><span class="line">	system(<span class="string">"pause"</span>);<span class="comment">//阻塞功能</span></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;<span class="comment">//返回正常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-2-在C-语言代码中处理"><a href="#1-2-在C-语言代码中处理" class="headerlink" title="1.2 在C++语言代码中处理"></a>1.2 在C++语言代码中处理</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//C++中调用C语言方法</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;<span class="comment">//show方法，按照C语言方式做连接</span></span><br><span class="line"><span class="comment">//解决问题：在C++中调用C语言的函数</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>调用C语言实现的函数较少时，可采用这种方法。</p>
+</blockquote>
+<p><code>test.h</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once <span class="comment">//防止头文件重复编译</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;//包含基本的输入输出，C语言</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p><code>test.c</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"test.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"hello world\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>06 extern C浅析.cpp</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; //标准输入输出流</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用命名空间 std</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//C++中调用C语言方法</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> <span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;<span class="comment">//show方法，按照C语言方式做连接</span></span><br><span class="line"><span class="comment">//解决问题：在C++中调用C语言的函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//函数入口</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	show();<span class="comment">//C++中函数是可以发生重载，编译器会把这个函数名称偷偷改变</span></span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);<span class="comment">//阻塞功能</span></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;<span class="comment">//返回正常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="2-内联函数"><a href="#2-内联函数" class="headerlink" title="2 内联函数"></a>2 内联函数</h1><p>内联函数是为了解决宏定义的缺陷。<br>注意事项：</p>
+<ol>
+<li>内敛只是给编译器的一个小建议，加了inline编译器也不一定进行内联操作</li>
+<li>没有进行inline声明，编译器也有可能优化，帮你进行内联编译</li>
+<li>类的成员函数，编译器会自动添加inline</li>
+</ol>
+<h1 id="3-函数重载"><a href="#3-函数重载" class="headerlink" title="3 函数重载"></a>3 函数重载</h1><blockquote>
+<p>默认参数：如果第一个位置有了默认参数，后面的必须要有默认参数。</p>
+</blockquote>
+<p>函数重载的注意事项：</p>
+<ol>
+<li>必须要在同一作用域下</li>
+<li>函数的<strong>个数不同</strong>，<strong>参数类型不同</strong>，<strong>参数的顺序不同</strong></li>
+<li><strong>函数的返回值不可以作为重载的条件</strong></li>
+<li>const 可以作为重载的条件</li>
+</ol>
+
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢你请我吃糖果！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/29/hexo-yilia主题优化/" class="archive-article-date">
-  	<time datetime="2018-11-29T12:51:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/29/hexo-yilia主题优化/">hexo-yilia主题优化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://seaworth.github.io/2019/02/26/CPP-day02/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/29/定制域名/" class="archive-article-date">
-  	<time datetime="2018-11-29T06:53:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/26/思考致富/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">思考致富</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/29/定制域名/">定制域名</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-extern-C浅析——C-中调用C"><span class="toc-number">1.</span> <span class="toc-text">1 extern C浅析——C++中调用C</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-在C语言代码中处理"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 在C语言代码中处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-在C-语言代码中处理"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 在C++语言代码中处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-内联函数"><span class="toc-number">2.</span> <span class="toc-text">2 内联函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-函数重载"><span class="toc-number">3.</span> <span class="toc-text">3 函数重载</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/04/Hexo+Github搭建yilia主题的博客/" class="archive-article-date">
-  	<time datetime="2018-02-04T06:45:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-04</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/04/Hexo+Github搭建yilia主题的博客/">Hexo+Github搭建yilia主题的博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+  
+  
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'afe6966152deee6d73fa',
+  	clientSecret: '8aafe13329e7d11fa72e9bc19cb43ffd63092ab2',
+  	repo: 'Seaworth.github.io',
+  	owner: 'Seaworth',
+  	admin: ['Seaworth'],
+  	id: 'Tue Feb 26 2019 19:33:52 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+  
+  
 
 
           </div>
@@ -316,9 +413,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
