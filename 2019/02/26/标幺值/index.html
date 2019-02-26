@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://seaworth.github.io">
-  <title>C++ day01 | Seaworth的博客</title>
+  <title>标幺值 | Seaworth的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.C++概述C++是C的超集，是C的补充和扩展，兼容C。">
-<meta name="keywords" content="C++">
+  <meta name="description" content="采用标幺值的目的：简化计算，方便对计算结果分析评价。">
+<meta name="keywords" content="电力系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ day01">
-<meta property="og:url" content="http://seaworth.github.io/2018/12/16/CPP-day01/index.html">
+<meta property="og:title" content="标幺值">
+<meta property="og:url" content="http://seaworth.github.io/2019/02/26/标幺值/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
-<meta property="og:description" content="1.C++概述C++是C的超集，是C的补充和扩展，兼容C。">
-<meta property="og:updated_time" content="2018-12-17T00:44:24.140Z">
+<meta property="og:description" content="采用标幺值的目的：简化计算，方便对计算结果分析评价。">
+<meta property="og:image" content="http://seaworth.github.io/2019/02/26/标幺值/绘图1.png">
+<meta property="og:updated_time" content="2019-02-26T05:29:33.303Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ day01">
-<meta name="twitter:description" content="1.C++概述C++是C的超集，是C的补充和扩展，兼容C。">
+<meta name="twitter:title" content="标幺值">
+<meta name="twitter:description" content="采用标幺值的目的：简化计算，方便对计算结果分析评价。">
+<meta name="twitter:image" content="http://seaworth.github.io/2019/02/26/标幺值/绘图1.png">
   
     <link rel="alternative" href="/atom.xml" title="Seaworth的博客" type="application/atom+xml">
   
@@ -146,47 +148,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CPP-day01" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-标幺值" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      C++ day01
+      标幺值
     </h1>
   
 
         
-        <a href="/2018/12/16/CPP-day01/" class="archive-article-date">
-  	<time datetime="2018-12-16T13:37:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-16</time>
+        <a href="/2019/02/26/标幺值/" class="archive-article-date">
+  	<time datetime="2019-02-26T04:44:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-C-概述"><a href="#1-C-概述" class="headerlink" title="1.C++概述"></a>1.C++概述</h1><p>C++是C的超集，是C的补充和扩展，兼容C。<a id="more"></a><br><strong>C++和C的区别：</strong></p>
-<ul>
-<li>C：面向过程。（功能分解，自顶向下，逐层分解），程序=算法+数据结构</li>
-<li>C++：面向对象。（一切皆对象），对象=算法+数据结构，程序=对象+对象</li>
-</ul>
-<p><strong>面向对象三大特性：</strong></p>
-<ul>
-<li>封装，“抽象”</li>
-<li>继承</li>
-<li>多态，“一个接口，多种方法”</li>
-</ul>
-<h1 id="2-namespace命名空间"><a href="#2-namespace命名空间" class="headerlink" title="2.namespace命名空间"></a>2.namespace命名空间</h1><ul>
-<li>用来解决命名冲突</li>
-<li>必须在全局作用域下声明</li>
-<li>命名空间下可以放函数、变量、结构体、类</li>
-<li>命名空间可以嵌套命名空间</li>
-<li>命名空间是开放的，随时可以添加新的成员</li>
-<li>存在匿名空间</li>
-</ul>
-<h1 id="3-using声明和using编译"><a href="#3-using声明和using编译" class="headerlink" title="3.using声明和using编译"></a>3.using声明和using编译</h1><h2 id="3-1-using声明"><a href="#3-1-using声明" class="headerlink" title="3.1 using声明"></a>3.1 using声明</h2><p><strong>using KingGlory::sunwukongID;</strong>说明<strong>sunwukongID</strong>使用<strong>KingGlory</strong>下的。<br>编译器有就近原则，需要避免二义性。</p>
-<h2 id="3-2-using编译"><a href="#3-2-using编译" class="headerlink" title="3.2 using编译"></a>3.2 using编译</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//using编译指令</span></span><br><span class="line"><span class="comment">//就近原则 大于 打开房间</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> KingGlory;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> LOL;</span><br><span class="line"><span class="comment">//如果打开多个房间，要避免二义性，明确指明变量的命名空间</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; LOL::sunwukongID &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>采用<strong>标幺值</strong>的目的：简化计算，方便对计算结果分析评价。<a id="more"></a></p>
+</blockquote>
+<h1 id="1-标幺值的概念"><a href="#1-标幺值的概念" class="headerlink" title="1 标幺值的概念"></a>1 标幺值的概念</h1><p>在一般的电路计算中，电压、电流、功率和阻抗的单位分别为V，A，W，Ω表示，这种用实际有名单位表示物理量的方法称为<strong><code>有名单位制</code></strong>。在电力系统计算中，还广泛使用<strong><code>标幺值</code></strong>。<br><img src="/2019/02/26/标幺值/绘图1.png" title="标幺值"> </p>
+<p>如果我们选定电压的基准值为10.5kV，某发电机的端电压有名值表示为10.5kV，那么根据上式可得，发电机电压的标幺值为1。<br>注意事项：</p>
+<ol>
+<li>标幺值是一个没有量纲的数值</li>
+<li>对于同一个实际有名值，基准值不同，其标幺值也不同</li>
+<li>说一个量的标幺值时，必须同时说明它的基准值，否则，标幺值的意义不明确</li>
+</ol>
+<h1 id="2-基准值的选择"><a href="#2-基准值的选择" class="headerlink" title="2 基准值的选择"></a>2 基准值的选择</h1><p>基准值的选择，除了要求基准值和标幺值同单位外，尽量能够简化计算和便于对计算结果做出评价。</p>
+<h1 id="3-参考文献"><a href="#3-参考文献" class="headerlink" title="3 参考文献"></a>3 参考文献</h1><blockquote>
+<p>《电力系统分析》（上册）第三版，何仰赞，温增银</p>
+</blockquote>
 
       
       
@@ -225,7 +220,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">电力系统</a>
         		</li>
       		
 		</ul>
@@ -281,7 +276,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://seaworth.github.io/2018/12/16/CPP-day01/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://seaworth.github.io/2019/02/26/标幺值/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -295,18 +290,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/01/02/父亲的寄语/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          父亲的寄语
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/11/29/hexo-yilia主题优化/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo-yilia主题优化</div>
+    <a href="/2019/01/21/面向对象方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面向对象方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -333,7 +319,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-C-概述"><span class="toc-number">1.</span> <span class="toc-text">1.C++概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-namespace命名空间"><span class="toc-number">2.</span> <span class="toc-text">2.namespace命名空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-using声明和using编译"><span class="toc-number">3.</span> <span class="toc-text">3.using声明和using编译</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-using声明"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 using声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-using编译"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 using编译</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-标幺值的概念"><span class="toc-number">1.</span> <span class="toc-text">1 标幺值的概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-基准值的选择"><span class="toc-number">2.</span> <span class="toc-text">2 基准值的选择</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-参考文献"><span class="toc-number">3.</span> <span class="toc-text">3 参考文献</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -366,7 +352,7 @@ if(true){
   	repo: 'Seaworth.github.io',
   	owner: 'Seaworth',
   	admin: ['Seaworth'],
-  	id: 'Sun Dec 16 2018 21:37:07 GMT+0800',
+  	id: 'Tue Feb 26 2019 12:44:19 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 

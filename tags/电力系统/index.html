@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://seaworth.github.io">
-  <title>C++ day01 | Seaworth的博客</title>
+  <title>Tag: 电力系统 | Seaworth的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.C++概述C++是C的超集，是C的补充和扩展，兼容C。">
-<meta name="keywords" content="C++">
-<meta property="og:type" content="article">
-<meta property="og:title" content="C++ day01">
-<meta property="og:url" content="http://seaworth.github.io/2018/12/16/CPP-day01/index.html">
+  <meta name="description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta name="keywords" content="python,machine learning,matlab,爬虫,读书,音乐">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Seaworth的博客">
+<meta property="og:url" content="http://seaworth.github.io/tags/电力系统/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
-<meta property="og:description" content="1.C++概述C++是C的超集，是C的补充和扩展，兼容C。">
-<meta property="og:updated_time" content="2018-12-17T00:44:24.140Z">
+<meta property="og:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ day01">
-<meta name="twitter:description" content="1.C++概述C++是C的超集，是C的补充和扩展，兼容C。">
+<meta name="twitter:title" content="Seaworth的博客">
+<meta name="twitter:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
   
     <link rel="alternative" href="/atom.xml" title="Seaworth的博客" type="application/atom+xml">
   
@@ -146,234 +145,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CPP-day01" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      C++ day01
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/02/26/标幺值/" class="archive-article-date">
+  	<time datetime="2019-02-26T04:44:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/02/26/标幺值/">标幺值</a>
     </h1>
   
 
-        
-        <a href="/2018/12/16/CPP-day01/" class="archive-article-date">
-  	<time datetime="2018-12-16T13:37:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-C-概述"><a href="#1-C-概述" class="headerlink" title="1.C++概述"></a>1.C++概述</h1><p>C++是C的超集，是C的补充和扩展，兼容C。<a id="more"></a><br><strong>C++和C的区别：</strong></p>
-<ul>
-<li>C：面向过程。（功能分解，自顶向下，逐层分解），程序=算法+数据结构</li>
-<li>C++：面向对象。（一切皆对象），对象=算法+数据结构，程序=对象+对象</li>
-</ul>
-<p><strong>面向对象三大特性：</strong></p>
-<ul>
-<li>封装，“抽象”</li>
-<li>继承</li>
-<li>多态，“一个接口，多种方法”</li>
-</ul>
-<h1 id="2-namespace命名空间"><a href="#2-namespace命名空间" class="headerlink" title="2.namespace命名空间"></a>2.namespace命名空间</h1><ul>
-<li>用来解决命名冲突</li>
-<li>必须在全局作用域下声明</li>
-<li>命名空间下可以放函数、变量、结构体、类</li>
-<li>命名空间可以嵌套命名空间</li>
-<li>命名空间是开放的，随时可以添加新的成员</li>
-<li>存在匿名空间</li>
-</ul>
-<h1 id="3-using声明和using编译"><a href="#3-using声明和using编译" class="headerlink" title="3.using声明和using编译"></a>3.using声明和using编译</h1><h2 id="3-1-using声明"><a href="#3-1-using声明" class="headerlink" title="3.1 using声明"></a>3.1 using声明</h2><p><strong>using KingGlory::sunwukongID;</strong>说明<strong>sunwukongID</strong>使用<strong>KingGlory</strong>下的。<br>编译器有就近原则，需要避免二义性。</p>
-<h2 id="3-2-using编译"><a href="#3-2-using编译" class="headerlink" title="3.2 using编译"></a>3.2 using编译</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//using编译指令</span></span><br><span class="line"><span class="comment">//就近原则 大于 打开房间</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> KingGlory;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> LOL;</span><br><span class="line"><span class="comment">//如果打开多个房间，要避免二义性，明确指明变量的命名空间</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; LOL::sunwukongID &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-
-      
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢你请我吃糖果！<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">电力系统</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://seaworth.github.io/2018/12/16/CPP-day01/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/01/02/父亲的寄语/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          父亲的寄语
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/11/29/hexo-yilia主题优化/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo-yilia主题优化</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-C-概述"><span class="toc-number">1.</span> <span class="toc-text">1.C++概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-namespace命名空间"><span class="toc-number">2.</span> <span class="toc-text">2.namespace命名空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-using声明和using编译"><span class="toc-number">3.</span> <span class="toc-text">3.using声明和using编译</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-using声明"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 using声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-using编译"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 using编译</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-  
-  
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: 'afe6966152deee6d73fa',
-  	clientSecret: '8aafe13329e7d11fa72e9bc19cb43ffd63092ab2',
-  	repo: 'Seaworth.github.io',
-  	owner: 'Seaworth',
-  	admin: ['Seaworth'],
-  	id: 'Sun Dec 16 2018 21:37:07 GMT+0800',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-  
-  
+    
 
 
           </div>
@@ -407,9 +232,9 @@ gitalk.render('gitalk-container')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
