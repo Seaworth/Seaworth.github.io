@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://seaworth.github.io/2019/02/26/CPP-day02/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
 <meta property="og:description" content="1 extern C浅析——C++中调用C">
-<meta property="og:updated_time" content="2019-02-26T12:48:11.846Z">
+<meta property="og:updated_time" content="2019-02-26T13:11:33.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ day02">
 <meta name="twitter:description" content="1 extern C浅析——C++中调用C">
@@ -202,6 +202,21 @@
 <li><strong>函数的返回值不可以作为重载的条件</strong></li>
 <li>const 可以作为重载的条件</li>
 </ol>
+<h1 id="4-C-的封装"><a href="#4-C-的封装" class="headerlink" title="4 C++的封装"></a>4 C++的封装</h1><blockquote>
+<p>C语言的封装：属性和行为分开处理，类型检测不够强。<br>C++语言的封装：属性和行为绑在一起，严格的类型转换检测。</p>
+<ol>
+<li>属性和行为作为一个整体来表示生活中的事物</li>
+<li>具有三种控制权限：public，protected，private</li>
+<li>C++中struct和class是一个意思，但是struct的默认权限是<code>public</code>，class的默认权限是<code>private</code></li>
+</ol>
+</blockquote>
+<p>总结：</p>
+<ul>
+<li>public，类的内部和外部都可以访问</li>
+<li>protected，类的内部可以访问，类的外部不可以访问，子类可以访问</li>
+<li>private，类的内部和外部都不可以访问，子类也不可以访问</li>
+<li>建议类的成员属性设置为<code>private</code></li>
+</ul>
 
       
       
@@ -339,7 +354,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-extern-C浅析——C-中调用C"><span class="toc-number">1.</span> <span class="toc-text">1 extern C浅析——C++中调用C</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-在C语言代码中处理"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 在C语言代码中处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-在C-语言代码中处理"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 在C++语言代码中处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-内联函数"><span class="toc-number">2.</span> <span class="toc-text">2 内联函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-函数重载"><span class="toc-number">3.</span> <span class="toc-text">3 函数重载</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-extern-C浅析——C-中调用C"><span class="toc-number">1.</span> <span class="toc-text">1 extern C浅析——C++中调用C</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-在C语言代码中处理"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 在C语言代码中处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-在C-语言代码中处理"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 在C++语言代码中处理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-内联函数"><span class="toc-number">2.</span> <span class="toc-text">2 内联函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-函数重载"><span class="toc-number">3.</span> <span class="toc-text">3 函数重载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-C-的封装"><span class="toc-number">4.</span> <span class="toc-text">4 C++的封装</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -487,15 +502,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
