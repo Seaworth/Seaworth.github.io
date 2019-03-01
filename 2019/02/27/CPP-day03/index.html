@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://seaworth.github.io/2019/02/27/CPP-day03/1.png">
 <meta property="og:image" content="http://seaworth.github.io/2019/02/27/CPP-day03/2.png">
 <meta property="og:image" content="http://seaworth.github.io/2019/02/27/CPP-day03/3.png">
-<meta property="og:updated_time" content="2019-03-01T00:34:49.759Z">
+<meta property="og:updated_time" content="2019-03-01T13:25:40.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ day03">
 <meta name="twitter:description" content="1 面向对象设计案例—点和圆的关系 需求分析：  设计一个圆形类Circle，和一个点类Point，计算点和圆的关系。">
@@ -233,6 +233,19 @@
 </ul>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">explicit</span> <span class="title">MyString</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"MyString(int n)!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	MyString(<span class="keyword">const</span> <span class="keyword">char</span>* str)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"MyString(const char* str)"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//给字符串赋值？还是初始化？</span></span><br><span class="line">	<span class="comment">//MyString str1 = 1;//加了explicit，会报错Erro：不存在从int转换到MyString的适当构造函数</span></span><br><span class="line">	<span class="function">MyString <span class="title">str2</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//寓意非常明确，给字符串赋值</span></span><br><span class="line">	MyString str3 = <span class="string">"abcd"</span>;</span><br><span class="line">	<span class="function">MyString <span class="title">str4</span><span class="params">(<span class="string">"abcd"</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="7-动态对象的创建"><a href="#7-动态对象的创建" class="headerlink" title="7 动态对象的创建"></a>7 动态对象的创建</h1><blockquote>
+<p>当我们创建数组的时候，总是需要提前预定数组的长度，然后编译器分配预定长度的数组空间，在使用数组的时，会有这样的问题，数组也许空间太大了，浪费空间，也许空间不足，所以对于数组来讲，如果能根据需要来分配空间大小再好不过。<br>所以动态意味着不确定性。</p>
+</blockquote>
+<p>当创建一个C++对象时会发生两件事:</p>
+<ol>
+<li>为对象分配内存</li>
+<li>调用构造函数来初始化那块内存</li>
+</ol>
+<h2 id="7-1-new运算符"><a href="#7-1-new运算符" class="headerlink" title="7.1 new运算符"></a>7.1 new运算符</h2><p>C++中解决<strong>动态内存分配</strong>的方案是把创建一个对象所需要的操作都结合在一个称为<code>new</code>的运算符里。当用<code>new</code>创建一个对象时，它就在<strong><code>堆</code></strong>里为对象分配内存并调用<strong>构造函数</strong>完成初始化。<br><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Person</span>* <span class="keyword">person</span> = new <span class="keyword">Person</span>;</span><br></pre></td></tr></table></figure></p>
+<p>相当于:<br><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Person</span>* <span class="keyword">person</span> = (<span class="keyword">Person</span>*)malloc(sizeof(<span class="keyword">Person</span>));</span><br><span class="line">	if(<span class="keyword">person</span> == NULL)&#123;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">person</span>-&gt;Init();</span><br></pre></td></tr></table></figure></p>
+<p>在堆里创建对象的过程变得简单了，只需要一个简单的表达式，它带有内置的长度计算、类型转换和安全检查。</p>
+<h2 id="7-2-delete运算符"><a href="#7-2-delete运算符" class="headerlink" title="7.2 delete运算符"></a>7.2 delete运算符</h2><p>new表达式的反面是delete表达式。delete表达式先调用析构函数，然后释放内存。正如new表达式返回一个指向对象的指针一样，delete需要一个对象的地址。</p>
+<h2 id="7-3-new和delete采用相同形式"><a href="#7-3-new和delete采用相同形式" class="headerlink" title="7.3 new和delete采用相同形式"></a>7.3 new和delete采用相同形式</h2><p>使用<code>new</code>和<code>delete</code>在<strong>堆</strong>上创建数组非常容易。<br><strong>当创建一个对象数组的时候，必须对数组中的每一个对象调用构造函数。</strong><br><code>new</code>配合<code>delete</code>，<code>new []</code>配合<code>delete []</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//栈区开辟</span></span><br><span class="line">	<span class="comment">//Person p1;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//在堆区开辟</span></span><br><span class="line">	Person *p1 = <span class="keyword">new</span> Person;</span><br><span class="line">	<span class="keyword">delete</span> p1;</span><br><span class="line">	Person *p2 = <span class="keyword">new</span> Person[];</span><br><span class="line">	<span class="keyword">delete</span> [] p1;</span><br><span class="line">	<span class="comment">//所有new出来的对象都会返回该类型的指针</span></span><br><span class="line">	<span class="comment">//malloc返回的是void* 需要进行强制类型转换</span></span><br><span class="line">	<span class="comment">//malloc不会调用构造函数，new会调用构造函数</span></span><br><span class="line">	<span class="comment">//new是一个运算符，malloc是一个函数</span></span><br><span class="line">	<span class="comment">//释放堆区的空间，delete</span></span><br><span class="line">	<span class="comment">//delete也是一个运算符</span></span><br><span class="line">	<span class="comment">//molloc配合free，new配合delete</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
       
@@ -370,7 +383,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-面向对象设计案例—点和圆的关系"><span class="toc-number">1.</span> <span class="toc-text">1 面向对象设计案例—点和圆的关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-代码实现"><span class="toc-number">2.</span> <span class="toc-text">2 代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-新建一个空项目"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 新建一个空项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-相关代码"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 相关代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-构造函数和析构函数"><span class="toc-number">3.</span> <span class="toc-text">3 构造函数和析构函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-浅拷贝和深拷贝"><span class="toc-number">4.</span> <span class="toc-text">4 浅拷贝和深拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-浅拷贝"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 浅拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-深拷贝"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 深拷贝</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-多个对象的构造和析构"><span class="toc-number">5.</span> <span class="toc-text">5 多个对象的构造和析构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-初始化列表"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 初始化列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-类对象作为成员"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 类对象作为成员</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-explicit关键字"><span class="toc-number">6.</span> <span class="toc-text">6 explicit关键字</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-面向对象设计案例—点和圆的关系"><span class="toc-number">1.</span> <span class="toc-text">1 面向对象设计案例—点和圆的关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-代码实现"><span class="toc-number">2.</span> <span class="toc-text">2 代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-新建一个空项目"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 新建一个空项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-相关代码"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 相关代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-构造函数和析构函数"><span class="toc-number">3.</span> <span class="toc-text">3 构造函数和析构函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-浅拷贝和深拷贝"><span class="toc-number">4.</span> <span class="toc-text">4 浅拷贝和深拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-浅拷贝"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 浅拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-深拷贝"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 深拷贝</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-多个对象的构造和析构"><span class="toc-number">5.</span> <span class="toc-text">5 多个对象的构造和析构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-初始化列表"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 初始化列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-类对象作为成员"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 类对象作为成员</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-explicit关键字"><span class="toc-number">6.</span> <span class="toc-text">6 explicit关键字</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-动态对象的创建"><span class="toc-number">7.</span> <span class="toc-text">7 动态对象的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-new运算符"><span class="toc-number">7.1.</span> <span class="toc-text">7.1 new运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-delete运算符"><span class="toc-number">7.2.</span> <span class="toc-text">7.2 delete运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3-new和delete采用相同形式"><span class="toc-number">7.3.</span> <span class="toc-text">7.3 new和delete采用相同形式</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -543,14 +556,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">win10安装</a>
               </li>
              
@@ -559,11 +564,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">剑指</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">剑指</a>
               </li>
              
               <li class="article-tag-list-item">
