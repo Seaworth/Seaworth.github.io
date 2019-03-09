@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://seaworth.github.io">
-  <title>Archives | Seaworth的博客</title>
+  <title>C++ day05 运算符重载 | Seaworth的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
-<meta name="keywords" content="python,machine learning,matlab,爬虫,读书,音乐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Seaworth的博客">
-<meta property="og:url" content="http://seaworth.github.io/archives/index.html">
+  <meta name="description" content="运算符重载，就是对已有的运算符重新进行定义，赋予其另一种功能，以适应不同的数据类型。在C++中，可以定义一个处理类的新运算符。这种定义很像一个普通的函数定义，只是函数的名字由关键字operator及其紧跟的运算符组成。它像任何其他函数一样，当编译器遇到适当的模式时，就会调用这个函数。">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ day05 运算符重载">
+<meta property="og:url" content="http://seaworth.github.io/2019/03/08/CPP-day05/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
-<meta property="og:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta property="og:description" content="运算符重载，就是对已有的运算符重新进行定义，赋予其另一种功能，以适应不同的数据类型。在C++中，可以定义一个处理类的新运算符。这种定义很像一个普通的函数定义，只是函数的名字由关键字operator及其紧跟的运算符组成。它像任何其他函数一样，当编译器遇到适当的模式时，就会调用这个函数。">
+<meta property="og:updated_time" content="2019-03-09T06:34:40.245Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Seaworth的博客">
-<meta name="twitter:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta name="twitter:title" content="C++ day05 运算符重载">
+<meta name="twitter:description" content="运算符重载，就是对已有的运算符重新进行定义，赋予其另一种功能，以适应不同的数据类型。在C++中，可以定义一个处理类的新运算符。这种定义很像一个普通的函数定义，只是函数的名字由关键字operator及其紧跟的运算符组成。它像任何其他函数一样，当编译器遇到适当的模式时，就会调用这个函数。">
   
     <link rel="alternative" href="/atom.xml" title="Seaworth的博客" type="application/atom+xml">
   
@@ -145,472 +146,118 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-CPP-day05" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      C++ day05 运算符重载
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/08/CPP-day05/" class="archive-article-date">
+
+        
+        <a href="/2019/03/08/CPP-day05/" class="archive-article-date">
   	<time datetime="2019-03-08T13:10:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-08</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/08/CPP-day05/">C++ day05 运算符重载</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+        
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/04/CPP-day04/" class="archive-article-date">
-  	<time datetime="2019-03-04T12:12:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/04/CPP-day04/">C++ day04</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/CPP-day03/" class="archive-article-date">
-  	<time datetime="2019-02-27T14:13:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/CPP-day03/">C++ day03</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/CPP-day02/" class="archive-article-date">
-  	<time datetime="2019-02-26T11:33:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/CPP-day02/">C++ day02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/思考致富/" class="archive-article-date">
-  	<time datetime="2019-02-26T10:24:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/思考致富/">思考致富</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">读书</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/标幺值/" class="archive-article-date">
-  	<time datetime="2019-02-26T04:44:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/标幺值/">标幺值</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">电力系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/21/面向对象方法/" class="archive-article-date">
-  	<time datetime="2019-01-21T13:20:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/21/面向对象方法/">面向对象方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/20/剑指Offer-2/" class="archive-article-date">
-  	<time datetime="2019-01-20T00:50:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/20/剑指Offer-2/">剑指Offer-2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/18/剑指Offer-1/" class="archive-article-date">
-  	<time datetime="2019-01-18T12:38:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/18/剑指Offer-1/">剑指Offer-1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/11/CPP学习路线/" class="archive-article-date">
-  	<time datetime="2019-01-11T14:24:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/11/CPP学习路线/">C++学习路线</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/02/父亲的寄语/" class="archive-article-date">
-  	<time datetime="2019-01-02T13:55:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/02/父亲的寄语/">父亲的寄语</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
+    <div class="article-entry" itemprop="articleBody">
       
-        </div></section>
+        <blockquote>
+<p>运算符重载，就是对已有的<strong>运算符</strong>重新进行定义，赋予其另一种功能，以适应不同的数据类型。在C++中，可以定义一个处理类的新运算符。这种定义很像一个普通的函数定义，只是函数的名字由关键字operator及其紧跟的运算符组成。它像任何其他函数一样，当编译器遇到适当的模式时，就会调用这个函数。<br><a id="more"></a></p>
+</blockquote>
+<p><strong>注：不要滥用运算符重载，只有在能够使类的代码更容易写，容易读，才有理由重载运算符。对于内置的数据类型的所有运算符是不可能改变的。</strong></p>
+<h1 id="1-加号运算符重载"><a href="#1-加号运算符重载" class="headerlink" title="1 加号运算符重载"></a>1 加号运算符重载</h1><p>两种实现方法：</p>
+<ol>
+<li>类的成员函数实现+重载</li>
+<li>全局函数实现+重载</li>
+</ol>
+<blockquote>
+<p>需求：</p>
+<ol>
+<li>定义一个Person类，含有两个成员变量a和b（public）</li>
+<li>分别用成员函数和全局函数实现+运算符重载</li>
+</ol>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; //标准输入输出流</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用命名空间 std</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Person()&#123;&#125;</span><br><span class="line">	Person(<span class="keyword">int</span> in_a, <span class="keyword">int</span> in_b) :a(in_a), b(in_b)&#123;&#125;</span><br><span class="line">	~Person()&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//1：打开成员函数重载加号；0：关闭</span></span><br><span class="line">	<span class="meta">#<span class="meta-keyword">if</span> 0</span></span><br><span class="line">		Person <span class="keyword">operator</span>+ (<span class="keyword">const</span> Person p1)</span><br><span class="line">			&#123;</span><br><span class="line">				Person temp;</span><br><span class="line">				temp.a = <span class="keyword">this</span>-&gt;a + p1.a;</span><br><span class="line">				temp.b = <span class="keyword">this</span>-&gt;b + p1.b;</span><br><span class="line">				<span class="keyword">return</span> temp;</span><br><span class="line">			&#125;</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> a;</span><br><span class="line">	<span class="keyword">int</span> b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//1：打开全局函数，实现加法重载；0：关闭</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> 1</span></span><br><span class="line">Person <span class="keyword">operator</span>+ (<span class="keyword">const</span> Person p1, <span class="keyword">const</span> Person p2)</span><br><span class="line">&#123;</span><br><span class="line">	Person temp;</span><br><span class="line">	temp.a = p2.a + p1.a;</span><br><span class="line">	temp.b = p2.b + p1.b;</span><br><span class="line">	<span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">Person <span class="title">p1</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">	<span class="function">Person <span class="title">p2</span><span class="params">(<span class="number">2</span>,<span class="number">2</span>)</span></span>;</span><br><span class="line">	Person p3=p1+p2;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p3的a:"</span> &lt;&lt; p3.a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p3的b:"</span> &lt;&lt; p3.b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//函数入口</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	test01();</span><br><span class="line">	system(<span class="string">"pause"</span>);<span class="comment">//阻塞功能</span></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;<span class="comment">//返回正常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="2-左移运算符重载"><a href="#2-左移运算符重载" class="headerlink" title="2 左移运算符重载"></a>2 左移运算符重载</h1><blockquote>
+<p>需求：</p>
+<ol>
+<li>定义一个Person类，含有两个成员变量a和b（public）</li>
+<li>用全局函数对&lt;&lt;运算符进行重载</li>
+<li>能够实现链式输出，如<code>cout&lt;&lt;p1&lt;&lt;p2&lt;&lt;endl;</code></li>
+</ol>
+</blockquote>
+<p><strong>不能用类的成员函数对&lt;&lt;进行重载，因为如果是Person的成员函数，那么调用就是Person &lt;&lt; 不满足要求</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; //标准输入输出流</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用命名空间 std</span></span><br><span class="line"><span class="comment">//&lt;&lt;运算符重载</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. 用全局函数进行&lt;&lt;重载</span></span><br><span class="line"><span class="comment">2. 参数是ostream&amp; cout 和 Person p1</span></span><br><span class="line"><span class="comment">3. Person类中对重载函数进行友元函数声明，使其能够访问私有的成员变量</span></span><br><span class="line"><span class="comment">4. 要进行链式输出，需要返回哦stream&amp;，从而保证返回值是cout</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">friend</span> ostream&amp; <span class="keyword">operator</span> &lt;&lt; (ostream&amp; <span class="built_in">cout</span>, Person p1);</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Person()&#123;&#125;</span><br><span class="line">	Person(<span class="keyword">int</span> in_a, <span class="keyword">int</span> in_b) :a(in_a), b(in_b)&#123;&#125;</span><br><span class="line">	~Person()&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//不能用类的成员函数对&lt;&lt;进行重载，因为如果是Person的成员函数，那么调用就是Person &lt;&lt; 不满足要求</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> a;</span><br><span class="line">	<span class="keyword">int</span> b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ostream&amp; <span class="keyword">operator</span> &lt;&lt; (ostream&amp; <span class="built_in">cout</span>, Person p1)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"a = "</span> &lt;&lt; p1.a &lt;&lt; <span class="string">" b = "</span> &lt;&lt; p1.b &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">cout</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">Person <span class="title">p1</span><span class="params">(<span class="number">1</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line">	<span class="function">Person <span class="title">p2</span><span class="params">(<span class="number">2</span>, <span class="number">2</span>)</span></span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; p1 &lt;&lt; p2 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//函数入口</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	test01();</span><br><span class="line">	system(<span class="string">"pause"</span>);<span class="comment">//阻塞功能</span></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;<span class="comment">//返回正常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="3-递增递减运算符重载"><a href="#3-递增递减运算符重载" class="headerlink" title="3 递增递减运算符重载"></a>3 递增递减运算符重载</h1><p><strong>前置++</strong>：如++a，先++，再返回<br><strong>后置++</strong>：如a++，先返回，后++</p>
+<blockquote>
+<p>重载++运算符时，需要重载两个函数（前置++和后置++）。重载–运算符同理可得。<br>调用代码时候，要优先使用前缀形式，除非确实需要后缀形式返回的原值，前缀和后缀形式语义上是等价的，输入工作量也相当，只是效率经常会略高一些，由于前缀形式少创建了一个临时对象。<br>需求：</p>
+<ol>
+<li>定义一个Person类，含有一个成员变量age（private）</li>
+<li>重载++运算符，能够进行age加一</li>
+<li>重载–运算符，能够进行age减一</li>
+<li>重载&lt;&lt;运算符，能够打印年龄 </li>
+</ol>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; //标准输入输出流</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用命名空间 std</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">friend</span> ostream&amp; <span class="keyword">operator</span>&lt;&lt; (ostream&amp; <span class="built_in">cout</span>, Person p1);</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Person()&#123;&#125;</span><br><span class="line">	Person(<span class="keyword">int</span> in_age) :age(in_age)&#123;&#125;</span><br><span class="line">	~Person()&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//重载前置++，先++，再返回</span></span><br><span class="line">	Person&amp; <span class="keyword">operator</span>++ ()</span><br><span class="line">	&#123;</span><br><span class="line">		++(<span class="keyword">this</span>-&gt;age);<span class="comment">//前置++，效率稍高</span></span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//重载后置++，多一个占位参数进行区分</span></span><br><span class="line">	<span class="comment">//先返回，再++</span></span><br><span class="line">	<span class="comment">//后置++调用的时候，会多拷贝一次数据，比前置++的效率要差一些。</span></span><br><span class="line">	Person <span class="keyword">operator</span>++ (<span class="keyword">int</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		Person temp = *<span class="keyword">this</span>;<span class="comment">//先用一个临时的值保存住要返回的值</span></span><br><span class="line">		++(<span class="keyword">this</span>-&gt;age);</span><br><span class="line">		<span class="keyword">return</span> temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//重载前置--</span></span><br><span class="line">	Person&amp; <span class="keyword">operator</span>-- ()</span><br><span class="line">	&#123;</span><br><span class="line">		--(<span class="keyword">this</span>-&gt;age);</span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//重置后置--</span></span><br><span class="line">	Person <span class="keyword">operator</span>-- (<span class="keyword">int</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		Person temp = *<span class="keyword">this</span>;</span><br><span class="line">		--(<span class="keyword">this</span>-&gt;age);</span><br><span class="line">		<span class="keyword">return</span> temp;<span class="comment">//返回值只能用值传递，以为返回的一个临时的变量，如果返回引用，临时变量会被释放，从而引发错误</span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//重载&lt;&lt;</span></span><br><span class="line">ostream&amp; <span class="keyword">operator</span>&lt;&lt; (ostream&amp; <span class="built_in">cout</span>, Person p1)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; p1.age;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">cout</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">Person <span class="title">p1</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ++p1 &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//1</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; p1++ &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//1</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; p1 &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//2</span></span><br><span class="line"></span><br><span class="line">	<span class="function">Person <span class="title">p2</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; --p2 &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//9</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; p2-- &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//9</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; p2 &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//8</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//函数入口</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	test01();</span><br><span class="line">	system(<span class="string">"pause"</span>);<span class="comment">//阻塞功能</span></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;<span class="comment">//返回正常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="4-指针运算符重载"><a href="#4-指针运算符重载" class="headerlink" title="4 指针运算符重载"></a>4 指针运算符重载</h1><blockquote>
+<p>实现一个智能指针（smartPointer）的类，用来管理Person类。如果在堆区new了一个Person类型的内存，忘记了释放就会导致内存泄漏，而smartPointer就是用来释放内存。<br>实现步骤：</p>
+<ol>
+<li>定义一个Person类，含有一个成员变量age（private）</li>
+<li>定义一个smartPointer类，含有一个成员变量Person* p，在析构函数中对p进行释放</li>
+<li>对smartPointer类，重载-&gt;和*运算符</li>
+</ol>
+</blockquote>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#include &lt;iostream&gt; //标准输入输出流</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="title">std</span>;<span class="comment">//使用命名空间 std</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Person</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Person()&#123;&#125;</span><br><span class="line">	Person(<span class="keyword">int</span> in_age) :age(in_age)&#123;&#125;</span><br><span class="line">	~Person()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"调用Person的析构函数"</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">showAge</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"年龄： "</span> &lt;&lt; age &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//智能指针</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">smartPointer</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	smartPointer(Person * p1) :p(p1)&#123;&#125;</span><br><span class="line">	~smartPointer()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">"调用smartPointer的指针"</span> &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;p != NULL)<span class="comment">//检查p中是否开辟了内存，如果不为空，则释放</span></span><br><span class="line">		&#123;</span><br><span class="line">			delete <span class="keyword">this</span>-&gt;p;</span><br><span class="line">			<span class="keyword">this</span>-&gt;p = NULL;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//重载-&gt;</span></span><br><span class="line">	Person* <span class="keyword">operator</span>-&gt; ()</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>-&gt;p;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//重载*</span></span><br><span class="line">	Person&amp; <span class="keyword">operator</span>* ()<span class="comment">//注意返回的是引用</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> *(<span class="keyword">this</span>-&gt;p);</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	Person * p;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//Person* p1 = new Person(10);</span></span><br><span class="line">	<span class="comment">//如果忘记释放，那么就会造成内存泄漏</span></span><br><span class="line"></span><br><span class="line">	<span class="function">smartPointer <span class="title">sp</span>(<span class="params">new Person(<span class="number">10</span></span>))</span>;<span class="comment">//sp开辟到了栈上，自动释放</span></span><br><span class="line">	sp-&gt;showAge();<span class="comment">//sp-&gt;-&gt;showAge()，编译器做了优化</span></span><br><span class="line">	(*sp).showAge();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//函数入口</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	test01();</span><br><span class="line">	system(<span class="string">"pause"</span>);<span class="comment">//阻塞功能</span></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;<span class="comment">//返回正常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="5-赋值运算符重载"><a href="#5-赋值运算符重载" class="headerlink" title="5 赋值运算符重载"></a>5 赋值运算符重载</h1><p><strong>常见错误，当准备给两个相同对象赋值时，应该首先检查一下这个对象是否对自身赋值了。</strong><br><strong><code>为什么要检查自我赋值？</code></strong></p>
+<p>1.<strong>为了效率。自己给自己赋值完全没有意义，浪费开销，应该避免。如果是自我赋值，应该直接返回<code>* this</code></strong>。</p>
+<p>2.<strong>为了正确性。因为指针间的赋值（假设p2=p1），在复制前，需要将p2所指向的空间杀掉delete，然后重新为p2分配空间，再将<code>p1所指的内容</code>拷贝到<code>p2所指的空间</code>，如果是自我赋值，p1和p2是同一指针，在赋值操作前，杀掉p2所指的空间（即杀掉p1所指的空间），要赋值的数据（p1指向的内容）已被杀掉，程序报错。</strong></p>
+<blockquote>
+<p>一个类默认创建四个函数：</p>
+</blockquote>
+<ol>
+<li>默认构造函数</li>
+<li>析构函数</li>
+<li>拷贝构造函数</li>
+<li>operator=重载函数（只进行简单的值传递）</li>
+</ol>
+<p><strong>当类中含有指针时，必须对=进行重载，从而避免浅拷贝</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; //标准输入输出流</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用命名空间 std</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//一个类默认创建四个函数：默认构造函数，析构函数，拷贝构造函数，operator=重载函数（只进行简单的值传递）</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Person(<span class="keyword">int</span> in_age,<span class="keyword">int</span> in_id) :age(in_age),id(in_id)&#123;&#125;</span><br><span class="line">	~Person()&#123;&#125;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="keyword">int</span> id;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//1. =号容易混淆的地方</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">Person <span class="title">p1</span><span class="params">(<span class="number">10</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">	<span class="function">Person <span class="title">p2</span><span class="params">(<span class="number">20</span>, <span class="number">2</span>)</span></span>;</span><br><span class="line">	Person p3 = p1;<span class="comment">//调用拷贝构造，</span></span><br><span class="line">	<span class="comment">//如果一个对象还没有被创建，则必须初始化，即调用构造函数。</span></span><br><span class="line">	<span class="comment">//p3还没有初始化，所以会调用构造函数</span></span><br><span class="line">	<span class="comment">//p3是从p1创建而来，所以需要调用拷贝构造函数</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt;<span class="string">"p3: age = "</span>&lt;&lt; p3.age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt;<span class="string">"p3: id  = "</span>&lt;&lt; p3.id  &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	p2 = p1;<span class="comment">//调用operator=函数</span></span><br><span class="line">	<span class="comment">//由于p2已经创建了，不用再调用构造函数了，只需调用重载的=运算符函数</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p2: age = "</span> &lt;&lt; p2.age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p2: id  = "</span> &lt;&lt; p2.id  &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 类中含有指针</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person2</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Person2(<span class="keyword">const</span> <span class="keyword">char</span>* in_name)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;name = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="built_in">strlen</span>(in_name) + <span class="number">1</span>];</span><br><span class="line">		<span class="built_in">strcpy</span>(<span class="keyword">this</span>-&gt;name, in_name);</span><br><span class="line">	&#125;</span><br><span class="line">	Person2&amp; <span class="keyword">operator</span>= (<span class="keyword">const</span> Person2&amp; p)<span class="comment">//传入的是引用，函数返回值也是引用，能实现连续=</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//检查是否是自我赋值</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span> == &amp;p)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//如果判断原来已经堆区有内容，先释放</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;name != <span class="literal">NULL</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">delete</span>[] <span class="keyword">this</span>-&gt;name;</span><br><span class="line">			<span class="keyword">this</span>-&gt;name = <span class="literal">NULL</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">this</span>-&gt;name = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="built_in">strlen</span>(p.name) + <span class="number">1</span>];</span><br><span class="line">		<span class="built_in">strcpy</span>(<span class="keyword">this</span>-&gt;name,p.name);</span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	~Person2()</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//类的成员中有指针，需要释放</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;name != <span class="literal">NULL</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">delete</span>[] <span class="keyword">this</span>-&gt;name;</span><br><span class="line">			<span class="keyword">this</span>-&gt;name = <span class="literal">NULL</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">char</span>* name;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test02</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">Person2 <span class="title">p1</span><span class="params">(<span class="string">"老王"</span>)</span></span>;</span><br><span class="line">	<span class="function">Person2 <span class="title">p2</span><span class="params">(<span class="string">"大王"</span>)</span></span>;</span><br><span class="line">	<span class="function">Person2 <span class="title">p3</span><span class="params">(<span class="string">"小王"</span>)</span></span>;</span><br><span class="line">	p2 = p1;<span class="comment">//编译器默认的=重载是简单的值复制，如果类中含有指针，就会产生浅拷贝问题，释放指针的时候，就会造成两次释放，所以必须重载=</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; p2.name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	p3 = p2 = p1;<span class="comment">//检查重载=</span></span><br><span class="line">	p3 = p3;<span class="comment">//检查自我赋值</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; p3.name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//函数入口</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	test01();</span><br><span class="line">	test02();</span><br><span class="line">	system(<span class="string">"pause"</span>);<span class="comment">//阻塞功能</span></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;<span class="comment">//返回正常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢你请我吃糖果！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/16/CPP-day01/" class="archive-article-date">
-  	<time datetime="2018-12-16T13:37:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/16/CPP-day01/">C++ day01</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -622,305 +269,140 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://seaworth.github.io/2019/03/08/CPP-day05/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/29/hexo-yilia主题优化/" class="archive-article-date">
-  	<time datetime="2018-11-29T12:51:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/04/CPP-day04/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++ day04</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/29/hexo-yilia主题优化/">hexo-yilia主题优化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-加号运算符重载"><span class="toc-number">1.</span> <span class="toc-text">1 加号运算符重载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-左移运算符重载"><span class="toc-number">2.</span> <span class="toc-text">2 左移运算符重载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-递增递减运算符重载"><span class="toc-number">3.</span> <span class="toc-text">3 递增递减运算符重载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-指针运算符重载"><span class="toc-number">4.</span> <span class="toc-text">4 指针运算符重载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-赋值运算符重载"><span class="toc-number">5.</span> <span class="toc-text">5 赋值运算符重载</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/29/定制域名/" class="archive-article-date">
-  	<time datetime="2018-11-29T06:53:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-29</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/29/定制域名/">定制域名</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/28/通信录备份/" class="archive-article-date">
-  	<time datetime="2018-11-28T14:11:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/28/通信录备份/">通信录备份</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">socket</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">sqlite3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/11/破解VIP会员视频/" class="archive-article-date">
-  	<time datetime="2018-03-11T12:03:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/11/破解VIP会员视频/">破解VIP会员视频</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/04/win10系统安装教程/" class="archive-article-date">
-  	<time datetime="2018-03-04T13:15:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/04/win10系统安装教程/">win10系统安装教程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">win10安装</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/04/Hexo+Github搭建yilia主题的博客/" class="archive-article-date">
-  	<time datetime="2018-02-04T06:45:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/04/Hexo+Github搭建yilia主题的博客/">Hexo+Github搭建yilia主题的博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/26/hello Seaworth的第一篇博客/" class="archive-article-date">
-  	<time datetime="2018-01-26T10:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/26/hello Seaworth的第一篇博客/">Hello Seaworth的第一篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
 
-    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'afe6966152deee6d73fa',
+  	clientSecret: '8aafe13329e7d11fa72e9bc19cb43ffd63092ab2',
+  	repo: 'Seaworth.github.io',
+  	owner: 'Seaworth',
+  	admin: ['Seaworth'],
+  	id: 'Fri Mar 08 2019 21:10:46 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+  
+  
 
 
           </div>
@@ -954,8 +436,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
