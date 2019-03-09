@@ -6,23 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://seaworth.github.io">
-  <title>C++ day04 | Seaworth的博客</title>
+  <title>Tag: IT资源 | Seaworth的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 静态成员在类定义中，成员包括成员变量和成员函数，这些成员可以用关键字static声明为静态的，称为静态成员。不管这个类创建了多少个对象，静态成员只有一个拷贝，这个拷贝被所有属于这个类的对象共享。">
-<meta name="keywords" content="C++">
-<meta property="og:type" content="article">
-<meta property="og:title" content="C++ day04">
-<meta property="og:url" content="http://seaworth.github.io/2019/03/04/CPP-day04/index.html">
+  <meta name="description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta name="keywords" content="python,machine learning,matlab,爬虫,读书,音乐">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Seaworth的博客">
+<meta property="og:url" content="http://seaworth.github.io/tags/IT资源/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
-<meta property="og:description" content="1 静态成员在类定义中，成员包括成员变量和成员函数，这些成员可以用关键字static声明为静态的，称为静态成员。不管这个类创建了多少个对象，静态成员只有一个拷贝，这个拷贝被所有属于这个类的对象共享。">
-<meta property="og:image" content="http://seaworth.github.io/2019/03/04/CPP-day04/1.png">
-<meta property="og:image" content="http://seaworth.github.io/2019/03/04/CPP-day04/2.png">
-<meta property="og:image" content="http://seaworth.github.io/2019/03/04/CPP-day04/3.png">
-<meta property="og:updated_time" content="2019-03-05T12:26:28.277Z">
+<meta property="og:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ day04">
-<meta name="twitter:description" content="1 静态成员在类定义中，成员包括成员变量和成员函数，这些成员可以用关键字static声明为静态的，称为静态成员。不管这个类创建了多少个对象，静态成员只有一个拷贝，这个拷贝被所有属于这个类的对象共享。">
-<meta name="twitter:image" content="http://seaworth.github.io/2019/03/04/CPP-day04/1.png">
+<meta name="twitter:title" content="Seaworth的博客">
+<meta name="twitter:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
   
     <link rel="alternative" href="/atom.xml" title="Seaworth的博客" type="application/atom+xml">
   
@@ -150,281 +145,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CPP-day04" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      C++ day04
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/03/09/IT资源/" class="archive-article-date">
+  	<time datetime="2019-03-09T06:46:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-09</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/03/09/IT资源/">IT资源</a>
     </h1>
   
 
-        
-        <a href="/2019/03/04/CPP-day04/" class="archive-article-date">
-  	<time datetime="2019-03-04T12:12:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-静态成员"><a href="#1-静态成员" class="headerlink" title="1 静态成员"></a>1 静态成员</h1><p>在类定义中，成员包括<strong>成员变量</strong>和<strong>成员函数</strong>，这些成员可以用关键字<strong><code>static</code></strong>声明为静态的，称为<strong>静态成员</strong>。<br>不管这个类创建了多少个对象，<strong>静态成员只有一个拷贝</strong>，这个拷贝被所有属于这个类的对象<strong>共享</strong>。<a id="more"></a></p>
-<h2 id="1-1-静态成员变量"><a href="#1-1-静态成员变量" class="headerlink" title="1.1 静态成员变量"></a>1.1 静态成员变量</h2><p>类中的成员声明为<strong>static</strong>，这种成员称为<strong>静态成员变量</strong>。与一般的数据成员不同，无论建立多少个对象，都只有一个静态数据的拷贝。<strong>静态成员变量属于类，所有对象共享</strong>。</p>
-<blockquote>
-<p>静态成员变量在编译的阶段就分配内存，对象还没有建立时，就分配了空间。</p>
-<ul>
-<li>静态成员变量必须在<strong>类中声明</strong>，在<strong>类外定义</strong>。</li>
-<li>静态数据成员不属于某个对象，在为对象分配空间中不包括静态成员所占空间。</li>
-<li>静态数据成员可以通过类名或者对象名来引用。</li>
-</ul>
-</blockquote>
-<h2 id="1-2-静态成员函数"><a href="#1-2-静态成员函数" class="headerlink" title="1.2 静态成员函数"></a>1.2 静态成员函数</h2><p>在类定义中，前面有static说明的成员函数称为<strong>静态成员函数</strong>。静态成员函数使用方式和静态变量一样，同样在对象没有创建前，即可通过类名调用。静态成员函数主要为了<strong>访问静态变量</strong>，但是，<strong>不能访问普通成员变量</strong>。<br>静态成员函数的意义，不在于信息共享，数据沟通，而在于管理静态数据成员，完成对静态数据成员的封装。</p>
-<ul>
-<li>静态成员函数只能访问静态变量</li>
-<li>静态成员函数也是有权限的private，public</li>
-<li>普通成员函数既可以访问静态成员变量，也可以访问非静态成员变量</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; //标准输入输出流</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用命名空间 std</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//加入static就是静态成员变量，会共享数据，在类内声明，类外初始化</span></span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//静态成员函数，不可以访问普通的成员变量，可以访问静态的成员函数</span></span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"static void func()调用"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//普通的成员函数，可以访问普通成员变量，也可以访问静态成员变量</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">myFunc</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		age = <span class="number">100</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> other;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">func1</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"static void func1()调用"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//类外对静态成员进行初始化</span></span><br><span class="line"><span class="keyword">int</span> Person::age = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> Person::other = <span class="number">6</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//测试函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//1 通过对象访问属性</span></span><br><span class="line">	Person p1;</span><br><span class="line">	p1.age = <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	Person p2;</span><br><span class="line">	p2.age = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p1.age = "</span> &lt;&lt; p1.age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p2.age = "</span> &lt;&lt; p2.age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2 通过类名访问属性</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"通过类名访问属性age："</span> &lt;&lt; Person::age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//3 私有权限在类外无法访问</span></span><br><span class="line">	<span class="comment">//cout &lt;&lt; "other = " &lt;&lt; Person::other &lt;&lt; endl;</span></span><br><span class="line"></span><br><span class="line">	p1.func();</span><br><span class="line">	p2.func();</span><br><span class="line">	Person::func();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数入口</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	test01();</span><br><span class="line">	system(<span class="string">"pause"</span>);<span class="comment">//阻塞功能</span></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;<span class="comment">//返回正常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="2-单例模式"><a href="#2-单例模式" class="headerlink" title="2 单例模式"></a>2 单例模式</h1><p>单例模式是一种常用的软件设计模式。在它的核心结构中只包含一个被称为单例的特殊类。通过单例模式可以保证系统中一个类只有一个实例而且该实例易于外界访问，从而方便对实例个数的控制并节约系统资源。如果希望在系统中某个类的对象只能存在一个，单例模式是最好的解决方案。</p>
-<blockquote>
-<p>Singleton（单例）：在单例类的内部实现只生成一个实例，同时它提供一个静态的getInstance()工厂方法，让客户可以访问它的唯一实例；为了防止在外部对其实例化，将其默认构造函数和拷贝构造函数设计为私有；在单例类内部定义了一个Singleton类型的静态对象，作为外部共享的唯一实例。</p>
-<p>用单例模式，模拟公司员工使用打印机场景，打印机可以打印员工要输出的内容，并且可以累积打印机使用次数。</p>
-<ol>
-<li>默认构造函数私有化</li>
-<li>拷贝构造函数私有化</li>
-<li>内部维护一个对象指针</li>
-<li>私有化唯一指针</li>
-<li>对外提供getInstance方法来访问这个指针</li>
-</ol>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Printer</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//静态函数</span></span><br><span class="line">	<span class="function"><span class="keyword">static</span> Printer* <span class="title">getInstance</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> singlePrinter;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">printText</span><span class="params">(<span class="built_in">string</span> text)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; text &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		count++;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"目前打印次数："</span> &lt;&lt; count &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	Printer()&#123; count = <span class="number">0</span>; &#125;</span><br><span class="line">	Printer(<span class="keyword">const</span> Printer&amp; p1)&#123;&#125;</span><br><span class="line">	<span class="keyword">static</span> Printer* singlePrinter;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//记录打印次数</span></span><br><span class="line">	<span class="keyword">int</span> count;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Printer* Printer::singlePrinter=<span class="keyword">new</span> Printer;</span><br><span class="line"></span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//拿到打印机</span></span><br><span class="line">	Printer* Printer = Printer::getInstance();</span><br><span class="line">	Printer-&gt;printText(<span class="string">"hello 单例模式"</span>);</span><br><span class="line">	Printer-&gt;printText(<span class="string">"hello 单例模式"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="3-成员变量和成员函数的存储"><a href="#3-成员变量和成员函数的存储" class="headerlink" title="3 成员变量和成员函数的存储"></a>3 成员变量和成员函数的存储</h1><ul>
-<li>C++中的<strong>非静态数据成员</strong>直接内含在类对象中，就像c struct一样。</li>
-<li>静态成员变量不属于对象</li>
-<li>静态成员函数和非静态成员函数都不属于对象</li>
-</ul>
-<p>结论：C++类对象中的变量和函数是分开存储，只有非静态成员变量属于对象。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> age;<span class="comment">//非静态成员变量，属于对象</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//非静态成员函数，不属于对象</span></span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> id;<span class="comment">//静态成员变量，不属于对象</span></span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">func2</span><span class="params">()</span></span>&#123;&#125;<span class="comment">//静态成员函数，不属于对象</span></span><br><span class="line">	<span class="comment">//结论：只有非静态成员变量，属于对象</span></span><br><span class="line">	<span class="keyword">double</span> a;<span class="comment">//4+8=12,字节对齐，16</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//空类的大小为1，因为每个实例的对象都有一个独一无二的地址，char维护这个地址</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"sizeof(Person): "</span> &lt;&lt;<span class="keyword">sizeof</span>(Person)&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="4-this指针"><a href="#4-this指针" class="headerlink" title="4 this指针"></a>4 this指针</h1><h2 id="4-1-this指针的工作原理"><a href="#4-1-this指针的工作原理" class="headerlink" title="4.1 this指针的工作原理"></a>4.1 this指针的工作原理</h2><p>C++的数据和操作也是分开存储，也就是说多个同类型的对象会共用一块代码，这一块代码是如何区分哪个对象调用自己的呢？<br><img src="/2019/03/04/CPP-day04/1.png" title="工作原理"> </p>
-<p>C++通过提供特殊的对象指针，<strong>this指针</strong>，解决上述问题。this指针指向被调用的成员函数所属的对象。</p>
-<h2 id="4-2-this指针的使用"><a href="#4-2-this指针的使用" class="headerlink" title="4.2 this指针的使用"></a>4.2 this指针的使用</h2><ul>
-<li>当形参和成员变量同名时，可用this指针来区分</li>
-<li>在类的非静态成员函数中返回对象本身，可使用<code>return *this</code></li>
-</ul>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//1. 当形参名和成员变量名一样时，this指针可用来区分</span></span><br><span class="line">	Person(int age)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2. 返回对象本身的引用</span></span><br><span class="line">	Person&amp; addAge(Person &amp;p1)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;age += p1.age;</span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;<span class="comment">//*this指向对象本体</span></span><br><span class="line">	&#125;</span><br><span class="line">	int age;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="4-3-const修饰成员函数"><a href="#4-3-const修饰成员函数" class="headerlink" title="4.3 const修饰成员函数"></a>4.3 const修饰成员函数</h2><ul>
-<li>用const修饰的成员函数时，const修饰this指针指向的内存区域，成员函数体内<strong>不可以</strong>修改本类中的任何<strong>普通成员变量</strong></li>
-<li>当成员变量类型符前用<strong><code>mutable</code></strong>修饰时例外</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Person()</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;m_a = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">this</span>-&gt;m_b = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">showInfo</span><span class="params">()</span> <span class="keyword">const</span><span class="comment">//常函数，不允许修改指针指向的值</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">//this-&gt;m_a = 11;</span></span><br><span class="line">		<span class="keyword">this</span>-&gt;m_b = <span class="number">11</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"m_a = "</span> &lt;&lt; m_a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"m_b = "</span> &lt;&lt; m_b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">//m_a = 22;</span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//private:</span></span><br><span class="line">	<span class="keyword">int</span> m_a;</span><br><span class="line">	<span class="keyword">mutable</span> <span class="keyword">int</span> m_b;<span class="comment">//就算是常函数，也要执意修改</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="4-4-const修饰成员对象"><a href="#4-4-const修饰成员对象" class="headerlink" title="4.4 const修饰成员对象"></a>4.4 const修饰成员对象</h2><ul>
-<li>常对象只能调用<strong>const的成员函数</strong></li>
-<li>常对象可访问const或非const数据成员，不能修改，除非成员用mutable修饰</li>
-</ul>
-<h1 id="5-友元"><a href="#5-友元" class="headerlink" title="5 友元"></a>5 友元</h1><p>类的主要特点之一是<strong>数据隐藏</strong>，即类的私有成员无法在类的外部(作用域之外)访问。但是，有时候需要在类的外部访问类的私有成员，怎么办？</p>
-<blockquote>
-<p>解决方法:<br>使用友元函数，友元函数是一种特权函数，C++允许这个特权函数访问私有成员。<br>举个例子：家里有客厅、卧室，客厅是Public的，所有的客人都可以进去，但是你的卧室是private的，只有你能进去，但是，你也可以允许你的好朋友进去。<br>程序员可以把一个全局函数、某个类中的成员函数、甚至整个类声明为友元。</p>
-<ol>
-<li>全局函数作友元</li>
-<li>类作友元</li>
-<li>类的成员函数作友元</li>
-</ol>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Building</span>;</span></span><br><span class="line"><span class="comment">//友元类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyFriend</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//友元成员函数</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">LookAtBedRoom</span><span class="params">(Building&amp; building)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">PlayInBedRoom</span><span class="params">(Building&amp; building)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Building</span>&#123;</span></span><br><span class="line">	<span class="comment">//全局函数做友元函数</span></span><br><span class="line">	<span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">CleanBedRoom</span><span class="params">(Building&amp; building)</span></span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> 0</span></span><br><span class="line">	<span class="comment">//成员函数做友元函数</span></span><br><span class="line">	<span class="keyword">friend</span> <span class="keyword">void</span> MyFriend::LookAtBedRoom(Building&amp; building);</span><br><span class="line">	<span class="keyword">friend</span> <span class="keyword">void</span> MyFriend::PlayInBedRoom(Building&amp; building);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span>	</span></span><br><span class="line">	<span class="comment">//友元类</span></span><br><span class="line">	<span class="keyword">friend</span> <span class="class"><span class="keyword">class</span> <span class="title">MyFriend</span>;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Building();</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">string</span> mSittingRoom;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">string</span> mBedroom;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> MyFriend::LookAtBedRoom(Building&amp; building)&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"我的朋友参观"</span> &lt;&lt; building.mBedroom &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> MyFriend::PlayInBedRoom(Building&amp; building)&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"我的朋友玩耍在"</span> &lt;&lt; building.mBedroom &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//友元全局函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CleanBedRoom</span><span class="params">(Building&amp; building)</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"友元全局函数访问"</span> &lt;&lt; building.mBedroom &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Building::Building()&#123;</span><br><span class="line">	<span class="keyword">this</span>-&gt;mSittingRoom = <span class="string">"客厅"</span>;</span><br><span class="line">	<span class="keyword">this</span>-&gt;mBedroom = <span class="string">"卧室"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	Building building;</span><br><span class="line">	MyFriend myfriend;</span><br><span class="line"></span><br><span class="line">	CleanBedRoom(building);</span><br><span class="line">	myfriend.LookAtBedRoom(building);</span><br><span class="line">	myfriend.PlayInBedRoom(building);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>特别注意</strong><br>在用VS2010，新建的项目名称为<code>10 成员函数做友元函数</code>，这个例子中，编译器会提示如下错误</p>
-<img src="/2019/03/04/CPP-day04/2.png" title="警告">
-<p>但点击<code>生成</code>-&gt;重新生成 <code>10 成员函数做友元函数</code>，又成功，没有失败，但错误列表中仍提示错误。</p>
-<img src="/2019/03/04/CPP-day04/3.png" title="输出">
-<p>此时估计是编译器犯糊涂了，语法和程序都没有问题。</p>
-
-      
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢你请我吃糖果！<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IT资源</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://seaworth.github.io/2019/03/04/CPP-day04/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/03/08/CPP-day05/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          C++ day05 运算符重载
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/02/27/CPP-day03/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C++ day03</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-静态成员"><span class="toc-number">1.</span> <span class="toc-text">1 静态成员</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-静态成员变量"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 静态成员变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-静态成员函数"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 静态成员函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-单例模式"><span class="toc-number">2.</span> <span class="toc-text">2 单例模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-成员变量和成员函数的存储"><span class="toc-number">3.</span> <span class="toc-text">3 成员变量和成员函数的存储</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-this指针"><span class="toc-number">4.</span> <span class="toc-text">4 this指针</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-this指针的工作原理"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 this指针的工作原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-this指针的使用"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 this指针的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-const修饰成员函数"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 const修饰成员函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-const修饰成员对象"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 const修饰成员对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-友元"><span class="toc-number">5.</span> <span class="toc-text">5 友元</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-  
-  
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: 'afe6966152deee6d73fa',
-  	clientSecret: '8aafe13329e7d11fa72e9bc19cb43ffd63092ab2',
-  	repo: 'Seaworth.github.io',
-  	owner: 'Seaworth',
-  	admin: ['Seaworth'],
-  	id: 'Mon Mar 04 2019 20:12:37 GMT+0800',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-  
-  
+    
 
 
           </div>
@@ -458,9 +232,9 @@ gitalk.render('gitalk-container')
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
