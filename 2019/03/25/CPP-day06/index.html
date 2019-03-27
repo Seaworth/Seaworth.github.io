@@ -6,18 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://seaworth.github.io">
-  <title>Tag: 随笔 | Seaworth的博客</title>
+  <title>C++ day06 继承 | Seaworth的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
-<meta name="keywords" content="python,machine learning,matlab,爬虫,读书,音乐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Seaworth的博客">
-<meta property="og:url" content="http://seaworth.github.io/tags/随笔/index.html">
+  <meta name="description" content="1 继承概述为什么需要继承？">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ day06 继承">
+<meta property="og:url" content="http://seaworth.github.io/2019/03/25/CPP-day06/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
-<meta property="og:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta property="og:description" content="1 继承概述为什么需要继承？">
+<meta property="og:image" content="http://seaworth.github.io/2019/03/25/CPP-day06/1.png">
+<meta property="og:image" content="http://seaworth.github.io/2019/03/25/CPP-day06/2.png">
+<meta property="og:image" content="http://seaworth.github.io/2019/03/25/CPP-day06/VS2013tool.png">
+<meta property="og:image" content="http://seaworth.github.io/2019/03/25/CPP-day06/3.png">
+<meta property="og:image" content="http://seaworth.github.io/2019/03/25/CPP-day06/4.png">
+<meta property="og:image" content="http://seaworth.github.io/2019/03/25/CPP-day06/5.png">
+<meta property="og:image" content="http://seaworth.github.io/2019/03/25/CPP-day06/6.png">
+<meta property="og:image" content="http://seaworth.github.io/2019/03/25/CPP-day06/7.png">
+<meta property="og:image" content="http://seaworth.github.io/2019/03/25/CPP-day06/8.png">
+<meta property="og:updated_time" content="2019-03-27T12:55:19.301Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Seaworth的博客">
-<meta name="twitter:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta name="twitter:title" content="C++ day06 继承">
+<meta name="twitter:description" content="1 继承概述为什么需要继承？">
+<meta name="twitter:image" content="http://seaworth.github.io/2019/03/25/CPP-day06/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Seaworth的博客" type="application/atom+xml">
   
@@ -145,146 +156,262 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CPP-day06" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/思考致富/" class="archive-article-date">
-  	<time datetime="2019-02-26T10:24:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/思考致富/">思考致富</a>
+    <h1 class="article-title" itemprop="name">
+      C++ day06 继承
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/03/25/CPP-day06/" class="archive-article-date">
+  	<time datetime="2019-03-25T12:54:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-继承概述"><a href="#1-继承概述" class="headerlink" title="1 继承概述"></a>1 继承概述</h1><p>为什么需要继承？<a id="more"></a></p>
+<img src="/2019/03/25/CPP-day06/1.png" title="继承">
+<p>因为有些时候，两个类中大部分的属性和方法相同，只有少量的属性和方法有区别。此时使用<strong>继承</strong>可以复用已有的代码，减少代码的冗余性。</p>
+<p>C++最重要的特征是代码重用，通过继承机制可以利用已有的数据类型来定义新的数据类型，新的类不仅拥有旧类的成员，还拥有新定义的成员。</p>
+<p>派生类定义格式：<br><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Class</span> 派生类名 :  继承方式 基类名</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//派生类新增的数据成员和成员函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>三种继承方式： </p>
+<ul>
+<li>public：公有继承</li>
+<li>protected：保护继承</li>
+<li>private：私有继承</li>
+</ul>
+<p>单继承：指每个派生类只直接继承了一个基类的特征。<br>多继承：指多个基类派生出一个派生类的继承关系，多继承的派生类直接继承了不止一个基类的特征。</p>
+<p>派生类访问控制的权限：<br>派生类继承基类，派生类拥有基类中全部成员变量和成员方法（除了构造和析构之外的成员方法），但是在派生类中，继承的成员并不一定能直接访问，不同的继承方式会导致不同的访问权限。</p>
+<img src="/2019/03/25/CPP-day06/2.png" title="派生类访问控制的权限">
+<h1 id="3-继承中的构造与析构"><a href="#3-继承中的构造与析构" class="headerlink" title="3 继承中的构造与析构"></a>3 继承中的构造与析构</h1><h2 id="3-1-继承中的对象模型"><a href="#3-1-继承中的对象模型" class="headerlink" title="3.1 继承中的对象模型"></a>3.1 继承中的对象模型</h2><p>在C++编译器的内部可以理解为结构体，子类是由父类成员叠加子类新成员而成。<br><code>test.cpp</code><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; //标准输入输出流</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用命名空间 std</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	<span class="keyword">int</span> b;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> c;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//子类中会继承父类的私有成员，只是被编译器给隐藏起来了，访问不到私有成员</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son1</span> :</span><span class="keyword">public</span> Father</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> d;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span>(Son1) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数入口</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	test01();</span><br><span class="line">	system(<span class="string">"pause"</span>);<span class="comment">//阻塞功能</span></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;<span class="comment">//返回正常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行结果是<code>16</code>。<br>上述代码的保存路径为<code>F:\C++\C++_learning\01 关系运算符重载\06 继承中的对象模型</code>。</p>
+<p>通过<code>VS2013 开发人员命令提示</code>进行查看上述案例的对象模型。<br>在我的电脑上该工具的路径为<code>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\Shortcuts</code>，如下图所示。</p>
+<img src="/2019/03/25/CPP-day06/VS2013tool.png" title="VS2013开发人员命令提示">
+<p>打开该命令工具后，切换到该工程目录下，然后打印其对象模型。<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">F:\&gt;<span class="keyword">cd</span> F:\C++\C++_learning\01 （关系运算符重载\06 继承中的对象模型）</span><br><span class="line"><span class="keyword">dir</span> （打印该路径的目录，可以看到<span class="keyword">test</span>.cpp文件）</span><br><span class="line"><span class="keyword">cl</span> /d1 reportSingleClassLayoutSon1 <span class="keyword">test</span>.cpp （输入该命令，打印Son1的对象模型）</span><br></pre></td></tr></table></figure></p>
+<img src="/2019/03/25/CPP-day06/3.png" title="对象模型">
+<p>可以从红色方框中看出，Son1类从Father基类继承的成员有<code>a</code>，<code>b</code>，<code>c</code>，添加了一个成员<code>d</code>。所以<code>sizeof(Son1)</code>的结果是<code>16</code>（4个int成员变量，每个int是4byte）。</p>
+<h2 id="3-2-继承中的构造和析构"><a href="#3-2-继承中的构造和析构" class="headerlink" title="3.2 继承中的构造和析构"></a>3.2 继承中的构造和析构</h2><p>在C++编译器的内部可以理解为结构体，子类是由父类成员叠加子类新成员而成。</p>
+<ul>
+<li>子类对象在创建时会首先调用父类的构造函数</li>
+<li>父类构造函数执行完毕后，才会调用子类的构造函数</li>
+<li>当父类构造函数有参数时，需要在子类初始化列表(参数列表)中显示调用父类构造函数</li>
+<li>析构函数调用顺序和构造函数相反</li>
+</ul>
+<h1 id="4-继承中的同名处理"><a href="#4-继承中的同名处理" class="headerlink" title="4 继承中的同名处理"></a>4 继承中的同名处理</h1><ul>
+<li>当子类成员和父类成员同名时，子类依然继承父类的同名成员。</li>
+<li>如果子类成员和父类成员同名时，子类访问其成员时，默认访问子类的成员（就近原则）。</li>
+<li>如果要访问父类的同名成员时，需要通过作用域::进行同名成员区分。</li>
+</ul>
+<h1 id="5-继承中的静态成员"><a href="#5-继承中的静态成员" class="headerlink" title="5 继承中的静态成员"></a>5 继承中的静态成员</h1><p>父类中的静态成员属性，子类可以继承下来。<br>父类中的静态成员函数，子类对象可以通过作用域::访问。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; //标准输入输出流</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用命名空间 std</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> a;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"base void func()"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"base void func(int val)"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> Base::a = <span class="number">10</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> :</span><span class="keyword">public</span> Base</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> a;</span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"son void func()"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> Son::a = <span class="number">20</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//静态成员属性，子类可以继承下来</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; Son::a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; Base::a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//访问父类的同名函数</span></span><br><span class="line">	Son::func();</span><br><span class="line">	Son::Base::func(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数入口</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	test01();</span><br><span class="line">	system(<span class="string">"pause"</span>);<span class="comment">//阻塞功能</span></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;<span class="comment">//返回正常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">20</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line">son void <span class="function"><span class="keyword">func</span><span class="params">()</span></span></span><br><span class="line">base void <span class="function"><span class="keyword">func</span><span class="params">(int val)</span></span></span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure></p>
+<h1 id="6-多继承"><a href="#6-多继承" class="headerlink" title="6 多继承"></a>6 多继承</h1><blockquote>
+<p>可以从一个类继承，也能同时从多个类继承，这就是多继承。但是由于多继承是非常受争议的，从多个类继承可能会导致函数、变量等同名导致较多的歧义。</p>
+</blockquote>
+<img src="/2019/03/25/CPP-day06/4.png" title="多继承">
+<p>带来的问题：<br>如果两个基类中有同名的函数或者变量，那么通过派生类对象去访问这个函数或变量时就不能明确到底调用从基类1继承的版本还是从基类2继承的版本？<br>解决方法：<br>显示指定调用那个基类的版本。</p>
+<p><strong>菱形继承</strong></p>
+<img src="/2019/03/25/CPP-day06/5.png" title="菱形继承">
+<p>这种继承所带来的问题：</p>
+<ol>
+<li>B1继承了A的数据和函数，B2同样继承了A的数据和函数，当C调用函数或者数据时，就会产生二义性。</li>
+<li>C继承自A的函数和数据继承了两份，这份数据我们只需要一份就可以。</li>
+</ol>
+<p>对于这种<strong>菱形继承</strong>所带来的两个问题，C++为我们提供了一种方式：<strong>采用虚基类</strong>。</p>
+<img src="/2019/03/25/CPP-day06/6.png" title="菱形继承">
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; //标准输入输出流</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用命名空间 std</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sheep</span>:</span><span class="keyword">virtual</span> <span class="keyword">public</span> Animal</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tuo</span> :</span><span class="keyword">virtual</span> <span class="keyword">public</span> Animal</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SheepTuo</span> :</span><span class="keyword">public</span> Sheep, <span class="keyword">public</span> Tuo</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//解决菱形问题，用虚继承</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SheepTuo s1;</span><br><span class="line">	s1.Sheep::age = <span class="number">10</span>;</span><br><span class="line">	s1.Tuo::age = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; s1.Sheep::age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; s1.Tuo::age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; s1.age &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//虚继承解决了二义性，只有一份age</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"-----------以下为虚继承的工作原理-----------"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	SheepTuo s2;</span><br><span class="line">	s2.age = <span class="number">666</span>;</span><br><span class="line">	<span class="comment">//Sheep的偏移量</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; *((<span class="keyword">int</span>*)(*(<span class="keyword">int</span>*)(&amp;s2)) + <span class="number">1</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="comment">//Tuo的偏移量</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; *((<span class="keyword">int</span>*)(*((<span class="keyword">int</span>*)&amp;s2+<span class="number">1</span>)) + <span class="number">1</span>)&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="comment">//输出age</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;((Animal*)((<span class="keyword">char</span>*)&amp;s2 + <span class="number">8</span>))-&gt;age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//函数入口</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	test01();</span><br><span class="line">	system(<span class="string">"pause"</span>);<span class="comment">//阻塞功能</span></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;<span class="comment">//返回正常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<img src="/2019/03/25/CPP-day06/7.png" title="结果1">
+<p>从结果中看出虚继承只有一份age，输出3个20。<br>我们可以通过前面介绍的方法，在<code>VS2013 开发人员命令提示</code>上进行查看的SheepTuo对象模型，如下图：</p>
+<img src="/2019/03/25/CPP-day06/8.png" title="结果2">
+<p>可以看出虚继承，只存在一份<strong>age</strong>。<br>1.Animal菱形最顶层的类，内存布局图没有发生改变。<br>2.Sheep和Tuo通过虚继承的方式派生自Animal，这两个对象的布局图中可以看出编译器为我们的对象中增加了一个<strong>vbptr</strong> (virtual base pointer)，<strong>vbptr</strong>指向了一张表，这张表保存了当前的虚指针相对于虚基类的首地址的偏移量。<br>3.SheepTuo派生于Sheep和Tuo，继承了两个基类的vbptr指针，并调整了vbptr与虚基类的首地址的偏移量。</p>
+<blockquote>
+<p>工程开发中真正意义上的多继承是几乎不被使用，因为多重继承带来的代码复杂性远多于其带来的便利，多重继承对代码维护性上的影响是灾难性的，在设计方法上，任何多继承都可以用单继承代替。</p>
+</blockquote>
+
+      
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢你请我吃糖果！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://seaworth.github.io/2019/03/25/CPP-day06/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/02/父亲的寄语/" class="archive-article-date">
-  	<time datetime="2019-01-02T13:55:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/09/IT资源/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IT资源 持续更新</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/02/父亲的寄语/">父亲的寄语</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-继承概述"><span class="toc-number">1.</span> <span class="toc-text">1 继承概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-继承中的构造与析构"><span class="toc-number">2.</span> <span class="toc-text">3 继承中的构造与析构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-继承中的对象模型"><span class="toc-number">2.1.</span> <span class="toc-text">3.1 继承中的对象模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-继承中的构造和析构"><span class="toc-number">2.2.</span> <span class="toc-text">3.2 继承中的构造和析构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-继承中的同名处理"><span class="toc-number">3.</span> <span class="toc-text">4 继承中的同名处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-继承中的静态成员"><span class="toc-number">4.</span> <span class="toc-text">5 继承中的静态成员</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-多继承"><span class="toc-number">5.</span> <span class="toc-text">6 多继承</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/26/hello Seaworth的第一篇博客/" class="archive-article-date">
-  	<time datetime="2018-01-26T10:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/26/hello Seaworth的第一篇博客/">Hello Seaworth的第一篇博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+  
+  
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'afe6966152deee6d73fa',
+  	clientSecret: '8aafe13329e7d11fa72e9bc19cb43ffd63092ab2',
+  	repo: 'Seaworth.github.io',
+  	owner: 'Seaworth',
+  	admin: ['Seaworth'],
+  	id: 'Mon Mar 25 2019 20:54:43 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+  
+  
 
 
           </div>
@@ -318,9 +445,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
