@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://seaworth.github.io">
-  <title>Seaworth的博客</title>
+  <title>C++ day07 多态和头文件 | Seaworth的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
-<meta name="keywords" content="python,machine learning,matlab,爬虫,读书,音乐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Seaworth的博客">
-<meta property="og:url" content="http://seaworth.github.io/page/3/index.html">
+  <meta name="description" content="人生的意义是从事你真正喜欢的、适合你的并有益于他人的工作。——《财富的自由之路》">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ day07 多态和头文件">
+<meta property="og:url" content="http://seaworth.github.io/2019/04/08/CPP-day07/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
-<meta property="og:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta property="og:description" content="人生的意义是从事你真正喜欢的、适合你的并有益于他人的工作。——《财富的自由之路》">
+<meta property="og:updated_time" content="2019-04-09T11:22:09.333Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Seaworth的博客">
-<meta name="twitter:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta name="twitter:title" content="C++ day07 多态和头文件">
+<meta name="twitter:description" content="人生的意义是从事你真正喜欢的、适合你的并有益于他人的工作。——《财富的自由之路》">
   
     <link rel="alternative" href="/atom.xml" title="Seaworth的博客" type="application/atom+xml">
   
@@ -145,113 +146,74 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-定制域名" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-CPP-day07" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/29/定制域名/">定制域名</a>
+    <h1 class="article-title" itemprop="name">
+      C++ day07 多态和头文件
     </h1>
   
 
         
-        <a href="/2018/11/29/定制域名/" class="archive-article-date">
-  	<time datetime="2018-11-29T06:53:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-29</time>
+        <a href="/2019/04/08/CPP-day07/" class="archive-article-date">
+  	<time datetime="2019-04-08T13:19:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近给自己的博客换了一个新的域名，在新添加博客文章的时候出现了问题。记录下来~
-        
-          <a class="article-more-a" href="/2018/11/29/定制域名/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        <blockquote>
+<p>人生的意义是从事你真正喜欢的、适合你的并有益于他人的工作。——《财富的自由之路》<a id="more"></a></p>
+</blockquote>
+<h1 id="1-多态"><a href="#1-多态" class="headerlink" title="1 多态"></a>1 多态</h1><p>C++支持编译时多态(<strong>静态多态</strong>)和运行时多态(<strong>动态多态</strong>)，运算符重载和函数重载就是编译时多态，而派生类和虚函数实现运行时多态。</p>
+<p>静态多态和动态多态的区别就是函数地址是早绑定(静态联编)还是晚绑定(动态联编)。如果函数的调用，在编译阶段就可以确定函数的调用地址，并产生代码，就是静态多态。而如果函数的调用地址不能在编译期间确定，而需要在运行时才能决定，这就属于晚绑定。</p>
+<p>真正的开发中，要遵循<strong>开闭原则</strong>：</p>
+<ol>
+<li>对扩展开放，对修改关闭。</li>
+<li>可以利用多态实现——有利于后期的扩展，结构性好，可读性高，但是效率稍微低一点（相比于C语言），因为发生多态的内部结构要复杂一点.</li>
+</ol>
+<p><strong>多态案例-计算器</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; //标准输入输出流</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;<span class="comment">//使用命名空间 std</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculate</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//虚函数</span></span><br><span class="line">	<span class="comment">//virtual int getResult()&#123; return 0; &#125;</span></span><br><span class="line">	<span class="comment">//纯虚函数：如果父类中有了纯虚函数，子类继承父类，就必须实现纯虚函数</span></span><br><span class="line">	<span class="comment">//如果父类中有了纯虚函数，这个父类就不能实例化对象</span></span><br><span class="line">	<span class="comment">//类中有纯虚函数，这个类叫做抽象类</span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">getResult</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">setVal</span><span class="params">(<span class="keyword">int</span> in_val1, <span class="keyword">int</span> in_val2)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;val1 = in_val1;</span><br><span class="line">		<span class="keyword">this</span>-&gt;val2 = in_val2;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getVal1</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> val1;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getVal2</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> val2;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> val1;</span><br><span class="line">	<span class="keyword">int</span> val2;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AddCalculate</span>:</span><span class="keyword">public</span> Calculate</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">getResult</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> getVal1() + getVal2();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//扩展减法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SubCalculate</span> :</span><span class="keyword">public</span> Calculate</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">getResult</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> getVal1() - getVal2();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Calculate *cal;</span><br><span class="line">	cal = <span class="keyword">new</span> AddCalculate;</span><br><span class="line">	cal-&gt;setVal(<span class="number">10</span>, <span class="number">20</span>);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; cal-&gt;getResult() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">delete</span> cal;</span><br><span class="line">	cal = <span class="keyword">new</span> SubCalculate;</span><br><span class="line">	cal-&gt;setVal(<span class="number">10</span>, <span class="number">20</span>);</span><br><span class="line">	cal-&gt;getResult();</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; cal-&gt;getResult() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//函数入口</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	test01();</span><br><span class="line">	system(<span class="string">"pause"</span>);<span class="comment">//阻塞功能</span></span><br><span class="line">	<span class="keyword">return</span> EXIT_SUCCESS;<span class="comment">//返回正常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="2-编写头文件"><a href="#2-编写头文件" class="headerlink" title="2 编写头文件"></a>2 编写头文件</h1><p>为了确保各个文件中类的定义一致，类通常被定义在头文件中，而且类所在头文件的名字应和类的名字一样。</p>
+<p><strong>预处理</strong></p>
+<p>确保头文件多次包含依然能够安全工作的是预处理器。预处理器是在编译前执行一段程序，可以部分改变我们所写的程序。<code>#include</code>也是一项预处理功能，当预处理器看到<code>#include</code>标记时，就会用指定的头文件的内容代替<code>#include</code>。</p>
+<p>另外一项预处理功能<strong>头文件保护符</strong>，<strong>头文件保护符</strong>依赖于预处理变量，预处理变量分为两种状态：<strong>已定义</strong>和<strong>未定义</strong>。</p>
+<p><code>#define</code>指令：把一个名字设定为预处理变量。</p>
+<p>下面的两个指令分别检查某个指定的预处理变量是否已经定义。<br><code>#ifdef</code>指令：当且仅当变量已定义时为真。<br><code>#ifndef</code>指令：当且仅当变量未定义时为真。<br>一旦检查结果为真，则后续操作直到遇见<code>#endif</code>指令为止。</p>
+<p>使用这些功能就能有效防止多次包含的发生。<br><code>Hero.h</code>文件<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> HERO_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> HERO_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hero</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Hero();</span><br><span class="line"></span><br><span class="line">	<span class="built_in">string</span> name;<span class="comment">//名字</span></span><br><span class="line">	<span class="keyword">int</span> atk;<span class="comment">//攻击力</span></span><br><span class="line">	<span class="keyword">int</span> def;<span class="comment">//防御</span></span><br><span class="line">	<span class="keyword">int</span> hp;<span class="comment">//血量</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
+<p>第一次包含Hero.h时，<code>#ifndef</code>的结果为真，预处理器将顺序执行后面的操作，直到遇见<code>#endif</code>。此时，预处理变量HERO_H已经定义。后面如果再次包含Hero.h，则#ifndef的检查结果为假，编译器将忽略<code>#ifndef</code>与<code>#endif</code>之间的部分。</p>
+<p><strong>整个程序的头文件保护符必须唯一，为了避免与程序中的其他实体发生名字冲突，一般把预处理变量的名字全部大写。</strong></p>
 
       
-
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/29/定制域名/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢你请我吃糖果！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-通信录备份" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/28/通信录备份/">通信录备份</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/28/通信录备份/" class="archive-article-date">
-  	<time datetime="2018-11-28T14:11:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-设计要求"><a href="#1-设计要求" class="headerlink" title="1.设计要求"></a>1.设计要求</h1><ul>
-<li>语言C++</li>
-<li>编程环境Ubuntu</li>
-<li>客户端的通信录备份到服务器</li>
-<li>数据库使用sqlite3</li>
-<li><strong><a href="https://github.com/Seaworth/contacts_backup" target="_blank" rel="noopener">源码下载</a></strong>
-        
-          <a class="article-more-a" href="/2018/11/28/通信录备份/#more">more >></a>
-        
-      
       
     </div>
     <div class="article-info article-info-index">
@@ -264,14 +226,6 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">socket</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">sqlite3</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -279,16 +233,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/28/通信录备份/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://seaworth.github.io/2019/04/08/CPP-day07/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/25/CPP-day06/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++ day06 继承</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -303,327 +316,53 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-破解VIP会员视频" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/11/破解VIP会员视频/">破解VIP会员视频</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/11/破解VIP会员视频/" class="archive-article-date">
-  	<time datetime="2018-03-11T12:03:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、前言"><a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h3><p>这次给追剧的同学带来一个福利，一键破解[优酷|腾讯|乐视|爱奇艺]等VIP或会员视频，不用再每个月花钱买各种VIP，只需要简单的安装一个脚本，直接跳过广告，播放VIP最新电视剧。让我们一起愉快的追剧~
-        
-          <a class="article-more-a" href="/2018/03/11/破解VIP会员视频/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/11/破解VIP会员视频/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-多态"><span class="toc-number">1.</span> <span class="toc-text">1 多态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-编写头文件"><span class="toc-number">2.</span> <span class="toc-text">2 编写头文件</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-win10系统安装教程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/04/win10系统安装教程/">win10系统安装教程</a>
-    </h1>
   
 
-        
-        <a href="/2018/03/04/win10系统安装教程/" class="archive-article-date">
-  	<time datetime="2018-03-04T13:15:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、前言"><a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h3><p>在这个信息爆炸的时代，几乎人人都有一台电脑，有时候电脑用久了很卡，或是出现莫名其妙的问题，你就会想到重新安装系统。每次重装系统都叫别人帮忙总显得麻烦，不如自己动手，丰衣足食。安装系统成为一种必备的技能。其实安装系统并没有想象的那么难，曾经的我也是一个小白，大一买来电脑生怕出问题，害怕把电脑装坏了。还好寝室有个电脑高手，看着他经常装系统，从Windows的xp到win10，ubuntu，最好玩了的是把联想笔记本装成了苹果系统，从此有了一台“黑苹果”，跟着室友我也会学会装系统了哈哈，只要不嫌麻烦，不断折腾，总会安装好的。在这里给大家分享一种安装系统的方法，用UltraISO（俗称软碟通）把Win10 ISO镜像写入U盘制作系统启动盘，再在bios界面设置U盘启动，然后一路回车，最后会遇见你的win10！
-        
-          <a class="article-more-a" href="/2018/03/04/win10系统安装教程/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">win10安装</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/04/win10系统安装教程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-Hexo+Github搭建yilia主题的博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/04/Hexo+Github搭建yilia主题的博客/">Hexo+Github搭建yilia主题的博客</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/04/Hexo+Github搭建yilia主题的博客/" class="archive-article-date">
-  	<time datetime="2018-02-04T06:45:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h3><p>什么是Hexo？</p>
-<blockquote>
-<p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo</a> 是一个快速、简洁且高效的博客发布工具。Hexo支持Markdown格式，众多优秀插件和主题。在几秒内，即可利用靓丽的主题生成静态网页。<br>
-        
-          <a class="article-more-a" href="/2018/02/04/Hexo+Github搭建yilia主题的博客/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/04/Hexo+Github搭建yilia主题的博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello Seaworth的第一篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/26/hello Seaworth的第一篇博客/">Hello Seaworth的第一篇博客</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/26/hello Seaworth的第一篇博客/" class="archive-article-date">
-  	<time datetime="2018-01-26T10:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-初识博客"><a href="#1-初识博客" class="headerlink" title="1 初识博客"></a>1 初识博客</h2><p>作为一个码农怎么能没有一个博客呢？最近在学习Python这门语言，在网上发现了<a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="noopener">廖雪峰的官方网站</a>上的Python教程讲得挺好，通俗易懂，知识点比较全，每一小节后面还有习题。在学习的过程中，遇到一些问题通过百度，在许多大牛的技术博客上寻找到了解决方法。心里想到自己也要拥有一个博客，于是自己就开始尝试着搭建个人博客。本来开始也想过直接就在CSDN、Wordpress、博客园、简书上面创建自己的博客，但偶然间发现Github上也可以搭建博客，就果断选择了Github+Hexo+yilia。
-        
-          <a class="article-more-a" href="/2018/01/26/hello Seaworth的第一篇博客/#more">more >></a>
-        
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/26/hello Seaworth的第一篇博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
 
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+  
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'afe6966152deee6d73fa',
+  	clientSecret: '8aafe13329e7d11fa72e9bc19cb43ffd63092ab2',
+  	repo: 'Seaworth.github.io',
+  	owner: 'Seaworth',
+  	admin: ['Seaworth'],
+  	id: 'Mon Apr 08 2019 21:19:07 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+  
   
 
 
@@ -657,8 +396,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
