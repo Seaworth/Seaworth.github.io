@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://seaworth.github.io">
-  <title>Tag: hexo | Seaworth的博客</title>
+  <title>C++ day08 模板 | Seaworth的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
-<meta name="keywords" content="python,machine learning,matlab,爬虫,读书,音乐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Seaworth的博客">
-<meta property="og:url" content="http://seaworth.github.io/tags/hexo/index.html">
+  <meta name="description" content="谁控制过去，谁就控制未来；谁控制现在，谁就控制过去。——《1984》">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ day08 模板">
+<meta property="og:url" content="http://seaworth.github.io/2019/04/14/CPP-day08/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
-<meta property="og:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta property="og:description" content="谁控制过去，谁就控制未来；谁控制现在，谁就控制过去。——《1984》">
+<meta property="og:updated_time" content="2019-04-14T08:33:50.352Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Seaworth的博客">
-<meta name="twitter:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta name="twitter:title" content="C++ day08 模板">
+<meta name="twitter:description" content="谁控制过去，谁就控制未来；谁控制现在，谁就控制过去。——《1984》">
   
     <link rel="alternative" href="/atom.xml" title="Seaworth的博客" type="application/atom+xml">
   
@@ -145,144 +146,252 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CPP-day08" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C++ day08 模板
+    </h1>
+  
+
+        
+        <a href="/2019/04/14/CPP-day08/" class="archive-article-date">
+  	<time datetime="2019-04-14T03:06:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-14</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>谁控制过去，谁就控制未来；谁控制现在，谁就控制过去。——《1984》<a id="more"></a></p>
+</blockquote>
+<h1 id="1-函数模板"><a href="#1-函数模板" class="headerlink" title="1 函数模板"></a>1 函数模板</h1><p>C++提供了函数模板(function template)，所谓函数模板，实际上是建立一个通用函数，其函数类型和形参类型不具体制定，用一个虚拟的类型来代表。这个通用函数就成为函数模板。凡是函数体相同的函数，但是参数的类型不同，都可以用这个模板代替，不必定义多个函数，只需在模板中定义一次即可。在调用函数时系统会根据实参的类型来取代模板中的虚拟类型，从而实现不同函数的功能。</p>
+<h2 id="1-1-函数模板基本用法"><a href="#1-1-函数模板基本用法" class="headerlink" title="1.1 函数模板基本用法"></a>1.1 函数模板基本用法</h2><p>设计一个函数，功能是交换两个变量的值。其基本的用法如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数模板</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt; //同<span class="title">template</span>&lt;typename T&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">mySwap</span>(<span class="title">T</span> &amp;<span class="title">a1</span>, <span class="title">T</span> &amp;<span class="title">a2</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	T temp = a1;<span class="comment">//声明一个临时值</span></span><br><span class="line">	a1 = a2;</span><br><span class="line">	a2 = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>调用以上的函数模板，有两种方式：</p>
+<ol>
+<li>自动类型推导</li>
+<li>显示类型调用</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//测试函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a1 = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> a2 = <span class="number">30</span>;</span><br><span class="line">	<span class="comment">//1自动类型推导</span></span><br><span class="line">	mySwap(a1, a2);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"a1= "</span> &lt;&lt; a1 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"a2= "</span> &lt;&lt; a2 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2显式类型调用</span></span><br><span class="line">	mySwap&lt;<span class="keyword">int</span>&gt;(a1, a2);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"a1= "</span> &lt;&lt; a1 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"a2= "</span> &lt;&lt; a2 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数模板与普通函数的区别：函数模板不可以进行隐式类型转换，而普通函数可以进行隐式类型转化。</p>
+<p>函数模板和普通函数的调用规则：</p>
+<ol>
+<li>如果函数模板和普通函数重载（同名），优先调用普通函数，如果要强制调用函数模板，可以使用空参数列表myPrint&lt;&gt;(a,b)。</li>
+<li>函数模板可以发生重载。</li>
+<li>如果函数模板可以产生更好的匹配时，优先调用函数模板。</li>
+</ol>
+<h2 id="1-4-模板实现的机制"><a href="#1-4-模板实现的机制" class="headerlink" title="1.4 模板实现的机制"></a>1.4 模板实现的机制</h2><p>HelloWorld.cpp是高级语言程序，是方便人阅读和编写，机器是不能够直接识别的，机器只能够识别机器指令（二进制文件）。为了在系统上能够运行HelloWorld.cpp程序，每一条语句都需要转化为机器指令。然后将这些机器指令打包成可执行目标文件格式，并以二进制形式存储在磁盘中。</p>
+<p>预处理(Pre-processing)<code>-&gt;</code>编译(Compiling)<code>-&gt;</code>汇编(Assembling)<code>-&gt;</code>链接(Linking)</p>
+<p>函数模板机制，并不是通过把函数模板处理成任何类型的函数，只是通过传递的类型参数生成不同的函数，编译器会对函数模板进行<strong>两次编译</strong>，在声明的地方对模板代码本身进行编译，在调用的地方对参数替换后的代码进行编译。</p>
+<h2 id="1-3-模板的局限性和解决方法"><a href="#1-3-模板的局限性和解决方法" class="headerlink" title="1.3 模板的局限性和解决方法"></a>1.3 模板的局限性和解决方法</h2><p>假设有如下函数模板，用来比较两个对象是否相等。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">template&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line">bool myCompare(T &amp;a, T &amp;b)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (a == b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当调用函数模板的时候，传入的是自定义参数类型<code>class Person</code>，该函数则无法正确处理。为了解决这种问题，可以提供模板的重载，为这些特定的类型提供具体化的模板。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">bool</span> myCompare&lt;Person&gt;(Person &amp;a, Person &amp;b)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (a.age == b.age)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="2-类模板"><a href="#2-类模板" class="headerlink" title="2 类模板"></a>2 类模板</h1><h1 id="2-1-类模板基本用法"><a href="#2-1-类模板基本用法" class="headerlink" title="2.1 类模板基本用法"></a>2.1 类模板基本用法</h1><p>类模板和函数模板的定义和使用相似。有时候，两个类的功能相同，仅仅数据类型不同，则可以使用类模板。用法如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">nameType</span>,<span class="title">class</span> <span class="title">ageType</span>=<span class="title">int</span>&gt;//如果没有传递类型，则默认为<span class="title">int</span></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Person(nameType in_name, ageType in_age)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;name = in_name;</span><br><span class="line">		<span class="keyword">this</span>-&gt;age = in_age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"name: "</span> &lt;&lt; <span class="keyword">this</span>-&gt;name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"age: "</span> &lt;&lt; <span class="keyword">this</span>-&gt;age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	nameType name;</span><br><span class="line">	ageType age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//测试函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Person&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; p1(<span class="string">"孙悟空"</span>, <span class="number">1000</span>);</span><br><span class="line">	Person&lt;<span class="built_in">string</span>&gt; p2(<span class="string">"猪八戒"</span>, <span class="number">2000</span>);<span class="comment">//默认类型</span></span><br><span class="line">	p1.show();</span><br><span class="line">	p2.show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>类模板：</p>
+<ol>
+<li>可以有默认的类型</li>
+<li>类模板不可以类型推导，只能够显式调用</li>
+</ol>
+<h1 id="2-2-类模板做函数参数"><a href="#2-2-类模板做函数参数" class="headerlink" title="2.2 类模板做函数参数"></a>2.2 类模板做函数参数</h1><p>三种使用方式：</p>
+<ol>
+<li>指定传入类型</li>
+<li>参数模板化</li>
+<li>整体模板化</li>
+</ol>
+<blockquote>
+<p>小技巧：typeid().name() 打印变量的类型</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 指定传入类型</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">doWork1</span><span class="params">(Person&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; &amp;p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	p.show();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Person&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; p(<span class="string">"aa"</span>, <span class="number">12</span>);</span><br><span class="line">	doWork1(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//2. 参数模板化</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T1</span>,<span class="title">class</span> <span class="title">T2</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">doWork2</span>(<span class="title">Person</span>&lt;T1, T2&gt; &amp;<span class="title">p</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(T1).name() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(T2).name() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	p.show();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test02</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Person&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; p(<span class="string">"bb"</span>, <span class="number">13</span>);</span><br><span class="line">	doWork2(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//3. 整体模板化</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">doWork3</span>(<span class="title">T</span> &amp;<span class="title">p</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(T).name() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	p.show();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test03</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Person&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; p(<span class="string">"cc"</span>, <span class="number">14</span>);</span><br><span class="line">	doWork3(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="2-3-类模板的继承"><a href="#2-3-类模板的继承" class="headerlink" title="2.3 类模板的继承"></a>2.3 类模板的继承</h1><p>有一个Base类模板，现在要从Base类模板派生出普通函数Son1和模板函数Son2。需要注意的是，Son1和Son2继承与Base，必须指明Base的T的类型，否则无法分配内存。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基类模板</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Base</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	T a;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//派生出普通函数</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> :</span><span class="keyword">public</span> Base&lt;<span class="keyword">int</span>&gt;</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//派生出模板函数</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T1</span>,<span class="title">class</span> <span class="title">T2</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Son1</span> :</span><span class="keyword">public</span> Base&lt;T2&gt;</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Son1()</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(T1).name() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(T2).name() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	T1 b;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="2-4-类模板的头文件（分文件编写）"><a href="#2-4-类模板的头文件（分文件编写）" class="headerlink" title="2.4 类模板的头文件（分文件编写）"></a>2.4 类模板的头文件（分文件编写）</h1><p>如果将类模板进行分文件编写，Person.h和Person.cpp分别写声明和实现，会出现问题，由于类模板的成员函数在运行的阶段才去创建，导致只包含Person.h头文件，不会去创建成员函数的实现，所以在链接的过程中，无法解析外部命令。</p>
+<p>解决方案：</p>
+<ol>
+<li>包含Person.cpp文件，<code>#include &quot;Person.cpp&quot;</code>（不推荐）</li>
+<li>类模板不要进行分文件编写，写到一个文件中，类内进行声明，类外进行实现，最后将名字改为Person.hpp，这是约定俗成的。</li>
+</ol>
+<p><strong>Person.hpp</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> PERSON_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PERSON_H</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">nameType</span>, <span class="title">class</span> <span class="title">ageType</span> = <span class="title">int</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Person(nameType in_name, ageType in_age);</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	nameType name;</span><br><span class="line">	ageType age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">nameType</span>, <span class="title">class</span> <span class="title">ageType</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">Person</span>&lt;nameType, ageType&gt;:</span>:Person(nameType in_name, ageType in_age)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">this</span>-&gt;name = in_name;</span><br><span class="line">	<span class="keyword">this</span>-&gt;age = in_age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">nameType</span>, <span class="title">class</span> <span class="title">ageType</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">Person</span>&lt;nameType, ageType&gt;:</span>:show()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"name: "</span> &lt;&lt; <span class="keyword">this</span>-&gt;name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"age: "</span> &lt;&lt; <span class="keyword">this</span>-&gt;age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
+
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢你请我吃糖果！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/29/hexo-yilia主题优化/" class="archive-article-date">
-  	<time datetime="2018-11-29T12:51:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/29/hexo-yilia主题优化/">hexo-yilia主题优化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://seaworth.github.io/2019/04/14/CPP-day08/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/29/定制域名/" class="archive-article-date">
-  	<time datetime="2018-11-29T06:53:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/08/CPP-day07/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++ day07 多态和头文件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/29/定制域名/">定制域名</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-函数模板"><span class="toc-number">1.</span> <span class="toc-text">1 函数模板</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-函数模板基本用法"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 函数模板基本用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-模板实现的机制"><span class="toc-number">1.2.</span> <span class="toc-text">1.4 模板实现的机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-模板的局限性和解决方法"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 模板的局限性和解决方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-类模板"><span class="toc-number">2.</span> <span class="toc-text">2 类模板</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-1-类模板基本用法"><span class="toc-number">3.</span> <span class="toc-text">2.1 类模板基本用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-2-类模板做函数参数"><span class="toc-number">4.</span> <span class="toc-text">2.2 类模板做函数参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-3-类模板的继承"><span class="toc-number">5.</span> <span class="toc-text">2.3 类模板的继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-4-类模板的头文件（分文件编写）"><span class="toc-number">6.</span> <span class="toc-text">2.4 类模板的头文件（分文件编写）</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/04/Hexo+Github搭建yilia主题的博客/" class="archive-article-date">
-  	<time datetime="2018-02-04T06:45:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-04</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/04/Hexo+Github搭建yilia主题的博客/">Hexo+Github搭建yilia主题的博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+  
+  
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'afe6966152deee6d73fa',
+  	clientSecret: '8aafe13329e7d11fa72e9bc19cb43ffd63092ab2',
+  	repo: 'Seaworth.github.io',
+  	owner: 'Seaworth',
+  	admin: ['Seaworth'],
+  	id: 'Sun Apr 14 2019 11:06:39 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+  
+  
 
 
           </div>
@@ -316,9 +425,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
