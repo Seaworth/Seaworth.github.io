@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://seaworth.github.io">
   <title>C++ day04 | Seaworth的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 静态成员在类定义中，成员包括成员变量和成员函数，这些成员可以用关键字static声明为静态的，称为静态成员。不管这个类创建了多少个对象，静态成员只有一个拷贝，这个拷贝被所有属于这个类的对象共享。">
+  <meta name="description" content="真正的光明绝不是没有黑暗的时间，只是永远不被黑暗掩蔽罢了。真正的英雄绝不是没有卑下的情操，只是永不被卑下的情操所屈服罢了。——《颠覆者》">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ day04">
 <meta property="og:url" content="http://seaworth.github.io/2019/03/04/CPP-day04/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
-<meta property="og:description" content="1 静态成员在类定义中，成员包括成员变量和成员函数，这些成员可以用关键字static声明为静态的，称为静态成员。不管这个类创建了多少个对象，静态成员只有一个拷贝，这个拷贝被所有属于这个类的对象共享。">
+<meta property="og:description" content="真正的光明绝不是没有黑暗的时间，只是永远不被黑暗掩蔽罢了。真正的英雄绝不是没有卑下的情操，只是永不被卑下的情操所屈服罢了。——《颠覆者》">
 <meta property="og:image" content="http://seaworth.github.io/2019/03/04/CPP-day04/1.png">
 <meta property="og:image" content="http://seaworth.github.io/2019/03/04/CPP-day04/2.png">
 <meta property="og:image" content="http://seaworth.github.io/2019/03/04/CPP-day04/3.png">
-<meta property="og:updated_time" content="2019-03-05T12:26:28.277Z">
+<meta property="og:updated_time" content="2019-04-14T08:47:14.025Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ day04">
-<meta name="twitter:description" content="1 静态成员在类定义中，成员包括成员变量和成员函数，这些成员可以用关键字static声明为静态的，称为静态成员。不管这个类创建了多少个对象，静态成员只有一个拷贝，这个拷贝被所有属于这个类的对象共享。">
+<meta name="twitter:description" content="真正的光明绝不是没有黑暗的时间，只是永远不被黑暗掩蔽罢了。真正的英雄绝不是没有卑下的情操，只是永不被卑下的情操所屈服罢了。——《颠覆者》">
 <meta name="twitter:image" content="http://seaworth.github.io/2019/03/04/CPP-day04/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Seaworth的博客" type="application/atom+xml">
@@ -170,7 +170,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-静态成员"><a href="#1-静态成员" class="headerlink" title="1 静态成员"></a>1 静态成员</h1><p>在类定义中，成员包括<strong>成员变量</strong>和<strong>成员函数</strong>，这些成员可以用关键字<strong><code>static</code></strong>声明为静态的，称为<strong>静态成员</strong>。<br>不管这个类创建了多少个对象，<strong>静态成员只有一个拷贝</strong>，这个拷贝被所有属于这个类的对象<strong>共享</strong>。<a id="more"></a></p>
+        <blockquote>
+<p>真正的光明绝不是没有黑暗的时间，只是永远不被黑暗掩蔽罢了。真正的英雄绝不是没有卑下的情操，只是永不被卑下的情操所屈服罢了。——《颠覆者》<a id="more"></a></p>
+</blockquote>
+<h1 id="1-静态成员"><a href="#1-静态成员" class="headerlink" title="1 静态成员"></a>1 静态成员</h1><p>在类定义中，成员包括<strong>成员变量</strong>和<strong>成员函数</strong>，这些成员可以用关键字<strong><code>static</code></strong>声明为静态的，称为<strong>静态成员</strong>。<br>不管这个类创建了多少个对象，<strong>静态成员只有一个拷贝</strong>，这个拷贝被所有属于这个类的对象<strong>共享</strong>。</p>
 <h2 id="1-1-静态成员变量"><a href="#1-1-静态成员变量" class="headerlink" title="1.1 静态成员变量"></a>1.1 静态成员变量</h2><p>类中的成员声明为<strong>static</strong>，这种成员称为<strong>静态成员变量</strong>。与一般的数据成员不同，无论建立多少个对象，都只有一个静态数据的拷贝。<strong>静态成员变量属于类，所有对象共享</strong>。</p>
 <blockquote>
 <p>静态成员变量在编译的阶段就分配内存，对象还没有建立时，就分配了空间。</p>
@@ -569,6 +572,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">win10安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">剑指</a>
               </li>
              
@@ -582,14 +593,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sqlite3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">win10安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教程</a>
               </li>
             
             <div class="clearfix"></div>
