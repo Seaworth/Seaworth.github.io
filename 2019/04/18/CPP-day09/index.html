@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://seaworth.github.io/2019/04/18/CPP-day09/1.png">
 <meta property="og:image" content="http://seaworth.github.io/2019/04/18/CPP-day09/2.png">
 <meta property="og:image" content="http://seaworth.github.io/2019/04/18/CPP-day09/3.png">
-<meta property="og:updated_time" content="2019-04-19T13:06:39.623Z">
+<meta property="og:updated_time" content="2019-04-21T08:48:31.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ day09 异常处理、标准IO流、文件读写">
 <meta name="twitter:description" content="我希望每个程序员都能够明白工作、技术、写代码这些并不是你存在的意义，而生活才是，你需要懂得生活，学会生活。  生活：尝试有节制和有规律地生活，程序员生涯绝不是一次冲刺跑，而是一场马拉松。 睡眠：请记住保证充足的睡眠将使你变得更加强大。 旅行：这能够让你发现和感受到新的东西和事物，而这些无法从电脑屏幕上获取。——《程序员的自我修养》">
@@ -182,7 +182,8 @@
 <p>向上类型转换和向下类型转化：如下图所示，父类在上，子类在下。父类对象向子类转换，称向下类型转换，不安全。子类对象向父类转换，称向上类型转换，安全。安全与不安全的界定：指针是否指向了未知的区域，如果有则不安全。</p>
 </blockquote>
 <p><strong>发生多态时，向上类型转换和向下类型转换总是安全的。因为一开始就给基类指针分配了派生类大小的内存空间，向上类型转换后，不会超出分配的内存空间，所以是安全的。</strong><br><img src="/2019/04/18/CPP-day09/1.png" title="向上向下类型转换"></p>
-<p>命名的强制类型转换<br>转换的形式如下：<br><em>cast-name<type>(expression);</type></em><br>其中，<em>type</em>是装换的目标类型，<em>expression</em>是要转换的值。<em>cast-name</em>是<strong>static_cast</strong>，<strong>dynamic_cast</strong>，<strong>const_cast</strong>，<strong>reinterpret_cast</strong>中的一种。<em>cast-name</em>指定了执行的是哪种转换。</p>
+<p>命名的强制类型转换<br>转换的形式如下：<br><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">cast</span>-name&lt;<span class="keyword">type</span>&gt;(expression);</span><br></pre></td></tr></table></figure></p>
+<p>其中，<em>type</em>是装换的目标类型，<em>expression</em>是要转换的值。<em>cast-name</em>是<strong>static_cast</strong>，<strong>dynamic_cast</strong>，<strong>const_cast</strong>，<strong>reinterpret_cast</strong>中的一种。<em>cast-name</em>指定了执行的是哪种转换。</p>
 <p><strong>静态转换static_cast</strong><br>任何具有明确定义的类型转换，只要不包含底层的const，都可以使用<em>static_cast</em>。当需要把一个较大的算数类型赋值给较小的类型时，static_cast非常有用。此时，强制类型转换告诉程序的读者和编译器：我们知道并且不在乎潜在的精度损失。</p>
 <p><strong>动态类型转换dynamic_cast</strong><br>基础类型都不可以转换，因为这会导致失去精度和不安全，都不让转换，非常严格。在进行下行转换的时候，<strong>dynamic_cast</strong>具有类型检查的功能，比static_cast更安全。</p>
 <p><strong>dynamic_cast</strong> 如果发生了多态，可以让基类转化为子类，向下转换，因为发生多态时，向上类型转换和向下类型转换总是安全的。</p>
@@ -520,10 +521,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IT资源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -533,6 +530,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IT资源</a>
               </li>
              
               <li class="article-tag-list-item">
