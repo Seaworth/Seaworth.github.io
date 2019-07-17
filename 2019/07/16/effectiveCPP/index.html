@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://seaworth.github.io/2019/07/16/effectiveCPP/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
 <meta property="og:description" content="你的时间有限，所以不要浪费时间去重复别人的生活。Your time is limited, so don’t waste it living someone else’s life.——斯蒂夫.乔布斯">
-<meta property="og:updated_time" content="2019-07-16T01:17:27.385Z">
+<meta property="og:updated_time" content="2019-07-17T01:09:11.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Effective C++ 笔记">
 <meta name="twitter:description" content="你的时间有限，所以不要浪费时间去重复别人的生活。Your time is limited, so don’t waste it living someone else’s life.——斯蒂夫.乔布斯">
@@ -286,6 +286,15 @@
 <li>你的新type有多么一般化？</li>
 <li>你真的需要一个新的type么？</li>
 </ul>
+<h1 id="条款20：以pass-by-reference-to-const替换pass-by-value"><a href="#条款20：以pass-by-reference-to-const替换pass-by-value" class="headerlink" title="条款20：以pass-by-reference-to-const替换pass-by-value"></a>条款20：以pass-by-reference-to-const替换pass-by-value</h1><ul>
+<li>尽量以pass-by-reference-to-const替换pass-by-value。前者通常比较高效，并可以避免切割问题。</li>
+<li>以上规则并不适用于内置类型，以及STL的迭代器和函数对象。对他们而言，pass-by-value往往比较适合。</li>
+</ul>
+<h1 id="条款21：必须返回对象时，别妄想返回其reference"><a href="#条款21：必须返回对象时，别妄想返回其reference" class="headerlink" title="条款21：必须返回对象时，别妄想返回其reference"></a>条款21：必须返回对象时，别妄想返回其reference</h1><p>绝不要返回pointer或reference指向一个local stack对象，或返回一个reference指向一个heap-allocated对象，或返回pointer或reference指向一个local static对象而有可能同时需要多个这样的对象。条款4已经为“在单线程环境中合理返回reference指向一个local static对象”提供了一份设计实例。</p>
+<h1 id="条款22：将成员变量声明为private"><a href="#条款22：将成员变量声明为private" class="headerlink" title="条款22：将成员变量声明为private"></a>条款22：将成员变量声明为private</h1><ul>
+<li>切记将成员变量声明为private。这可以赋予客户访问数据的一致性、可细微划分访问控制、允诺约束条件获得保证，并提供class作者以充分的实现弹性。</li>
+<li>protected并不比public更具封装性。private（提供封装）和其他（不提供封装）。</li>
+</ul>
 
       
       
@@ -423,7 +432,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#条款01：视C-为一个语言联邦"><span class="toc-number">1.</span> <span class="toc-text">条款01：视C++为一个语言联邦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款02：尽量以const，enum，inline替换-define"><span class="toc-number">2.</span> <span class="toc-text">条款02：尽量以const，enum，inline替换#define</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款03：尽可能使用const"><span class="toc-number">3.</span> <span class="toc-text">条款03：尽可能使用const</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款04：确定对象被使用前已先被初始化"><span class="toc-number">4.</span> <span class="toc-text">条款04：确定对象被使用前已先被初始化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款05：了解C-默默编写并调用了哪些函数"><span class="toc-number">5.</span> <span class="toc-text">条款05：了解C++默默编写并调用了哪些函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款06：若不想使用编译器自动生成的函数，就该明确拒绝"><span class="toc-number">6.</span> <span class="toc-text">条款06：若不想使用编译器自动生成的函数，就该明确拒绝</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款07：为多态基类声明virtual析构函数"><span class="toc-number">7.</span> <span class="toc-text">条款07：为多态基类声明virtual析构函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款08：别让异常逃离析构函数"><span class="toc-number">8.</span> <span class="toc-text">条款08：别让异常逃离析构函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款09：绝不在构造和析构过程中调用virtual函数"><span class="toc-number">9.</span> <span class="toc-text">条款09：绝不在构造和析构过程中调用virtual函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款10：让operator-返回一个reference-to-this"><span class="toc-number">10.</span> <span class="toc-text">条款10：让operator=返回一个reference to *this</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款11：在operator-中处理“自我赋值”"><span class="toc-number">11.</span> <span class="toc-text">条款11：在operator=中处理“自我赋值”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款12：复制对象时勿忘记每一个成分"><span class="toc-number">12.</span> <span class="toc-text">条款12：复制对象时勿忘记每一个成分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款13：以对象管理资源"><span class="toc-number">13.</span> <span class="toc-text">条款13：以对象管理资源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款14：在资源管理类中小心copying行为"><span class="toc-number">14.</span> <span class="toc-text">条款14：在资源管理类中小心copying行为</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款15：在资源管理类中提供对原始资源的访问"><span class="toc-number">15.</span> <span class="toc-text">条款15：在资源管理类中提供对原始资源的访问</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款16：成对使用new和delete时要采取相同的形式"><span class="toc-number">16.</span> <span class="toc-text">条款16：成对使用new和delete时要采取相同的形式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款17：以独立语句将newed指针置入智能指针"><span class="toc-number">17.</span> <span class="toc-text">条款17：以独立语句将newed指针置入智能指针</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款18：让接口容易被使用，不易被误用"><span class="toc-number">18.</span> <span class="toc-text">条款18：让接口容易被使用，不易被误用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款19：设计class犹如设计type"><span class="toc-number">19.</span> <span class="toc-text">条款19：设计class犹如设计type</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#条款01：视C-为一个语言联邦"><span class="toc-number">1.</span> <span class="toc-text">条款01：视C++为一个语言联邦</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款02：尽量以const，enum，inline替换-define"><span class="toc-number">2.</span> <span class="toc-text">条款02：尽量以const，enum，inline替换#define</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款03：尽可能使用const"><span class="toc-number">3.</span> <span class="toc-text">条款03：尽可能使用const</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款04：确定对象被使用前已先被初始化"><span class="toc-number">4.</span> <span class="toc-text">条款04：确定对象被使用前已先被初始化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款05：了解C-默默编写并调用了哪些函数"><span class="toc-number">5.</span> <span class="toc-text">条款05：了解C++默默编写并调用了哪些函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款06：若不想使用编译器自动生成的函数，就该明确拒绝"><span class="toc-number">6.</span> <span class="toc-text">条款06：若不想使用编译器自动生成的函数，就该明确拒绝</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款07：为多态基类声明virtual析构函数"><span class="toc-number">7.</span> <span class="toc-text">条款07：为多态基类声明virtual析构函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款08：别让异常逃离析构函数"><span class="toc-number">8.</span> <span class="toc-text">条款08：别让异常逃离析构函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款09：绝不在构造和析构过程中调用virtual函数"><span class="toc-number">9.</span> <span class="toc-text">条款09：绝不在构造和析构过程中调用virtual函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款10：让operator-返回一个reference-to-this"><span class="toc-number">10.</span> <span class="toc-text">条款10：让operator=返回一个reference to *this</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款11：在operator-中处理“自我赋值”"><span class="toc-number">11.</span> <span class="toc-text">条款11：在operator=中处理“自我赋值”</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款12：复制对象时勿忘记每一个成分"><span class="toc-number">12.</span> <span class="toc-text">条款12：复制对象时勿忘记每一个成分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款13：以对象管理资源"><span class="toc-number">13.</span> <span class="toc-text">条款13：以对象管理资源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款14：在资源管理类中小心copying行为"><span class="toc-number">14.</span> <span class="toc-text">条款14：在资源管理类中小心copying行为</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款15：在资源管理类中提供对原始资源的访问"><span class="toc-number">15.</span> <span class="toc-text">条款15：在资源管理类中提供对原始资源的访问</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款16：成对使用new和delete时要采取相同的形式"><span class="toc-number">16.</span> <span class="toc-text">条款16：成对使用new和delete时要采取相同的形式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款17：以独立语句将newed指针置入智能指针"><span class="toc-number">17.</span> <span class="toc-text">条款17：以独立语句将newed指针置入智能指针</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款18：让接口容易被使用，不易被误用"><span class="toc-number">18.</span> <span class="toc-text">条款18：让接口容易被使用，不易被误用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款19：设计class犹如设计type"><span class="toc-number">19.</span> <span class="toc-text">条款19：设计class犹如设计type</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款20：以pass-by-reference-to-const替换pass-by-value"><span class="toc-number">20.</span> <span class="toc-text">条款20：以pass-by-reference-to-const替换pass-by-value</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款21：必须返回对象时，别妄想返回其reference"><span class="toc-number">21.</span> <span class="toc-text">条款21：必须返回对象时，别妄想返回其reference</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条款22：将成员变量声明为private"><span class="toc-number">22.</span> <span class="toc-text">条款22：将成员变量声明为private</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -592,15 +601,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Qt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Qt</a>
               </li>
              
               <li class="article-tag-list-item">
