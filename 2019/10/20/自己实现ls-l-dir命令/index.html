@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://seaworth.github.io">
-  <title>Archives: 2019/1 | Seaworth的博客</title>
+  <title>自己实现ls -l dir命令 | Seaworth的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
-<meta name="keywords" content="python,machine learning,matlab,爬虫,读书,音乐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Seaworth的博客">
-<meta property="og:url" content="http://seaworth.github.io/archives/2019/01/index.html">
+  <meta name="description" content="时间永远是最短缺的，没有任何东西可以替代已失去的时间。有效的管理者与他人最大的区别，就是他们非常珍惜自己的时间。但是往往人最不擅长管理自己的时间。 【美】彼得·德鲁克《卓有成效的管理者》">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自己实现ls -l dir命令">
+<meta property="og:url" content="http://seaworth.github.io/2019/10/20/自己实现ls-l-dir命令/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
-<meta property="og:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta property="og:description" content="时间永远是最短缺的，没有任何东西可以替代已失去的时间。有效的管理者与他人最大的区别，就是他们非常珍惜自己的时间。但是往往人最不擅长管理自己的时间。 【美】彼得·德鲁克《卓有成效的管理者》">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://seaworth.github.io/2019/10/20/自己实现ls-l-dir命令/Snipaste_2019-10-20_15-01-35.png">
+<meta property="og:updated_time" content="2019-10-20T08:31:45.580Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Seaworth的博客">
-<meta name="twitter:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta name="twitter:title" content="自己实现ls -l dir命令">
+<meta name="twitter:description" content="时间永远是最短缺的，没有任何东西可以替代已失去的时间。有效的管理者与他人最大的区别，就是他们非常珍惜自己的时间。但是往往人最不擅长管理自己的时间。 【美】彼得·德鲁克《卓有成效的管理者》">
+<meta name="twitter:image" content="http://seaworth.github.io/2019/10/20/自己实现ls-l-dir命令/Snipaste_2019-10-20_15-01-35.png">
   
     <link rel="alternative" href="/atom.xml" title="Seaworth的博客" type="application/atom+xml">
   
@@ -154,220 +157,221 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-自己实现ls-l-dir命令" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      自己实现ls -l dir命令
+    </h1>
+  
+
+        
+        <a href="/2019/10/20/自己实现ls-l-dir命令/" class="archive-article-date">
+  	<time datetime="2019-10-20T03:25:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-20</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote><p>时间永远是最短缺的，没有任何东西可以替代已失去的时间。有效的管理者与他人最大的区别，就是他们非常珍惜自己的时间。但是往往人最不擅长管理自己的时间。</p>
+<footer><strong>【美】彼得·德鲁克</strong><cite>《卓有成效的管理者》</cite></footer></blockquote>
+<a id="more"></a>
+<blockquote><p>本次要实现的功能是ls -l dir，就是罗列出dir文件夹下的所有文件的详细信息，要实现这个功能需要学习stat、opendir、readdir、closedir函数。stat函数主要用来获取每个文件或文件夹的相关属性，dir相关的三个函数主要用来获取文件夹下的所有文件，然后再对每个文件获取相关的属性，实现的功能如下图所示。</p>
+</blockquote>
+<img src="/2019/10/20/自己实现ls-l-dir命令/Snipaste_2019-10-20_15-01-35.png" title="This is an image">
+<h1 id="1-相关函数"><a href="#1-相关函数" class="headerlink" title="1.相关函数"></a>1.相关函数</h1><h2 id="1-1-stat函数"><a href="#1-1-stat函数" class="headerlink" title="1.1 stat函数"></a>1.1 stat函数</h2><p>在Linux终端查看stat函数的说明，使用<code>man 2 stat</code>。stat函数需要包含的头文件和函数声明如下。<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> stat(<span class="keyword">const</span> char *pathname, struct stat *buf)<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p>功能：调用stat，得到文件相关的属性<br>描述：<br>pathname，文件或路径的名称<br>buf，stat结构体的指针<br><figure class="highlight cpp"><figcaption><span>a stat structure</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">stat</span> &#123;</span></span><br><span class="line">   <span class="keyword">dev_t</span>     st_dev;         <span class="comment">/* ID of device containing file */</span></span><br><span class="line">   <span class="keyword">ino_t</span>     st_ino;         <span class="comment">/* inode number */</span></span><br><span class="line">   <span class="keyword">mode_t</span>    st_mode;        <span class="comment">/* protection */</span></span><br><span class="line">   <span class="keyword">nlink_t</span>   st_nlink;       <span class="comment">/* number of hard links */</span></span><br><span class="line">   <span class="keyword">uid_t</span>     st_uid;         <span class="comment">/* user ID of owner */</span></span><br><span class="line">   <span class="keyword">gid_t</span>     st_gid;         <span class="comment">/* group ID of owner */</span></span><br><span class="line">   <span class="keyword">dev_t</span>     st_rdev;        <span class="comment">/* device ID (if special file) */</span></span><br><span class="line">   <span class="keyword">off_t</span>     st_size;        <span class="comment">/* total size, in bytes */</span></span><br><span class="line">   <span class="keyword">blksize_t</span> st_blksize;     <span class="comment">/* blocksize for filesystem I/O */</span></span><br><span class="line">   <span class="keyword">blkcnt_t</span>  st_blocks;      <span class="comment">/* number of 512B blocks allocated */</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">/* Since Linux 2.6, the kernel supports nanosecond</span></span><br><span class="line"><span class="comment">	  precision for the following timestamp fields.</span></span><br><span class="line"><span class="comment">	  For the details before Linux 2.6, see NOTES. */</span></span><br><span class="line"></span><br><span class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">timespec</span> <span class="title">st_atim</span>;</span>  <span class="comment">/* time of last access */</span></span><br><span class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">timespec</span> <span class="title">st_mtim</span>;</span>  <span class="comment">/* time of last modification */</span></span><br><span class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">timespec</span> <span class="title">st_ctim</span>;</span>  <span class="comment">/* time of last status change */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> st_atime st_atim.tv_sec      <span class="comment">/* Backward compatibility */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> st_mtime st_mtim.tv_sec</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> st_ctime st_ctim.tv_sec</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-2-opendir函数"><a href="#1-2-opendir函数" class="headerlink" title="1.2 opendir函数"></a>1.2 opendir函数</h2><p>在Linux终端查看opendir函数的说明，使用<code>man opendir</code>。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;dirent.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">DIR *<span class="title">opendir</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *name)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>功能：打开一个文件夹。<br>描述：<br>name，文件的名字<br>返回值是一个指向文件流的指针。</p>
+<h2 id="1-3-readdir函数"><a href="#1-3-readdir函数" class="headerlink" title="1.3 readdir函数"></a>1.3 readdir函数</h2><p>在Linux终端查看readdir函数的说明，使用<code>man readdir</code>。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;dirent.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">struct dirent *<span class="title">readdir</span><span class="params">(DIR *dirp)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>功能：读文件夹<br>描述：<br>dirp，一个指向文件流的指针，和opendir函数的返回值是同一个类型。<br>dirent，dirent结构体的指针<br><figure class="highlight cpp"><figcaption><span>dirent structure</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">dirent</span> &#123;</span></span><br><span class="line">   <span class="keyword">ino_t</span>          d_ino;       <span class="comment">/* inode number */</span></span><br><span class="line">   <span class="keyword">off_t</span>          d_off;       <span class="comment">/* not an offset; see NOTES */</span></span><br><span class="line">   <span class="keyword">unsigned</span> <span class="keyword">short</span> d_reclen;    <span class="comment">/* length of this record */</span></span><br><span class="line">   <span class="keyword">unsigned</span> <span class="keyword">char</span>  d_type;      <span class="comment">/* type of file; not supported</span></span><br><span class="line"><span class="comment">								  by all filesystem types */</span></span><br><span class="line">   <span class="keyword">char</span>           d_name[<span class="number">256</span>]; <span class="comment">/* filename */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-4-closedir函数"><a href="#1-4-closedir函数" class="headerlink" title="1.4 closedir函数"></a>1.4 closedir函数</h2><p>在Linux终端查看closedir函数的说明，使用<code>man closedir</code>。<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;dirent.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> closedir(DIR *dirp)<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p>功能：关闭文件夹。<br>描述：<br>dirp，文件流的指针。</p>
+<h1 id="2-功能实现"><a href="#2-功能实现" class="headerlink" title="2.功能实现"></a>2.功能实现</h1><p>要实现ls -l dir的功能，就要实现两个函数，一个是DirCount函数，遍历当前目录下的所有文件。第二是GetFileInfo函数，利用stat函数，取得传入该函数的文件的属性，并连接成字符串，打印出来。</p>
+<figure class="highlight cpp"><figcaption><span>13_homework.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;grp.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;pwd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;dirent.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GetFileInfo</span><span class="params">(<span class="keyword">char</span>* filename)</span></span>;</span><br><span class="line"><span class="comment">//目录计数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">DirCount</span><span class="params">(<span class="keyword">char</span> *dirname)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//	printf("%s\n", dirname);</span></span><br><span class="line">	<span class="comment">//打开目录</span></span><br><span class="line">	DIR *dirp = opendir(dirname);</span><br><span class="line">	<span class="keyword">if</span>(dirp == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		perror(<span class="string">"opendir err"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//循环读目录，如果是普通文件，count++，如果是目录，继续调用DirCount</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">dirent</span> *<span class="title">dentp</span> = <span class="title">NULL</span>;</span></span><br><span class="line">	<span class="keyword">while</span>( (dentp = readdir(dirp)) !=<span class="literal">NULL</span> ) </span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">strcmp</span>(<span class="string">"."</span>, dentp-&gt;d_name)==<span class="number">0</span> || <span class="built_in">strcmp</span>(<span class="string">".."</span>, dentp-&gt;d_name)==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">continue</span>;<span class="comment">//如果是当前目录和上一级目录，跳过</span></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		GetFileInfo(dentp-&gt;d_name);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//关闭目录</span></span><br><span class="line">	closedir(dirp);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GetFileInfo</span><span class="params">(<span class="keyword">char</span>* filename)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//调用stat，得到文件属性信息</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">sb</span>;</span></span><br><span class="line">	stat(filename,&amp;sb);</span><br><span class="line">	<span class="keyword">char</span> stmode[<span class="number">11</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">memset</span>(stmode,<span class="string">'-'</span>,<span class="keyword">sizeof</span>(stmode)<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(S_ISREG(sb.st_mode)) stmode[<span class="number">0</span>]=<span class="string">'-'</span>;</span><br><span class="line">	<span class="keyword">if</span>(S_ISDIR(sb.st_mode)) stmode[<span class="number">0</span>]=<span class="string">'d'</span>;</span><br><span class="line">	<span class="keyword">if</span>(S_ISCHR(sb.st_mode)) stmode[<span class="number">0</span>]=<span class="string">'c'</span>;</span><br><span class="line">	<span class="keyword">if</span>(S_ISBLK(sb.st_mode)) stmode[<span class="number">0</span>]=<span class="string">'b'</span>;</span><br><span class="line">	<span class="keyword">if</span>(S_ISFIFO(sb.st_mode)) stmode[<span class="number">0</span>]=<span class="string">'p'</span>;</span><br><span class="line">	<span class="keyword">if</span>(S_ISLNK(sb.st_mode)) stmode[<span class="number">0</span>]=<span class="string">'l'</span>;</span><br><span class="line">	<span class="keyword">if</span>(S_ISSOCK(sb.st_mode)) stmode[<span class="number">0</span>]=<span class="string">'s'</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//解析权限</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(sb.st_mode &amp; S_IRUSR)</span><br><span class="line">	&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> 0</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,S_IRUSR);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sb.st_mode);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,(sb.st_mode&amp;S_IRUSR));</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%x\n"</span>,<span class="number">0b101</span>&amp;<span class="number">0b101</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">		stmode[<span class="number">1</span>]=<span class="string">'r'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(sb.st_mode &amp; S_IWUSR) stmode[<span class="number">2</span>]=<span class="string">'w'</span>;</span><br><span class="line">	<span class="keyword">if</span>(sb.st_mode &amp; S_IXUSR) stmode[<span class="number">3</span>]=<span class="string">'x'</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(sb.st_mode &amp; S_IRGRP) stmode[<span class="number">4</span>]=<span class="string">'r'</span>;</span><br><span class="line">	<span class="keyword">if</span>(sb.st_mode &amp; S_IWGRP) stmode[<span class="number">5</span>]=<span class="string">'w'</span>;</span><br><span class="line">	<span class="keyword">if</span>(sb.st_mode &amp; S_IXGRP) stmode[<span class="number">6</span>]=<span class="string">'x'</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(sb.st_mode &amp; S_IROTH) stmode[<span class="number">7</span>]=<span class="string">'r'</span>;</span><br><span class="line">	<span class="keyword">if</span>(sb.st_mode &amp; S_IWOTH) stmode[<span class="number">8</span>]=<span class="string">'w'</span>;</span><br><span class="line">	<span class="keyword">if</span>(sb.st_mode &amp; S_IXOTH) stmode[<span class="number">9</span>]=<span class="string">'x'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">//测试memset的用法</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> 0</span></span><br><span class="line">	<span class="keyword">char</span> str[] = <span class="string">"almost every programmer should know memset!"</span>;</span><br><span class="line">	<span class="built_in">puts</span> (str);</span><br><span class="line">	<span class="built_in">memset</span> (str,<span class="string">'-'</span>,<span class="number">6</span>);</span><br><span class="line">	<span class="built_in">puts</span> (str);	</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">tm</span> *<span class="title">filetm</span> = <span class="title">localtime</span>(&amp;<span class="title">sb</span>.<span class="title">st_atim</span>.<span class="title">tv_sec</span>);</span></span><br><span class="line">	<span class="keyword">char</span>* str;</span><br><span class="line">	str=ctime(&amp;sb.st_mtime);</span><br><span class="line">	<span class="keyword">char</span> timebuf[<span class="number">13</span>] =&#123;<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="built_in">strncpy</span>(timebuf,str+<span class="number">4</span>,<span class="number">12</span>);</span><br><span class="line">	timebuf[<span class="number">13</span>] = <span class="string">'\0'</span>;<span class="comment">//要添加结束符，不然打印会出现乱码</span></span><br><span class="line">	<span class="comment">//puts(timebuf);</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s %ld %s %s %6ld %12s %s\n"</span>,stmode,sb.st_nlink,getpwuid(sb.st_uid)-&gt;pw_name,getgrgid(sb.st_gid)-&gt;gr_name,sb.st_size,timebuf,filename);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>*argv [])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(argc !=<span class="number">2</span> )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"./13_homework filename\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	DirCount(argv[<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相关的Makefile文件。<br><figure class="highlight makefile"><figcaption><span>makefile</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">srcFiles := <span class="variable">$(<span class="built_in">wildcard</span> *.c)</span></span><br><span class="line">objects := <span class="variable">$(<span class="built_in">patsubst</span> %.c,%,<span class="variable">$(srcFiles)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="section">all:<span class="variable">$(objects)</span></span></span><br><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>:all</span></span><br><span class="line"></span><br><span class="line"><span class="section">%:%.c</span></span><br><span class="line">	gcc <span class="variable">$^</span> -o <span class="variable">$@</span> -g</span><br><span class="line"></span><br><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>:clean</span></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	-rm -f <span class="variable">$(objects)</span></span><br></pre></td></tr></table></figure><br>然后再终端执行<code>make</code>，生成执行文件。<br><figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">seaworth@ubuntu:~/Desktop/file_dir$ make</span><br><span class="line">gcc 13_homework.c -o 13_homework -g</span><br><span class="line">seaworth@ubuntu:~/Desktop/file_dir$ ./13_homework ./</span><br><span class="line">-rw-rw-r--<span class="number"> 2 </span>seaworth seaworth   <span class="number"> 370 </span>Oct<span class="number"> 12 </span>10:46 hello.txt</span><br><span class="line">-rwxrwxr-x<span class="number"> 1 </span>seaworth seaworth <span class="number"> 11304 </span>Oct<span class="number"> 20 </span>16:28 02_ls</span><br><span class="line">-rw-rw-r--<span class="number"> 1 </span>seaworth seaworth  <span class="number"> 1861 </span>Oct<span class="number"> 15 </span>19:10 02_ls.c</span><br><span class="line">-rwxrwxr-x<span class="number"> 1 </span>seaworth seaworth <span class="number"> 10112 </span>Oct<span class="number"> 20 </span>16:28 01_openmax</span><br><span class="line">-rw-rw-r--<span class="number"> 1 </span>seaworth seaworth   <span class="number"> 246 </span>Oct<span class="number"> 12 </span>11:05 06_readlink_unlink.c</span><br><span class="line">-rw-rw-r--<span class="number"> 1 </span>seaworth seaworth   <span class="number"> 137 </span>Oct<span class="number"> 12 </span>15:38 10_mkdir.c</span><br><span class="line">-rwxrwxr-x<span class="number"> 1 </span>seaworth seaworth  <span class="number"> 9752 </span>Oct<span class="number"> 20 </span>16:28 10_mkdir</span><br><span class="line">-rw-rw-r--<span class="number"> 1 </span>seaworth seaworth   <span class="number"> 237 </span>Sep<span class="number"> 29 </span>17:04 stat.c</span><br></pre></td></tr></table></figure></p>
+
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢你请我吃糖果！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/21/面向对象方法/" class="archive-article-date">
-  	<time datetime="2019-01-21T13:20:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/21/面向对象方法/">面向对象方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://seaworth.github.io/2019/10/20/自己实现ls-l-dir命令/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/20/剑指Offer-2/" class="archive-article-date">
-  	<time datetime="2019-01-20T00:50:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/16/IT资源/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IT资源 持续更新</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/20/剑指Offer-2/">剑指Offer-2 圆圈中最后剩下的数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-相关函数"><span class="toc-number">1.</span> <span class="toc-text">1.相关函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-stat函数"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 stat函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-opendir函数"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 opendir函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-readdir函数"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 readdir函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-closedir函数"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 closedir函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-功能实现"><span class="toc-number">2.</span> <span class="toc-text">2.功能实现</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/18/剑指Offer-1/" class="archive-article-date">
-  	<time datetime="2019-01-18T12:38:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-18</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/18/剑指Offer-1/">剑指Offer-1 和为S的两个数字</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/11/CPP学习路线/" class="archive-article-date">
-  	<time datetime="2019-01-11T14:24:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/11/CPP学习路线/">C++学习路线</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/02/父亲的寄语/" class="archive-article-date">
-  	<time datetime="2019-01-02T13:55:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/02/父亲的寄语/">父亲的寄语</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
 
-    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'afe6966152deee6d73fa',
+  	clientSecret: '8aafe13329e7d11fa72e9bc19cb43ffd63092ab2',
+  	repo: 'Seaworth.github.io',
+  	owner: 'Seaworth',
+  	admin: ['Seaworth'],
+  	id: 'Sun Oct 20 2019 11:25:50 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+  
+  
 
 
           </div>
@@ -401,8 +405,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
