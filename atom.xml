@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://seaworth.github.io/"/>
-  <updated>2019-10-26T13:40:14.878Z</updated>
+  <updated>2019-11-02T13:40:18.569Z</updated>
   <id>http://seaworth.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常用的数据结构</title>
+    <link href="http://seaworth.github.io/2019/11/02/%E5%B8%B8%E7%94%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <id>http://seaworth.github.io/2019/11/02/常用的数据结构/</id>
+    <published>2019-11-02T12:28:31.000Z</published>
+    <updated>2019-11-02T13:40:18.569Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>如果你交给某人一个程序，你讲折磨他一整天；如果你教给某人如何编写程序，你将折磨它一辈子。</p><footer><strong>程杰</strong><cite>《大话数据结构》</cite></footer></blockquote><a id="more"></a><p>算法和数据结构最能体现一个人的基本功。基本功扎实的人，无论是做工程还是去做算法，都不会差到哪里去。不是科班出身的我，却想扎进软件开发领域，得把这些数据结构和算法补起来，成为一个合格的程序员。这篇博客总结了常见的数据结构，包括数组、字符串、链表、栈、双端队列、树，以及相对应的LeetCode上的题目，练练手，能够巩固，深化自己对数据结构的理解。废话不多说开始吧！</p><h1 id="0-算法基本概念"><a href="#0-算法基本概念" class="headerlink" title="0.算法基本概念"></a>0.算法基本概念</h1><blockquote><p>算法是解决特定问题求解步骤的描述，在计算机中表示为指令的有限序列，并且每条指令表示一个或多个操作。</p></blockquote><p>那么如何评价一个算法的好坏呢？一个好的算法具有的特点如下：</p><ol><li>正确性</li><li>高效率</li><li>低存储</li><li>可读性</li><li>健壮性<br>算法的效率主要是指算法的时间复杂度和空间复杂度。<h2 id="0-1-时间复杂度"><a href="#0-1-时间复杂度" class="headerlink" title="0.1 时间复杂度"></a>0.1 时间复杂度</h2>我们一般采用大O()来记录算法的时间复杂度，称之为大O记法。<blockquote><p>推导大O阶方法<br>1.用常数1取代运行时间中的所有加法常数<br>2.在运行次数函数中，只保留最高阶项，其他省略<br>3.如果最高阶项的系数不是1，则将其系数改为1</p></blockquote>常用的时间复杂度所耗费的时间从小到大依次是：<br>O(1)&lt;O(logn)&lt;O(n)&lt;O(nlogn)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(2!)&lt;O(n^n)<br>最坏情况的运行时间是一种保证，运行时间不会更差了。在实际中，这是一种最重要的需求，通常，没有特别说明，提到的运行时间都是指最坏情况的运行时间。</li></ol><h2 id="0-2-空间复杂度"><a href="#0-2-空间复杂度" class="headerlink" title="0.2 空间复杂度"></a>0.2 空间复杂度</h2><p>算法的空间复杂度指的是实现算法所需要的存储空间。<br>通常，我们使用时间复杂度来表示运行时间的需求，使用空间复杂度指空间需求。当不用限定词时，“复杂度”通常指<strong>时间复杂度</strong>。</p><h1 id="1-数组和字符串"><a href="#1-数组和字符串" class="headerlink" title="1.数组和字符串"></a>1.数组和字符串</h1><p>数组和字符串是顺序存储结构，指的是用一段地址连续的存储单元依次存储数据元素。要掌握一种数据结构，就必须要懂得分析它的优点和缺点。<br>数组的优点：</p><ul><li>结构简单</li><li>可以在O(1)时间内根据下标<code>index</code>存取某个元素</li></ul><p>数组的缺点：</p><ul><li>插入和删除操作需要移动大量的元素，耗费O(n)的时间</li><li>查询某个元素时，需要遍历整个数组，耗费O(n)的时间（n是指元素的个数）</li><li>构建时必须分配一段连续的空间，容易造成空间的碎片</li></ul><p>LeetCode上数组和字符串的题有：<br>LeetCode344-反转字符串<br>LeetCode242-字母异位词</p><h1 id="2-链表"><a href="#2-链表" class="headerlink" title="2.链表"></a>2.链表</h1><p>单链表：链表中每个节点元素实际上都是一个单独的对象，包含数据域和指针域，数据域存放元素的值，指针域存放相邻下一个节点的位置。<br>双链表：与单链表不同在于，指针域存放了直接后继和直接前驱的位置。<br>链表的优点：</p><ul><li>能够灵活分配内存空间</li><li>能够在O(1)时间内删除或添加元素，单链表是在该元素的前一个元素已知的情况下。双链表中已知该元素的后一个元素，同样也可以在O(1)时间内增删元素</li></ul><p>链表的缺点：</p><ul><li>不能像数组一样通过下标快速读取元素，只能通过头指针开始一个个读取</li><li>查询第k个元素需要O(k)的时间<br><strong>应用场景</strong>：如果要解决的问题里面需要很多快速查询，链表可能并不适合；如果遇到的问题中，数据的元素个数不确定，而且需要经常进行数据的添加和删除，那么链表会比较合适。而如果数据元素大小确定，删除插入的操作并不多，那么数组可能更适合。<br>LeetCode练习：<br>LeetCode206-反转链表<br>LeetCode141-环形链表<br>LeetCode876-链表的中间结点<br>LeetCode25-K个一组翻转链表</li></ul><h1 id="3-栈"><a href="#3-栈" class="headerlink" title="3.栈"></a>3.栈</h1><h1 id="4-双端队列"><a href="#4-双端队列" class="headerlink" title="4.双端队列"></a>4.双端队列</h1><h1 id="5-树"><a href="#5-树" class="headerlink" title="5.树"></a>5.树</h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;&lt;p&gt;如果你交给某人一个程序，你讲折磨他一整天；如果你教给某人如何编写程序，你将折磨它一辈子。&lt;/p&gt;
+&lt;footer&gt;&lt;strong&gt;程杰&lt;/strong&gt;&lt;cite&gt;《大话数据结构》&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="数据结构" scheme="http://seaworth.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="LeetCode" scheme="http://seaworth.github.io/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo-yilia主题优化</title>
