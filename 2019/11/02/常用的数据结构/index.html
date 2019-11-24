@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Seaworth的博客">
 <meta property="og:description" content="如果你交给某人一个程序，你讲折磨他一整天；如果你教给某人如何编写程序，你将折磨它一辈子。 程杰《大话数据结构》">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-02T13:40:18.569Z">
+<meta property="og:updated_time" content="2019-11-24T13:22:07.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用的数据结构">
 <meta name="twitter:description" content="如果你交给某人一个程序，你讲折磨他一整天；如果你教给某人如何编写程序，你将折磨它一辈子。 程杰《大话数据结构》">
@@ -225,9 +225,21 @@
 <p>链表的缺点：</p>
 <ul>
 <li>不能像数组一样通过下标快速读取元素，只能通过头指针开始一个个读取</li>
-<li>查询第k个元素需要O(k)的时间<br><strong>应用场景</strong>：如果要解决的问题里面需要很多快速查询，链表可能并不适合；如果遇到的问题中，数据的元素个数不确定，而且需要经常进行数据的添加和删除，那么链表会比较合适。而如果数据元素大小确定，删除插入的操作并不多，那么数组可能更适合。<br>LeetCode练习：<br>LeetCode206-反转链表<br>LeetCode141-环形链表<br>LeetCode876-链表的中间结点<br>LeetCode25-K个一组翻转链表</li>
+<li>查询第k个元素需要O(k)的时间<br><strong>应用场景</strong>：如果要解决的问题里面需要很多快速查询，链表可能并不适合；如果遇到的问题中，数据的元素个数不确定，而且需要经常进行数据的添加和删除，那么链表会比较合适。而如果数据元素大小确定，删除插入的操作并不多，那么数组可能更适合。<br>LeetCode上<strong>链表</strong>的练习：<br>LeetCode206-反转链表<br>LeetCode141-环形链表<br>LeetCode876-链表的中间结点<br>LeetCode25-K个一组翻转链表</li>
 </ul>
-<h1 id="3-栈"><a href="#3-栈" class="headerlink" title="3.栈"></a>3.栈</h1><h1 id="4-双端队列"><a href="#4-双端队列" class="headerlink" title="4.双端队列"></a>4.双端队列</h1><h1 id="5-树"><a href="#5-树" class="headerlink" title="5.树"></a>5.树</h1>
+<h1 id="3-栈"><a href="#3-栈" class="headerlink" title="3.栈"></a>3.栈</h1><p>栈：限定仅在表尾进行插入和删除的线性表。能够插入和删除的一端称为栈顶，另一端为栈底。栈最大的一个特点就是<strong>后进先出（LIFO）</strong>，并且压栈和出栈的时间时间复杂度都是O(1)。</p>
+<p>LeetCode上栈的练习：<br>LeetCode20-有效的括号<br>LeetCode739-每日温度</p>
+<h1 id="4-双端队列"><a href="#4-双端队列" class="headerlink" title="4.双端队列"></a>4.双端队列</h1><p>队列：一种先进先出（FIFO）的线性表，只能在队尾插入元素，只能在队头删除元素。<br>双端队列：与队列不同的是，能够在双端队列的头和尾进行插入和删除操作，时间复杂度为O(1)。<br><strong>应用场景</strong>：双端队列常用来实现一个长度动态变化的窗口或者连续区间。</p>
+<p>LeetCode上队列的练习：<br>LeetCode239-滑动窗口的最大值</p>
+<h1 id="5-树"><a href="#5-树" class="headerlink" title="5.树"></a>5.树</h1><p>前面几种数据结构都是一对一的线性结构，而<strong>树</strong>是一种一对多的数据结构。在树中，常常用到<strong>递归</strong>的思想。</p>
+<p>常见树的类型有：普通二叉树、平衡二叉树、完全二叉树、二叉搜索树、四叉树、多叉树。<br>特殊的树有：红黑树、自平衡二叉树</p>
+<p>关于树的考题，主要重点在于树的遍历和序列化。<br>树的结构体定义：<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/* A binary tree <span class="keyword">node</span> <span class="title">has</span> data, pointer to left child </span><br><span class="line"><span class="keyword">and</span> a pointer to right child */</span><br><span class="line">struct <span class="keyword">Node</span> <span class="title"></span></span><br><span class="line"><span class="title">&#123; </span></span><br><span class="line"><span class="title">    int</span> data; </span><br><span class="line">    struct <span class="keyword">Node</span><span class="title">* left</span>, *right; </span><br><span class="line">    <span class="keyword">Node</span><span class="title">(int</span> data) </span><br><span class="line">    &#123; </span><br><span class="line">        this-&gt;data = data; </span><br><span class="line">        left = right = NULL; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-1-前序遍历"><a href="#5-1-前序遍历" class="headerlink" title="5.1 前序遍历"></a>5.1 前序遍历</h2><p>方法：若二叉树为空，则返回NULL。否则先访问根节点，再访问左子树，最后访问右子树。这是一个不断递归的过程。树的结构体定义如下：<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/* Given a binary tree, print its nodes <span class="keyword">in</span> preorder*/</span><br><span class="line">void printPreorder(struct <span class="keyword">Node</span><span class="title">* node</span>) </span><br><span class="line">&#123; </span><br><span class="line">    if (<span class="keyword">node</span> <span class="title">== NULL</span>) </span><br><span class="line">        return; </span><br><span class="line">  </span><br><span class="line">    /* first print data of <span class="keyword">node</span> <span class="title">*/</span></span><br><span class="line"><span class="title">    cout</span> <span class="tag">&lt;&lt; node-&gt;</span>data <span class="tag">&lt;&lt; " "; </span></span><br><span class="line"><span class="tag">  </span></span><br><span class="line"><span class="tag">    /* then recur on left sutree */</span></span><br><span class="line"><span class="tag">    printPreorder(node-&gt;</span>left);  </span><br><span class="line">  </span><br><span class="line">    /* now recur on right subtree */</span><br><span class="line">    printPreorder(<span class="keyword">node</span><span class="title">-&gt;right</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-2-中序遍历"><a href="#5-2-中序遍历" class="headerlink" title="5.2 中序遍历"></a>5.2 中序遍历</h2><p>方法：先访问左子树，在访问根节点，最后访问右子树，在访问左右子树的时候，也是先访问子树的左边，再访问子树的根节点，最后访问子树的右边。<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/* Given a binary tree, print its nodes <span class="keyword">in</span> inorder*/</span><br><span class="line">void printInorder(struct <span class="keyword">Node</span><span class="title">* node</span>) </span><br><span class="line">&#123; </span><br><span class="line">    if (<span class="keyword">node</span> <span class="title">== NULL</span>) </span><br><span class="line">        return; </span><br><span class="line">  </span><br><span class="line">    /* first recur on left child */</span><br><span class="line">    printInorder(<span class="keyword">node</span><span class="title">-&gt;left</span>); </span><br><span class="line">  </span><br><span class="line">    /* then print the data of <span class="keyword">node</span> <span class="title">*/</span></span><br><span class="line"><span class="title">    cout</span> <span class="tag">&lt;&lt; node-&gt;</span>data <span class="tag">&lt;&lt; " "; </span></span><br><span class="line"><span class="tag">  </span></span><br><span class="line"><span class="tag">    /* now recur on right child */</span></span><br><span class="line"><span class="tag">    printInorder(node-&gt;</span>right); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-3-后序遍历"><a href="#5-3-后序遍历" class="headerlink" title="5.3 后序遍历"></a>5.3 后序遍历</h2><p>方法：先访问左子树，再访问右子树，最后访问根节点。<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/* Given a binary tree, print its nodes according to the </span><br><span class="line"><span class="string">"bottom-up"</span> postorder traversal. */</span><br><span class="line">void printPostorder(struct <span class="keyword">Node</span><span class="title">* node</span>) </span><br><span class="line">&#123; </span><br><span class="line">    if (<span class="keyword">node</span> <span class="title">== NULL</span>) </span><br><span class="line">        return; </span><br><span class="line">  </span><br><span class="line">    // first recur on left subtree </span><br><span class="line">    printPostorder(<span class="keyword">node</span><span class="title">-&gt;left</span>); </span><br><span class="line">  </span><br><span class="line">    // then recur on right subtree </span><br><span class="line">    printPostorder(<span class="keyword">node</span><span class="title">-&gt;right</span>); </span><br><span class="line">  </span><br><span class="line">    // now deal with the <span class="keyword">node</span> <span class="title"></span></span><br><span class="line"><span class="title">    cout</span> <span class="tag">&lt;&lt; node-&gt;</span>data <span class="tag">&lt;&lt; " "; </span></span><br><span class="line"><span class="tag">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>LeetCode中树的练习有：<br>LeetCode938-二叉搜索树的范围和<br>LeetCode230-二叉搜索树中第K小的元素</p>
+<h1 id="6-参考"><a href="#6-参考" class="headerlink" title="6 参考"></a>6 参考</h1><p><a href="https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/" target="_blank" rel="noopener">Tree Traversals (Inorder, Preorder and Postorder)</a></p>
+
       
       
         <div class="page-reward">
@@ -368,7 +380,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-算法基本概念"><span class="toc-number">1.</span> <span class="toc-text">0.算法基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-1-时间复杂度"><span class="toc-number">1.1.</span> <span class="toc-text">0.1 时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-2-空间复杂度"><span class="toc-number">1.2.</span> <span class="toc-text">0.2 空间复杂度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-数组和字符串"><span class="toc-number">2.</span> <span class="toc-text">1.数组和字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-链表"><span class="toc-number">3.</span> <span class="toc-text">2.链表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-栈"><span class="toc-number">4.</span> <span class="toc-text">3.栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-双端队列"><span class="toc-number">5.</span> <span class="toc-text">4.双端队列</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-树"><span class="toc-number">6.</span> <span class="toc-text">5.树</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-算法基本概念"><span class="toc-number">1.</span> <span class="toc-text">0.算法基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-1-时间复杂度"><span class="toc-number">1.1.</span> <span class="toc-text">0.1 时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-2-空间复杂度"><span class="toc-number">1.2.</span> <span class="toc-text">0.2 空间复杂度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-数组和字符串"><span class="toc-number">2.</span> <span class="toc-text">1.数组和字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-链表"><span class="toc-number">3.</span> <span class="toc-text">2.链表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-栈"><span class="toc-number">4.</span> <span class="toc-text">3.栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-双端队列"><span class="toc-number">5.</span> <span class="toc-text">4.双端队列</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-树"><span class="toc-number">6.</span> <span class="toc-text">5.树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-前序遍历"><span class="toc-number">6.1.</span> <span class="toc-text">5.1 前序遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-中序遍历"><span class="toc-number">6.2.</span> <span class="toc-text">5.2 中序遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-后序遍历"><span class="toc-number">6.3.</span> <span class="toc-text">5.3 后序遍历</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-参考"><span class="toc-number">7.</span> <span class="toc-text">6 参考</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -559,10 +571,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">MATLAB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Qt</a>
               </li>
              
@@ -591,15 +599,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">电力系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">socket</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sqlite3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">电力系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">MATLAB</a>
               </li>
             
             <div class="clearfix"></div>
@@ -760,5 +772,5 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":200,"height":400,"hOffset":50,"vOffset":-40},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":70,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>
