@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://seaworth.github.io/"/>
-  <updated>2019-11-24T13:22:07.501Z</updated>
+  <updated>2019-12-02T13:57:33.007Z</updated>
   <id>http://seaworth.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>论文写作工具</title>
+    <link href="http://seaworth.github.io/2019/12/02/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7/"/>
+    <id>http://seaworth.github.io/2019/12/02/论文写作工具/</id>
+    <published>2019-12-02T12:59:48.000Z</published>
+    <updated>2019-12-02T13:57:33.007Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>工欲善其事，必先利其器。</p><footer><strong>《论语·卫灵公》</strong></footer></blockquote><a id="more"></a><p>作为研究生，写论文是家常便饭。小到平时的课程报告和发表的小论文，还有最重要的毕业论文。好的工具确实能够提升写作的效率，我将平时写论文中常用的工具记录下来，主要采用的word书写，希望对大家有所帮助。</p><p>论文的主体内容采用word书写，公式编辑器采用的是mathtype，公式识别软件Mathpix（用了你一定会爱上它，哈哈），识别公式挺准的，并且直接粘贴到mathtype中就可以，绘图常用的有MATLAB、Visio、origin，论文中的仿真图一般采用MATLAB和origin绘制，结构框图和流程图使用Visio。参考文献采用的是NoteExpress，大多数高校的图书馆都买的这个软件的，可以去学校图书馆的电子资源里找找。</p><p>下面谈谈我使用这些软件遇到的问题希望大家注意。</p><h1 id="1-mathtype"><a href="#1-mathtype" class="headerlink" title="1 mathtype"></a>1 mathtype</h1><p>要安装嵌入到word中的版本，使用更加方便快捷。<br>主要掌握两个操作即可：</p><ul><li>插入编号在右的公式</li><li>插入对应公式得编号引用</li></ul><p><img src="https://s2.ax1x.com/2019/12/02/QuIB60.png" alt="QuIB60.png"></p><h1 id="2-Mathpix"><a href="#2-Mathpix" class="headerlink" title="2 Mathpix"></a>2 Mathpix</h1><p>四步完成公式识别：<br>1.快捷键Ctrl + Alt + M on Windows &amp; Linux, Ctrl + ⌘ + M on Mac</p><p><img src="https://s2.ax1x.com/2019/12/02/QuonBT.jpg" alt="QuonBT.jpg"></p><p>2.拖拽截图</p><p><img src="https://s2.ax1x.com/2019/12/02/Quotu6.gif" alt="Quotu6.gif"></p><p>3.复制需要的格式，如mathtype格式</p><p><img src="https://s2.ax1x.com/2019/12/02/Quor8A.gif" alt="Quor8A.gif"></p><p>4.新建mathtype公式，粘贴即可</p><h1 id="3-origin"><a href="#3-origin" class="headerlink" title="3 origin"></a>3 origin</h1><p>如果有类似的图片，可以设置模板，这样能够大大节省时间。origin的相关设置可以参考下面的博客:<a href="http://blog.sciencenet.cn/blog-1349151-851205.html" target="_blank" rel="noopener">origin常规设置</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;&lt;p&gt;工欲善其事，必先利其器。&lt;/p&gt;
+&lt;footer&gt;&lt;strong&gt;《论语·卫灵公》&lt;/strong&gt;&lt;/footer&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="工具" scheme="http://seaworth.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>常用的数据结构</title>
