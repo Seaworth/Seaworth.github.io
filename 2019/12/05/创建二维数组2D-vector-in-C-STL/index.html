@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://seaworth.github.io">
-  <title>Archives: 2019 | Seaworth的博客</title>
+  <title>创建二维数组2D vector in C++ STL | Seaworth的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
-<meta name="keywords" content="python,machine learning,matlab,爬虫,读书,音乐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Seaworth的博客">
-<meta property="og:url" content="http://seaworth.github.io/archives/2019/index.html">
+  <meta name="description" content="欣赏一个人，始于颜值，敬于才华，合于性格，久于善良，终于人品。 新华社《夜读|这个人，凭什么值得你欣赏》">
+<meta name="keywords" content="C++,STL,vector">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建二维数组2D vector in C++ STL">
+<meta property="og:url" content="http://seaworth.github.io/2019/12/05/创建二维数组2D-vector-in-C-STL/index.html">
 <meta property="og:site_name" content="Seaworth的博客">
-<meta property="og:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta property="og:description" content="欣赏一个人，始于颜值，敬于才华，合于性格，久于善良，终于人品。 新华社《夜读|这个人，凭什么值得你欣赏》">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-05T02:19:49.467Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Seaworth的博客">
-<meta name="twitter:description" content="珍惜时光，不断捣鼓，只为遇见未知的自己！">
+<meta name="twitter:title" content="创建二维数组2D vector in C++ STL">
+<meta name="twitter:description" content="欣赏一个人，始于颜值，敬于才华，合于性格，久于善良，终于人品。 新华社《夜读|这个人，凭什么值得你欣赏》">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -167,36 +168,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-创建二维数组2D-vector-in-C-STL" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/05/创建二维数组2D-vector-in-C-STL/" class="archive-article-date">
-  	<time datetime="2019-12-05T01:04:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/05/创建二维数组2D-vector-in-C-STL/">创建二维数组2D vector in C++ STL</a>
+    <h1 class="article-title" itemprop="name">
+      创建二维数组2D vector in C++ STL
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/12/05/创建二维数组2D-vector-in-C-STL/" class="archive-article-date">
+  	<time datetime="2019-12-05T01:04:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote><p>欣赏一个人，始于颜值，敬于才华，合于性格，久于善良，终于人品。</p>
+<footer><strong>新华社</strong><cite>《夜读|这个人，凭什么值得你欣赏》</cite></footer></blockquote>
+<a id="more"></a>
+<p>在LeetCode上刷题，常常遇到会初始化一个给定大小的二维数组，总结一下。</p>
+<h1 id="1-用数值初始化"><a href="#1-用数值初始化" class="headerlink" title="1 用数值初始化"></a>1 用数值初始化</h1><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//每行的个数相等</span></span><br><span class="line"><span class="type">vector</span>&lt;<span class="type">vector</span>&lt;int&gt; &gt; vec1&#123; &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, </span><br><span class="line">                           &#123; <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span> &#125;, </span><br><span class="line">                           &#123; <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span> &#125; &#125;; </span><br><span class="line"><span class="comment">//每行的个数不等</span></span><br><span class="line"><span class="type">vector</span>&lt;<span class="type">vector</span>&lt;int&gt; &gt; vec2&#123; &#123; <span class="number">1</span> &#125;, </span><br><span class="line">                           &#123; <span class="number">4</span>, <span class="number">5</span> &#125;, </span><br><span class="line">                           &#123; <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span> &#125; &#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="2-给定行数"><a href="#2-给定行数" class="headerlink" title="2 给定行数"></a>2 给定行数</h1><p>给定行数，再初始化每行的元素。需要声明的二维数组v[3][3]如下：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],</span><br><span class="line"> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],</span><br><span class="line"> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]]</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> row=<span class="number">3</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; col&#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; vec3(row);</span><br><span class="line"></span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;row;++i&gt;)&#123;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;col.size();++j)&#123;</span><br><span class="line">         vec3[i].push_back(col[j]);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="3-推荐方法"><a href="#3-推荐方法" class="headerlink" title="3 推荐方法"></a>3 推荐方法</h1><p>创建一维数组1x4的匿名变量，每个元素的值为0。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; (<span class="number">4</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure></p>
+<p>创建二维数组mxn，每一行由匿名的一维数组初始化。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 创建如下数组</span></span><br><span class="line"><span class="comment">[[0,0,0,0],</span></span><br><span class="line"><span class="comment"> [0,0,0,0],</span></span><br><span class="line"><span class="comment"> [0,0,0,0]]</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> m = <span class="number">3</span>; </span><br><span class="line"><span class="keyword">int</span> n = <span class="number">4</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; vec4( m , <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; (n, <span class="number">0</span>));</span><br></pre></td></tr></table></figure></p>
+<h1 id="4-完整代码"><a href="#4-完整代码" class="headerlink" title="4 完整代码"></a>4 完整代码</h1><p>IDE：VS2017<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印vector2D</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printVector</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;vec2D)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;vec : vec2D)&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;x : vec)</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="string">", "</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//测试函数：二位数组初始化</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//# 1 用数值初始化 </span></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; vec1&#123; &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, &#123; <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span> &#125;, &#123; <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span> &#125; &#125;;<span class="comment">//每行的个数相等</span></span><br><span class="line">	printVector(vec1);</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; vec2&#123; &#123; <span class="number">1</span> &#125;, &#123; <span class="number">4</span>, <span class="number">5</span> &#125;, &#123; <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span> &#125; &#125;;<span class="comment">//每行的个数不等</span></span><br><span class="line">	printVector(vec2);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//# 2 给定行数</span></span><br><span class="line">	<span class="keyword">int</span> row = <span class="number">3</span>;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; col&#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; vec3(row);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;row; ++i)&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j&lt;col.size(); ++j)&#123;</span><br><span class="line">			vec3[i].push_back(col[j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	printVector(vec3);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//# 3 推荐方法</span></span><br><span class="line">	<span class="keyword">int</span> m = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">4</span>;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; vec4(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">	printVector(vec4);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	test();</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>output：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,</span><br><span class="line"><span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>,</span><br><span class="line"><span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>,</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>,</span><br><span class="line"><span class="number">4</span>, <span class="number">5</span>,</span><br><span class="line"><span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>,</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,</span><br><span class="line"><span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,</span><br><span class="line"><span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,</span><br><span class="line"></span><br><span class="line"><span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>,</span><br><span class="line"><span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>,</span><br><span class="line"><span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>,</span><br><span class="line"></span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure></p>
+<p>参考博客：</p>
+<ol>
+<li><a href="https://www.geeksforgeeks.org/2d-vector-in-cpp-with-user-defined-size/" target="_blank" rel="noopener">2D vector in C++ with user defined size</a></li>
+<li><a href="https://thispointer.com/creating-a-matrix-using-2d-vector-in-c-vector-of-vectors/" target="_blank" rel="noopener">Creating a Matrix using 2D vector in C++ – Vector of Vectors</a></li>
+</ol>
+
+      
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢你请我吃糖果！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -216,1031 +256,140 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://seaworth.github.io/2019/12/05/创建二维数组2D-vector-in-C-STL/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/02/论文写作工具/" class="archive-article-date">
-  	<time datetime="2019-12-02T12:59:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/02/论文写作工具/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">论文写作工具</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/02/论文写作工具/">论文写作工具</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-用数值初始化"><span class="toc-number">1.</span> <span class="toc-text">1 用数值初始化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-给定行数"><span class="toc-number">2.</span> <span class="toc-text">2 给定行数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-推荐方法"><span class="toc-number">3.</span> <span class="toc-text">3 推荐方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-完整代码"><span class="toc-number">4.</span> <span class="toc-text">4 完整代码</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/02/常用的数据结构/" class="archive-article-date">
-  	<time datetime="2019-11-02T12:28:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/02/常用的数据结构/">常用的数据结构</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/26/hexo-yilia主题优化/" class="archive-article-date">
-  	<time datetime="2019-10-26T12:51:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/26/hexo-yilia主题优化/">hexo-yilia主题优化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/20/自己实现ls-l-dir命令/" class="archive-article-date">
-  	<time datetime="2019-10-20T03:25:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/20/自己实现ls-l-dir命令/">自己实现ls -l dir命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/16/IT资源/" class="archive-article-date">
-  	<time datetime="2019-10-16T06:46:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/16/IT资源/">IT资源 持续更新</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IT资源</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/24/Linux中的文件IO操作/" class="archive-article-date">
-  	<time datetime="2019-09-24T13:27:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/24/Linux中的文件IO操作/">Linux中的文件IO操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/10/剑指Offer-3/" class="archive-article-date">
-  	<time datetime="2019-09-10T02:21:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/10/剑指Offer-3/">剑指Offer-3 字符串中子序列的替换</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/28/MATLAB绘制模糊规则图形/" class="archive-article-date">
-  	<time datetime="2019-08-28T13:25:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/28/MATLAB绘制模糊规则图形/">MATLAB绘制模糊规则图形</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MATLAB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/16/effectiveCPP/" class="archive-article-date">
-  	<time datetime="2019-07-16T01:10:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/16/effectiveCPP/">Effective C++ 笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/24/Qt-day01/" class="archive-article-date">
-  	<time datetime="2019-06-24T13:06:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/24/Qt-day01/">Qt day01 初识Qt</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Qt</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/11/CPP-day10/" class="archive-article-date">
-  	<time datetime="2019-05-11T03:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/11/CPP-day10/">C++ day10 STL常用容器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/18/CPP-day09/" class="archive-article-date">
-  	<time datetime="2019-04-18T12:34:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/18/CPP-day09/">C++ day09 异常处理、标准IO流、文件读写</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/14/CPP-day08/" class="archive-article-date">
-  	<time datetime="2019-04-14T03:06:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/14/CPP-day08/">C++ day08 模板</a>
-    </h1>
-  
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/08/CPP-day07/" class="archive-article-date">
-  	<time datetime="2019-04-08T13:19:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-08</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/08/CPP-day07/">C++ day07 多态和头文件</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/25/CPP-day06/" class="archive-article-date">
-  	<time datetime="2019-03-25T12:54:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/25/CPP-day06/">C++ day06 继承</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/08/CPP-day05/" class="archive-article-date">
-  	<time datetime="2019-03-08T13:10:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/08/CPP-day05/">C++ day05 运算符重载</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/04/CPP-day04/" class="archive-article-date">
-  	<time datetime="2019-03-04T12:12:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/04/CPP-day04/">C++ day04</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/CPP-day03/" class="archive-article-date">
-  	<time datetime="2019-02-27T14:13:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/CPP-day03/">C++ day03</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/CPP-day02/" class="archive-article-date">
-  	<time datetime="2019-02-26T11:33:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/CPP-day02/">C++ day02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/思考致富/" class="archive-article-date">
-  	<time datetime="2019-02-26T10:24:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/思考致富/">思考致富</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/标幺值/" class="archive-article-date">
-  	<time datetime="2019-02-26T04:44:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/标幺值/">标幺值</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">电力系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/21/面向对象方法/" class="archive-article-date">
-  	<time datetime="2019-01-21T13:20:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/21/面向对象方法/">面向对象方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/20/剑指Offer-2/" class="archive-article-date">
-  	<time datetime="2019-01-20T00:50:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/20/剑指Offer-2/">剑指Offer-2 圆圈中最后剩下的数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/18/剑指Offer-1/" class="archive-article-date">
-  	<time datetime="2019-01-18T12:38:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/18/剑指Offer-1/">剑指Offer-1 和为S的两个数字</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/11/CPP学习路线/" class="archive-article-date">
-  	<time datetime="2019-01-11T14:24:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-11</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/11/CPP学习路线/">C++学习路线</a>
-    </h1>
   
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/02/父亲的寄语/" class="archive-article-date">
-  	<time datetime="2019-01-02T13:55:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/02/父亲的寄语/">父亲的寄语</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'afe6966152deee6d73fa',
+  	clientSecret: '8aafe13329e7d11fa72e9bc19cb43ffd63092ab2',
+  	repo: 'Seaworth.github.io',
+  	owner: 'Seaworth',
+  	admin: ['Seaworth'],
+  	id: 'Thu Dec 05 2019 09:04:05 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
   
   
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -1280,8 +429,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
